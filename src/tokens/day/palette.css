@@ -1,0 +1,126 @@
+/* Ahimsa Day — raw palette.
+   Warm cream neutrals and muted, warm-adjusted accents. These are raw
+   values; components must reference the semantic aliases in semantic.css,
+   never a step from this file.
+
+   Never pure white, never pure black. There is intentionally NO bright-red
+   danger value anywhere in this palette — errors use warm clay. */
+
+.ahimsa-day {
+  /* ---- Neutral: warm cream -> warm dark brown. The workhorse. ---- */
+  --neutral-50:  #faf8f5; /* softest cream — elevated surfaces, sheets, cards */
+  --neutral-100: #f4f0ea; /* very light cream — inline elevated blocks */
+  --neutral-200: #ebe6df; /* canvas — the default app background */
+  --neutral-300: #e0dcd5; /* sunk / recessed surfaces */
+  --neutral-400: #b8b0a4; /* disabled state, faint text */
+  --neutral-500: #8a8078; /* muted mid-tone */
+  --neutral-600: #605850; /* secondary text */
+  --neutral-700: #3d3428; /* body text */
+  --neutral-800: #2a1f18; /* heading text — darkest warm brown */
+  --neutral-900: #1a1310; /* inverse surface */
+
+  /* ================================================================
+     The ahimsa-tradition accents — the recommended family.
+     Named for the tradition the system takes its ethics from:
+     saffron (renunciate robes), turmeric (ritual gold), clay (earthen
+     lamps), bodhi (the fig tree of awakening), peacock (India's bird),
+     indigo (the Champaran satyagraha crop), monsoon (grey-blue rain
+     skies). Nothing high-chroma, nothing "poppy".
+     ================================================================ */
+
+  --saffron-300: #f8b877;
+  --saffron-400: #f29e4e;
+  --saffron-500: #e8862e;
+  --saffron-600: #c96d1e; /* primary saffron — marigold-robe orange */
+  --saffron-700: #a05415;
+
+  --turmeric-300: #edd07e;
+  --turmeric-400: #e3b94f;
+  --turmeric-500: #d4a02b;
+  --turmeric-600: #b3841f;
+  --turmeric-700: #8d6716;
+
+  --clay-300: #dda184;
+  --clay-400: #cd8060;
+  --clay-500: #b96144;
+  --clay-600: #9c4c33; /* fired-earth terracotta */
+  --clay-700: #7c3a27;
+
+  --bodhi-300: #b5cf9e;
+  --bodhi-400: #93b976;
+  --bodhi-500: #729e53;
+  --bodhi-600: #5a8340;
+  --bodhi-700: #456631;
+
+  --peacock-300: #8ecbd1;
+  --peacock-400: #5fb0bb;
+  --peacock-500: #3b93a3;
+  --peacock-600: #2c7787;
+  --peacock-700: #215d6b;
+
+  --indigo-300: #9ba4d6;
+  --indigo-400: #7480c4;
+  --indigo-500: #545fae;
+  --indigo-600: #414a92;
+  --indigo-700: #313876;
+
+  --monsoon-300: #9dadc2;
+  --monsoon-400: #7a8fab;
+  --monsoon-500: #5d7492;
+  --monsoon-600: #475b77;
+  --monsoon-700: #36465d;
+
+  /* ================================================================
+     The classic accents — the alternate family.
+     These are the original Ahimsa accents, kept because a consumer built
+     a full set of person-gradients directly on them. Same muted, warm-
+     adjusted register; reach for the tradition set first.
+
+     NOTE the one rename: this family's blue-violet is --periwinkle-*.
+     It was historically called --indigo-* in one consumer, which
+     collided with the tradition set's darker indigo at a different
+     value. Tradition indigo keeps the name; this one moved.
+     ================================================================ */
+
+  --amber-300: #f5c391;
+  --amber-400: #ecb078;
+  --amber-500: #d4a574;
+  --amber-600: #b8895a;
+  --amber-700: #96683f;
+
+  --rose-300: #f4bdbf;
+  --rose-400: #ed9fa5;
+  --rose-500: #e08591;
+  --rose-600: #c26875;
+  --rose-700: #9f4e5a;
+
+  --terracotta-300: #d6aa95;
+  --terracotta-400: #c89178;
+  --terracotta-500: #b87859;
+  --terracotta-600: #99613f;
+  --terracotta-700: #7a4a2d;
+
+  --sage-300: #b9cdc0;
+  --sage-400: #9ab5a0;
+  --sage-500: #7a9d7f;
+  --sage-600: #5f8467;
+  --sage-700: #47694f;
+
+  --violet-300: #cebede;
+  --violet-400: #bba8d2;
+  --violet-500: #a692c4;
+  --violet-600: #8c78ac;
+  --violet-700: #705d90;
+
+  --slate-300: #a5b3c7;
+  --slate-400: #8499b5;
+  --slate-500: #6781a3;
+  --slate-600: #4c6788;
+  --slate-700: #3a516d;
+
+  --periwinkle-300: #b0b6df;
+  --periwinkle-400: #8590cf;
+  --periwinkle-500: #6571b8;
+  --periwinkle-600: #4d5aa0;
+  --periwinkle-700: #3a4488;
+}

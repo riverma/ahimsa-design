@@ -1,0 +1,71 @@
+/* Ahimsa Night — semantic tokens.
+   Exactly the same names Day defines. A component never knows which theme
+   it is in. */
+
+.ahimsa-night {
+  /* ---- Surfaces ---- */
+  --surface-canvas:      var(--neutral-900);
+  --surface-canvas-flat: #0e131a;
+  --surface-elevated:    var(--neutral-800);
+  --surface-sunk:        var(--neutral-950);
+  --surface-inverse:     var(--neutral-50);
+
+  /* ---- Text. Quiet steps sit HIGHER here than Day's 65/45/28% — low
+     alpha ink disappears against a luminous ground. This is the same
+     correction Giraffy already made in the other direction when it
+     darkened its quiet text for a warm gradient canvas. ---- */
+  --text-heading:   var(--neutral-50);
+  --text-body:      var(--neutral-100);
+  --text-secondary: #dce3ecb8; /* ~72% */
+  --text-muted:     #dce3ec80; /* NON-TEXT ONLY — status dots, rules, disabled marks.
+                                   Measures 4.39:1, which clears 3:1 for non-text
+                                   (1.4.11) but NOT the 4.5:1 small text owes. No component
+                                   sets type in this. */
+  --text-faint:     #dce3ec4d; /* ~30% */
+  --text-inverse:   var(--neutral-900);
+
+  /* ---- Borders. In Night these are the PRIMARY structural device —
+     Day separates with shadow and cream, Night with a hairline.
+     A hairline that carries meaning must clear 3:1 (WCAG 1.4.11); use
+     --border-strong for those. Subtle and medium are decorative. ---- */
+  --border-subtle: #dce3ec1a; /* ~10% — decorative only */
+  --border-medium: #dce3ec33; /* ~20% — decorative only */
+  --border-strong: #dce3ec59; /* ~35% — emphatic, but DECORATIVE only: 2.69:1 */
+
+  /* The boundary of an interactive control. Owes 3:1 (WCAG 1.4.11). */
+  --border-control: #dce3ec8c; /* 55% — 4.86:1 worst case */
+
+  /* ---- Accents ---- */
+  --accent-primary:   var(--peacock-300);
+  --accent-secondary: var(--indigo-300);
+  --accent-success:   var(--bodhi-300);
+  --accent-warning:   var(--ember-300); /* the ONLY error colour. Never red. */
+
+  --accent-warning-surface: var(--ember-500); /* fill for a destructive control — warm copper, not red.
+                                      A destructive action is still not an emergency. */
+
+  /* Setting SMALL TEXT in an accent? Use the -200 step, not these.
+     --accent-success and --accent-warning are tuned as fills and marks and
+     clear the 3:1 non-text bar; as 10px type they do not reach 4.5:1. */
+
+  /* ---- Focus ---- */
+  --focus-ring:        var(--peacock-300);
+  --focus-ring-offset: var(--surface-canvas-flat);
+  --focus-ring-width:  2px;
+
+  /* ---- Glass. Tinted cool and much quieter than Day's white: a 42% white
+     overlay on a dark ground reads as fog, not as glass. ---- */
+  --glass-overlay:        #a9c6d914; /* ~8%  */
+  --glass-overlay-strong: #a9c6d926; /* ~15% */
+  --glass-scrim:          #05080ca6; /* ~65% — deeper than Day's 45% */
+  --glass-blur:           14px;
+
+  /* ---- Glow. Night's answer to Day's paper shadow. Emphasis here is
+     light, not lift. ---- */
+  --glow-sm: 0 0 12px -2px #8ecbd159;
+  --glow-md: 0 0 28px -4px #8ecbd166, 0 0 6px #8ecbd140;
+  --glow-lg: 0 0 64px -8px #8ecbd173, 0 0 18px #8ecbd14d;
+
+  /* ---- Night's display type opens up where Day's pulls tight. ---- */
+  --tracking-display: 0.03em;
+}

@@ -1,0 +1,177 @@
+/* Ahimsa components — display.
+   SmallCapsLabel, PullQuote, Monogram, ProgressDots, StatusDot, SectionRule.
+
+   This system is deliberately icon-light, and its most distinctive "icon"
+   is the absence of one: THERE IS NO NOTIFICATION BADGE COMPONENT, by
+   design. Updates surface through the rhythm of use, never a red dot. */
+
+/* ================================================================
+   SmallCapsLabel — the utility voice. Wide-tracked uppercase, optionally
+   led by a short rule, and it reads like a magazine caption.
+   ================================================================ */
+.ah-caps {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--size-xs);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  /* --text-secondary, not --text-muted. This is 10px uppercase, which is
+     SMALL text and owes 4.5:1 — the quieter token measures 3.35:1 and
+     fails. Nothing in this system sets small text in --text-muted. */
+  color: var(--text-secondary);
+}
+.ah-caps--micro { font-size: var(--size-micro); letter-spacing: 0.32em; }
+.ah-caps--rule::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+/* In Night the utility voice is mono — the HUD label. */
+.ahimsa-night .ah-caps { font-family: var(--font-mono); }
+
+/* ================================================================
+   PullQuote — the emotional voice, and the system's signature.
+   NEVER quotation marks: the setting is already the quotation, and the
+   marks would only shout.
+   ================================================================ */
+.ah-quote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--size-lg);
+  line-height: 1.35;
+  color: var(--text-heading);
+  text-wrap: pretty;
+  text-align: center;
+}
+.ah-quote--md { font-size: var(--size-md); }
+.ah-quote--xl { font-size: var(--size-xl); }
+.ah-quote--bordered {
+  text-align: left;
+  border-left: 1px solid var(--border-medium);
+  padding-left: var(--space-4);
+}
+.ahimsa-night .ah-quote {
+  font-style: normal;
+  font-weight: 200;
+  letter-spacing: 0.03em;
+  line-height: 1.45;
+  color: var(--frost-300);
+}
+
+/* ================================================================
+   Monogram — a circular avatar that is an initial, not a photograph.
+   Set --ah-mono-size (default 56px); the letter scales with the box.
+   ================================================================ */
+.ah-mono {
+  --ah-mono-size: 56px;
+  width: var(--ah-mono-size);
+  height: var(--ah-mono-size);
+  font-size: calc(var(--ah-mono-size) * 0.62);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1;
+  flex-shrink: 0;
+  background: var(--surface-elevated);
+  color: var(--text-heading);
+  box-shadow: var(--shadow-sm);
+}
+.ah-mono--sunk { background: var(--surface-sunk); color: var(--text-secondary); box-shadow: none; }
+.ah-mono--glass {
+  background: var(--glass-overlay);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  box-shadow: inset 0 0 0 1px var(--glass-overlay-strong);
+}
+.ah-mono--s20  { --ah-mono-size: 20px; }
+.ah-mono--s44  { --ah-mono-size: 44px; }
+.ah-mono--s84  { --ah-mono-size: 84px; }
+.ah-mono--s110 { --ah-mono-size: 110px; }
+.ah-mono--s144 { --ah-mono-size: 144px; }
+/* Night has no serif, so the monogram becomes a hairline ring around an
+   ultralight letter, lit rather than lifted. */
+.ahimsa-night .ah-mono {
+  font-style: normal;
+  font-weight: 200;
+  letter-spacing: 0.02em;
+  box-shadow: inset 0 0 0 1px var(--border-control), var(--glow-sm);
+}
+.ahimsa-night .ah-mono--sunk { box-shadow: inset 0 0 0 1px var(--border-medium); }
+
+/* ================================================================
+   ProgressDots — where you are, with no count and no urgency.
+   Each dot is a real button: pagination you can only reach by dragging
+   is not reachable (WCAG 2.5.7).
+   ================================================================ */
+.ah-dots { display: inline-flex; align-items: center; gap: 2px; }
+/* The control is a real 44x44 box; the dot is painted inside it. An
+   invisible ::after hit area works for a finger but is invisible to an
+   audit, and "it is accessible, trust me" is not a position this system
+   takes. */
+.ah-dots button,
+.ah-dots span {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  background: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.ah-dots button { cursor: pointer; }
+.ah-dots button::before,
+.ah-dots span::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: var(--radius-full);
+  background: var(--border-strong);
+  opacity: 0.5;
+  transition: width var(--duration-fast) var(--ease-standard),
+              opacity var(--duration-fast) var(--ease-standard);
+}
+.ah-dots .is-on::before { width: 22px; opacity: 1; background: var(--text-heading); }
+
+/* ================================================================
+   StatusDot — never the only carrier of its meaning. The adjacent text
+   says the same thing (WCAG 1.4.1).
+   ================================================================ */
+.ah-sdot {
+  width: 7px;
+  height: 7px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+  display: inline-block;
+  background: var(--text-muted);
+}
+
+/* ================================================================
+   SectionRule — the signature "── label ──────".
+   ================================================================ */
+.ah-rule-row { display: flex; align-items: center; gap: var(--space-2); }
+.ah-rule-row::before {
+  content: '';
+  width: 16px;
+  border-top: 1px solid var(--border-medium);
+  flex-shrink: 0;
+}
+.ah-rule-row::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid var(--border-medium);
+}

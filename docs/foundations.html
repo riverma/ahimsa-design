@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en" class="ahimsa-day">
+<head>
+<meta charset="utf-8">
+<!-- viewport-fit=cover for safe areas. Note what is absent: no
+     maximum-scale, no user-scalable=no. Pinch zoom always stays. -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ebe6df">
+<meta name="color-scheme" content="light dark">
+<title>Foundations — Ahimsa Design System</title>
+<meta name="description" content="Colour, type, space, elevation, motion, and Night's ambient layer.">
+<link rel="stylesheet" href="ahimsa.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="ah-visually-hidden" href="#main">Skip to content</a>
+<div class="ah-page">
+
+  <header class="site-head">
+    <a class="site-mark" href="index.html">Ahimsa</a>
+    <nav class="site-nav" aria-label="Sections">
+      <a class="ah-link ah-link--quiet ah-body" href="index.html">Overview</a>
+          <a class="ah-link ah-link--quiet ah-body" href="foundations.html" aria-current="page">Foundations</a>
+          <a class="ah-link ah-link--quiet ah-body" href="components.html">Components</a>
+          <a class="ah-link ah-link--quiet ah-body" href="patterns.html">Patterns</a>
+          <a class="ah-link ah-link--quiet ah-body" href="principles.html">Principles</a>
+          <a class="ah-link ah-link--quiet ah-body" href="accessibility.html">Accessibility</a>
+          <a class="ah-link ah-link--quiet ah-body" href="agents.html">For agents</a>
+    </nav>
+    <div class="theme-switch" role="group" aria-label="Aesthetic">
+      <button class="ah-pill ah-pill--outline ah-hit" data-theme-btn="day" aria-pressed="true">Day</button>
+      <button class="ah-pill ah-pill--outline ah-hit" data-theme-btn="night" aria-pressed="false">Night</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <p class="ah-caps ah-caps--rule" style="margin:0">Foundations</p>
+      <h1 class="ah-display-l heading-ink" style="margin:0">The values, and why each one is what it is</h1>
+      <p class="ah-prose hero__lede" style="margin:0">Every swatch and every line below is read out of the shipped token files at build time, so nothing on this page can drift from what you get.</p>
+    </section>
+
+    <section class="ah-section" id="colour">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Colour</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Never pure white, never pure black</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">The canvas is warm cream and the darkest ink is a warm brown. Pure black on
+     pure white is a harsher contrast than any screen needs, and it reads as
+     clinical — so the system does not contain either. Night holds the same law
+     from the other end: its deepest ground is <code>#080b10</code> and its
+     lightest ink <code>#eef2f7</code>.</p>
+      <div class="spec" style="margin-bottom:var(--space-6)">
+        <p class="ah-caps" style="margin:0">Neutrals — Day</p>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">neutral</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#faf8f5"></div>
+        <code>50 #faf8f5</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#f4f0ea"></div>
+        <code>100 #f4f0ea</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#ebe6df"></div>
+        <code>200 #ebe6df</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#e0dcd5"></div>
+        <code>300 #e0dcd5</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#b8b0a4"></div>
+        <code>400 #b8b0a4</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#8a8078"></div>
+        <code>500 #8a8078</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#605850"></div>
+        <code>600 #605850</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#3d3428"></div>
+        <code>700 #3d3428</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#2a1f18"></div>
+        <code>800 #2a1f18</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#1a1310"></div>
+        <code>900 #1a1310</code>
+      </div>
+        </div>
+      </div>
+        <p class="ah-caps" style="margin:0">Neutrals — Night</p>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">neutral</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#eef2f7"></div>
+        <code>50 #eef2f7</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#dce3ec"></div>
+        <code>100 #dce3ec</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#bcc6d4"></div>
+        <code>200 #bcc6d4</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#93a0b2"></div>
+        <code>300 #93a0b2</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#6d7a8c"></div>
+        <code>400 #6d7a8c</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#4e5a6b"></div>
+        <code>500 #4e5a6b</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#38424f"></div>
+        <code>600 #38424f</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#232c37"></div>
+        <code>700 #232c37</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#161d26"></div>
+        <code>800 #161d26</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#0e131a"></div>
+        <code>900 #0e131a</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#080b10"></div>
+        <code>950 #080b10</code>
+      </div>
+        </div>
+      </div>
+      </div>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)"><strong>Day's accents, the recommended family</strong>, are named for the
+     tradition the system takes its ethics from: saffron for renunciate robes,
+     turmeric for ritual gold, clay for earthen lamps, bodhi for the fig tree of
+     awakening, peacock for India's bird, indigo for the Champaran satyagraha
+     crop, monsoon for grey-blue rain skies. Nothing high-chroma, nothing poppy.</p>
+      <div class="spec" style="margin-bottom:var(--space-6)">
+        <p class="ah-caps" style="margin:0">Day · the ahimsa-tradition set</p>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">saffron</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#f8b877"></div>
+        <code>300 #f8b877</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#f29e4e"></div>
+        <code>400 #f29e4e</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#e8862e"></div>
+        <code>500 #e8862e</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#c96d1e"></div>
+        <code>600 #c96d1e</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#a05415"></div>
+        <code>700 #a05415</code>
+      </div>
+        </div>
+      </div>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">turmeric</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#edd07e"></div>
+        <code>300 #edd07e</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#e3b94f"></div>
+        <code>400 #e3b94f</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#d4a02b"></div>
+        <code>500 #d4a02b</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#b3841f"></div>
+        <code>600 #b3841f</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#8d6716"></div>
+        <code>700 #8d6716</code>
+      </div>
+        </div>
+      </div>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">clay</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#dda184"></div>
+        <code>300 #dda184</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#cd8060"></div>
+        <code>400 #cd8060</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#b96144"></div>
+        <code>500 #b96144</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#9c4c33"></div>
+        <code>600 #9c4c33</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#7c3a27"></div>
+        <code>700 #7c3a27</code>
+      </div>
+        </div>
+      </div>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">bodhi</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#b5cf9e"></div>
+        <code>300 #b5cf9e</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#93b976"></div>
+        <code>400 #93b976</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#729e53"></div>
+        <code>500 #729e53</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#5a8340"></div>
+        <code>600 #5a8340</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#456631"></div>
+        <code>700 #456631</code>
+      </div>
+        </div>
+      </div>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">peacock</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#8ecbd1"></div>
+        <code>300 #8ecbd1</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#5fb0bb"></div>
+        <code>400 #5fb0bb</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#3b93a3"></div>
+        <code>500 #3b93a3</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#2c7787"></div>
+        <code>600 #2c7787</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#215d6b"></div>
+        <code>700 #215d6b</code>
+      </div>
+        </div>
+      </div>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">indigo</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#9ba4d6"></div>
+        <code>300 #9ba4d6</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#7480c4"></div>
+        <code>400 #7480c4</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#545fae"></div>
+        <code>500 #545fae</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#414a92"></div>
+        <code>600 #414a92</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#313876"></div>
+        <code>700 #313876</code>
+      </div>
+        </div>
+      </div>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">monsoon</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#9dadc2"></div>
+        <code>300 #9dadc2</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#7a8fab"></div>
+        <code>400 #7a8fab</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#5d7492"></div>
+        <code>500 #5d7492</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#475b77"></div>
+        <code>600 #475b77</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#36465d"></div>
+        <code>700 #36465d</code>
+      </div>
+        </div>
+      </div>
+      </div>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)"><strong>The classic family</strong> is the original accent set, kept because
+     a consuming app built a full range of person-gradients directly on it. One
+     rename: its blue-violet is <code>--periwinkle-*</code>, because it used to
+     be called <code>--indigo-*</code> at a different value from the tradition
+     set's indigo, and two different colours cannot share one name.</p>
+      <div class="spec" style="margin-bottom:var(--space-6)">
+        <p class="ah-caps" style="margin:0">Day · the classic set</p>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">amber</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#f5c391"></div>
+        <code>300 #f5c391</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#ecb078"></div>
+        <code>400 #ecb078</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#d4a574"></div>
+        <code>500 #d4a574</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#b8895a"></div>
+        <code>600 #b8895a</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#96683f"></div>
+        <code>700 #96683f</code>
+      </div>
+        </div>
+      </div>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">rose</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#f4bdbf"></div>
+        <code>300 #f4bdbf</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#ed9fa5"></div>
+        <code>400 #ed9fa5</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#e08591"></div>
+        <code>500 #e08591</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#c26875"></div>
+        <code>600 #c26875</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#9f4e5a"></div>
+        <code>700 #9f4e5a</code>
+      </div>
+        </div>
+      </div>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">terracotta</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#d6aa95"></div>
+        <code>300 #d6aa95</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#c89178"></div>
+        <code>400 #c89178</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#b87859"></div>
+        <code>500 #b87859</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#99613f"></div>
+        <code>600 #99613f</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#7a4a2d"></div>
+        <code>700 #7a4a2d</code>
+      </div>
+        </div>
+      </div>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">sage</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#b9cdc0"></div>
+        <code>300 #b9cdc0</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#9ab5a0"></div>
+        <code>400 #9ab5a0</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#7a9d7f"></div>
+        <code>500 #7a9d7f</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#5f8467"></div>
+        <code>600 #5f8467</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#47694f"></div>
+        <code>700 #47694f</code>
+      </div>
+        </div>
+      </div>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">violet</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#cebede"></div>
+        <code>300 #cebede</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#bba8d2"></div>
+        <code>400 #bba8d2</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#a692c4"></div>
+        <code>500 #a692c4</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#8c78ac"></div>
+        <code>600 #8c78ac</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#705d90"></div>
+        <code>700 #705d90</code>
+      </div>
+        </div>
+      </div>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">slate</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#a5b3c7"></div>
+        <code>300 #a5b3c7</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#8499b5"></div>
+        <code>400 #8499b5</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#6781a3"></div>
+        <code>500 #6781a3</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#4c6788"></div>
+        <code>600 #4c6788</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#3a516d"></div>
+        <code>700 #3a516d</code>
+      </div>
+        </div>
+      </div>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">periwinkle</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#b0b6df"></div>
+        <code>300 #b0b6df</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#8590cf"></div>
+        <code>400 #8590cf</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#6571b8"></div>
+        <code>500 #6571b8</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#4d5aa0"></div>
+        <code>600 #4d5aa0</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#3a4488"></div>
+        <code>700 #3a4488</code>
+      </div>
+        </div>
+      </div>
+      </div>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)"><strong>Night reuses Day's cool hues</strong> unchanged at 300–700, each
+     gaining a lighter 200 step because a dark ground needs brighter ink. Only
+     two families are new: frost, which is Night's cream, and ember, its only
+     warning hue.</p>
+      <div class="spec">
+        <p class="ah-caps" style="margin:0">Night</p>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">peacock</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#bfe6ea"></div>
+        <code>200 #bfe6ea</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#8ecbd1"></div>
+        <code>300 #8ecbd1</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#5fb0bb"></div>
+        <code>400 #5fb0bb</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#3b93a3"></div>
+        <code>500 #3b93a3</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#2c7787"></div>
+        <code>600 #2c7787</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#215d6b"></div>
+        <code>700 #215d6b</code>
+      </div>
+        </div>
+      </div>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">indigo</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#c7cdec"></div>
+        <code>200 #c7cdec</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#9ba4d6"></div>
+        <code>300 #9ba4d6</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#7480c4"></div>
+        <code>400 #7480c4</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#545fae"></div>
+        <code>500 #545fae</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#414a92"></div>
+        <code>600 #414a92</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#313876"></div>
+        <code>700 #313876</code>
+      </div>
+        </div>
+      </div>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">monsoon</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#c6d1de"></div>
+        <code>200 #c6d1de</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#9dadc2"></div>
+        <code>300 #9dadc2</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#7a8fab"></div>
+        <code>400 #7a8fab</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#5d7492"></div>
+        <code>500 #5d7492</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#475b77"></div>
+        <code>600 #475b77</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#36465d"></div>
+        <code>700 #36465d</code>
+      </div>
+        </div>
+      </div>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">bodhi</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#d8e8cc"></div>
+        <code>200 #d8e8cc</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#b5cf9e"></div>
+        <code>300 #b5cf9e</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#93b976"></div>
+        <code>400 #93b976</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#729e53"></div>
+        <code>500 #729e53</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#5a8340"></div>
+        <code>600 #5a8340</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#456631"></div>
+        <code>700 #456631</code>
+      </div>
+        </div>
+      </div>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">frost</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#e4f1f5"></div>
+        <code>200 #e4f1f5</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#c3e2ea"></div>
+        <code>300 #c3e2ea</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#9ccfdb"></div>
+        <code>400 #9ccfdb</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#74b8c8"></div>
+        <code>500 #74b8c8</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#549cad"></div>
+        <code>600 #549cad</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#3d7c8c"></div>
+        <code>700 #3d7c8c</code>
+      </div>
+        </div>
+      </div>
+      <div style="margin-bottom:var(--space-5)">
+        <p class="ah-caps" style="margin:0 0 6px">ember</p>
+        <div class="ramp">
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#f3cdb2"></div>
+        <code>200 #f3cdb2</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#e7ac86"></div>
+        <code>300 #e7ac86</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#d78c60"></div>
+        <code>400 #d78c60</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#c07046"></div>
+        <code>500 #c07046</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#a05935"></div>
+        <code>600 #a05935</code>
+      </div>
+      <div class="ramp__step">
+        <div class="ramp__chip" style="background:#7e4429"></div>
+        <code>700 #7e4429</code>
+      </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="ah-section" id="gradients">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Gradients</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">One gradient owns a screen</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">All of them run at 155°, with stops at 0 / 30 / 60 / 100%. They are moments
+     of emphasis, not decoration — flat cream, or flat deep blue, is the default.
+     Two gradients side by side is the rule this system breaks least gladly.</p>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Each one ships as <code>.ah-surface--&lt;name&gt;</code>, which sets the
+     gradient <em>and</em> the ink measured to work on it. A 155° ramp spans a
+     wide lightness range, so no single ink can carry text across all of it; the
+     surface therefore carries its own. Five of Day's gradients cannot clear AA
+     at any ink opacity and are marked surface-only — put text on them in an
+     opaque card, which is this system's pattern anyway.</p>
+      <p class="ah-caps" style="margin:0 0 var(--space-3)">Day</p>
+      <div class="ahimsa-day grads" style="background:var(--surface-canvas);border-radius:var(--radius-lg)">
+        <div class="grad ah-surface--dawn">
+          <p class="ah-caps" style="margin:0">dawn</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--cream">
+          <p class="ah-caps" style="margin:0">cream</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--saffron">
+          <p class="ah-caps" style="margin:0">saffron</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--turmeric">
+          <p class="ah-caps" style="margin:0">turmeric</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--clay" style="background:linear-gradient(155deg, #b96144 0%, #cd8060 30%, #dda184 60%, #ecc3ad 100%)">
+          <p class="ah-caps" style="margin:0;color:#1a1310">clay</p>
+          <p class="grad__note" style="margin:0;color:#1a1310">surface only — text goes in a card</p>
+        </div>
+        <div class="grad ah-surface--bodhi">
+          <p class="ah-caps" style="margin:0">bodhi</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--peacock">
+          <p class="ah-caps" style="margin:0">peacock</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--indigo" style="background:linear-gradient(155deg, #545fae 0%, #7480c4 30%, #9ba4d6 60%, #c5c9e6 100%)">
+          <p class="ah-caps" style="margin:0;color:#1a1310">indigo</p>
+          <p class="grad__note" style="margin:0;color:#1a1310">surface only — text goes in a card</p>
+        </div>
+        <div class="grad ah-surface--monsoon" style="background:linear-gradient(155deg, #5d7492 0%, #7a8fab 30%, #9dadc2 60%, #c2cbd8 100%)">
+          <p class="ah-caps" style="margin:0;color:#1a1310">monsoon</p>
+          <p class="grad__note" style="margin:0;color:#1a1310">surface only — text goes in a card</p>
+        </div>
+        <div class="grad ah-surface--amber">
+          <p class="ah-caps" style="margin:0">amber</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--rose">
+          <p class="ah-caps" style="margin:0">rose</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--coral">
+          <p class="ah-caps" style="margin:0">coral</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--terracotta">
+          <p class="ah-caps" style="margin:0">terracotta</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--sage">
+          <p class="ah-caps" style="margin:0">sage</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--teal">
+          <p class="ah-caps" style="margin:0">teal</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--violet">
+          <p class="ah-caps" style="margin:0">violet</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--slate">
+          <p class="ah-caps" style="margin:0">slate</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--periwinkle" style="background:linear-gradient(155deg, #6571b8 0%, #8590cf 30%, #b0b6df 60%, #d3cce6 100%)">
+          <p class="ah-caps" style="margin:0;color:#1a1310">periwinkle</p>
+          <p class="grad__note" style="margin:0;color:#1a1310">surface only — text goes in a card</p>
+        </div>
+        <div class="grad ah-surface--periwinkle-soft" style="background:linear-gradient(155deg, #6571b8 0%, #8590cf 30%, #a8b1de 60%, #c8cee9 100%)">
+          <p class="ah-caps" style="margin:0;color:#1a1310">periwinkle-soft</p>
+          <p class="grad__note" style="margin:0;color:#1a1310">surface only — text goes in a card</p>
+        </div>
+        <div class="grad ah-surface--mauve">
+          <p class="ah-caps" style="margin:0">mauve</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--olive">
+          <p class="ah-caps" style="margin:0">olive</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+      </div>
+      <p class="ah-caps" style="margin:var(--space-8) 0 var(--space-3)">Night</p>
+      <div class="ahimsa-night grads" style="background:var(--surface-canvas);border-radius:var(--radius-lg)">
+        <div class="grad ah-surface--deep">
+          <p class="ah-caps" style="margin:0">deep</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--horizon">
+          <p class="ah-caps" style="margin:0">horizon</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--aurora">
+          <p class="ah-caps" style="margin:0">aurora</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--iris">
+          <p class="ah-caps" style="margin:0">iris</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--nightfall">
+          <p class="ah-caps" style="margin:0">nightfall</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--ember">
+          <p class="ah-caps" style="margin:0">ember</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+        <div class="grad ah-surface--void">
+          <p class="ah-caps" style="margin:0">void</p>
+          <p class="grad__note" style="margin:0">carries text</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ah-section" id="type">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Type</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Two voices, and the split is the tone</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Day pairs <strong>Fraunces</strong>, a variable serif carrying emotional
+     weight, with <strong>DM Sans</strong> for utility. Night has no serif at
+     all: <strong>DM Sans</strong> at hairline weights carries what is felt, and
+     <strong>DM Mono</strong> carries what is measured. In both, an emotional
+     line is set apart and a factual line stays plain.</p>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">The size scale is musical and deliberately uneven — there is no 12px and no
+     14px. It is expressed in <code>rem</code> at the same computed sizes it has
+     always rendered, so raising your browser's font size actually works.</p>
+      <div class="spec" style="margin-bottom:var(--space-6)">
+        <div style="border-bottom:1px solid var(--border-subtle);padding-bottom:var(--space-3)">
+          <p class="ah-caps" style="margin:0 0 6px">Display XL · <code>.ah-display-xl</code></p>
+          <p class="ah-display-xl" style="margin:0">Nothing here is designed to grab you.</p>
+          <p class="ah-body muted" style="margin:6px 0 0">A screen that is mostly one sentence.</p>
+        </div>
+        <div style="border-bottom:1px solid var(--border-subtle);padding-bottom:var(--space-3)">
+          <p class="ah-caps" style="margin:0 0 6px">Display L · <code>.ah-display-l</code></p>
+          <p class="ah-display-l" style="margin:0">Nothing here is designed to grab you.</p>
+
+        </div>
+        <div style="border-bottom:1px solid var(--border-subtle);padding-bottom:var(--space-3)">
+          <p class="ah-caps" style="margin:0 0 6px">Display M · <code>.ah-display-m</code></p>
+          <p class="ah-display-m" style="margin:0">Nothing here is designed to grab you.</p>
+
+        </div>
+        <div style="border-bottom:1px solid var(--border-subtle);padding-bottom:var(--space-3)">
+          <p class="ah-caps" style="margin:0 0 6px">Heading L · <code>.ah-heading-l</code></p>
+          <p class="ah-heading-l" style="margin:0">Nothing here is designed to grab you.</p>
+
+        </div>
+        <div style="border-bottom:1px solid var(--border-subtle);padding-bottom:var(--space-3)">
+          <p class="ah-caps" style="margin:0 0 6px">Heading M · <code>.ah-heading-m</code></p>
+          <p class="ah-heading-m" style="margin:0">Nothing here is designed to grab you.</p>
+
+        </div>
+        <div style="border-bottom:1px solid var(--border-subtle);padding-bottom:var(--space-3)">
+          <p class="ah-caps" style="margin:0 0 6px">Title L · <code>.ah-title-l</code></p>
+          <p class="ah-title-l" style="margin:0">Nothing here is designed to grab you.</p>
+
+        </div>
+        <div style="border-bottom:1px solid var(--border-subtle);padding-bottom:var(--space-3)">
+          <p class="ah-caps" style="margin:0 0 6px">Title M · <code>.ah-title-m</code></p>
+          <p class="ah-title-m" style="margin:0">Nothing here is designed to grab you.</p>
+
+        </div>
+        <div style="border-bottom:1px solid var(--border-subtle);padding-bottom:var(--space-3)">
+          <p class="ah-caps" style="margin:0 0 6px">Prose · <code>.ah-prose</code></p>
+          <p class="ah-prose" style="margin:0">Nothing here is designed to grab you.</p>
+          <p class="ah-body muted" style="margin:6px 0 0">Running text. 1rem, and the only size long copy may use.</p>
+        </div>
+        <div style="border-bottom:1px solid var(--border-subtle);padding-bottom:var(--space-3)">
+          <p class="ah-caps" style="margin:0 0 6px">Body · <code>.ah-body</code></p>
+          <p class="ah-body" style="margin:0">Nothing here is designed to grab you.</p>
+          <p class="ah-body muted" style="margin:6px 0 0">A UI label size. Not for paragraphs.</p>
+        </div>
+        <div style="border-bottom:1px solid var(--border-subtle);padding-bottom:var(--space-3)">
+          <p class="ah-caps" style="margin:0 0 6px">Body serif · <code>.ah-body-serif</code></p>
+          <p class="ah-body-serif" style="margin:0">Nothing here is designed to grab you.</p>
+
+        </div>
+        <div style="border-bottom:1px solid var(--border-subtle);padding-bottom:var(--space-3)">
+          <p class="ah-caps" style="margin:0 0 6px">Caption · <code>.ah-caption</code></p>
+          <p class="ah-caption" style="margin:0">Nothing here is designed to grab you.</p>
+
+        </div>
+        <div style="border-bottom:1px solid var(--border-subtle);padding-bottom:var(--space-3)">
+          <p class="ah-caps" style="margin:0 0 6px">Label · <code>.ah-label</code></p>
+          <p class="ah-label" style="margin:0">Nothing here is designed to grab you.</p>
+
+        </div>
+      </div>
+      <div class="pair">
+        <div class="spec">
+          <p class="ah-caps" style="margin:0">The two signature styles</p>
+          <div class="spec__demo spec__demo--stack spec__demo--pad">
+            <p class="ah-small-caps" style="margin:0">Small caps · the utility voice</p>
+            <p class="ah-pull-quote" style="margin:var(--space-3) 0 0">A supporting line, quietly offered.</p>
+          </div>
+          <p class="ah-body secondary" style="margin:0">Wide-tracked uppercase for what is known; the emotional register for what is felt. Never quotation marks on a pull quote — the setting is already doing that job.</p>
+        </div>
+        <div class="spec">
+          <p class="ah-caps" style="margin:0">Fluid display</p>
+          <div class="spec__demo spec__demo--pad">
+            <p class="ah-display-fluid" style="margin:0;font-size:clamp(2rem,6vw,4rem)">Begin</p>
+          </div>
+          <p class="ah-body secondary" style="margin:0">Day pulls display type tight (<code>-0.045em</code>); Night opens it out (<code>+0.03em</code>). Same class, opposite gesture.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ah-section" id="space">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Space</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">A 4px grid, composed like a magazine</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">The grid is mechanical; the composition is not. Generous negative space is a
+     principle, not a preference: at least one full unit of air above and below a
+     heading, and <em>if a section feels crowded, remove elements before
+     shrinking type.</em></p>
+      <div class="spec" style="margin-bottom:var(--space-6)">
+        <p class="ah-caps" style="margin:0">Spacing scale</p>
+        <div style="display:grid;gap:6px">
+          <div style="display:flex;align-items:center;gap:var(--space-4)">
+            <code class="ah-body muted" style="width:6.5rem;flex-shrink:0;font-family:var(--font-mono)">--space-0</code>
+            <div style="height:12px;width:0px;background:var(--accent-primary);border-radius:2px;flex-shrink:0"></div>
+            <span class="ah-body muted">0px</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-4)">
+            <code class="ah-body muted" style="width:6.5rem;flex-shrink:0;font-family:var(--font-mono)">--space-1</code>
+            <div style="height:12px;width:4px;background:var(--accent-primary);border-radius:2px;flex-shrink:0"></div>
+            <span class="ah-body muted">4px</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-4)">
+            <code class="ah-body muted" style="width:6.5rem;flex-shrink:0;font-family:var(--font-mono)">--space-2</code>
+            <div style="height:12px;width:8px;background:var(--accent-primary);border-radius:2px;flex-shrink:0"></div>
+            <span class="ah-body muted">8px</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-4)">
+            <code class="ah-body muted" style="width:6.5rem;flex-shrink:0;font-family:var(--font-mono)">--space-3</code>
+            <div style="height:12px;width:12px;background:var(--accent-primary);border-radius:2px;flex-shrink:0"></div>
+            <span class="ah-body muted">12px</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-4)">
+            <code class="ah-body muted" style="width:6.5rem;flex-shrink:0;font-family:var(--font-mono)">--space-4</code>
+            <div style="height:12px;width:16px;background:var(--accent-primary);border-radius:2px;flex-shrink:0"></div>
+            <span class="ah-body muted">16px</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-4)">
+            <code class="ah-body muted" style="width:6.5rem;flex-shrink:0;font-family:var(--font-mono)">--space-5</code>
+            <div style="height:12px;width:20px;background:var(--accent-primary);border-radius:2px;flex-shrink:0"></div>
+            <span class="ah-body muted">20px</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-4)">
+            <code class="ah-body muted" style="width:6.5rem;flex-shrink:0;font-family:var(--font-mono)">--space-6</code>
+            <div style="height:12px;width:24px;background:var(--accent-primary);border-radius:2px;flex-shrink:0"></div>
+            <span class="ah-body muted">24px</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-4)">
+            <code class="ah-body muted" style="width:6.5rem;flex-shrink:0;font-family:var(--font-mono)">--space-7</code>
+            <div style="height:12px;width:28px;background:var(--accent-primary);border-radius:2px;flex-shrink:0"></div>
+            <span class="ah-body muted">28px</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-4)">
+            <code class="ah-body muted" style="width:6.5rem;flex-shrink:0;font-family:var(--font-mono)">--space-8</code>
+            <div style="height:12px;width:32px;background:var(--accent-primary);border-radius:2px;flex-shrink:0"></div>
+            <span class="ah-body muted">32px</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-4)">
+            <code class="ah-body muted" style="width:6.5rem;flex-shrink:0;font-family:var(--font-mono)">--space-10</code>
+            <div style="height:12px;width:40px;background:var(--accent-primary);border-radius:2px;flex-shrink:0"></div>
+            <span class="ah-body muted">40px</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-4)">
+            <code class="ah-body muted" style="width:6.5rem;flex-shrink:0;font-family:var(--font-mono)">--space-12</code>
+            <div style="height:12px;width:48px;background:var(--accent-primary);border-radius:2px;flex-shrink:0"></div>
+            <span class="ah-body muted">48px</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-4)">
+            <code class="ah-body muted" style="width:6.5rem;flex-shrink:0;font-family:var(--font-mono)">--space-16</code>
+            <div style="height:12px;width:64px;background:var(--accent-primary);border-radius:2px;flex-shrink:0"></div>
+            <span class="ah-body muted">64px</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-4)">
+            <code class="ah-body muted" style="width:6.5rem;flex-shrink:0;font-family:var(--font-mono)">--space-20</code>
+            <div style="height:12px;width:80px;background:var(--accent-primary);border-radius:2px;flex-shrink:0"></div>
+            <span class="ah-body muted">80px</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-4)">
+            <code class="ah-body muted" style="width:6.5rem;flex-shrink:0;font-family:var(--font-mono)">--space-24</code>
+            <div style="height:12px;width:96px;background:var(--accent-primary);border-radius:2px;flex-shrink:0"></div>
+            <span class="ah-body muted">96px</span>
+          </div>
+        </div>
+      </div>
+      <div class="spec">
+        <p class="ah-caps" style="margin:0">Radius — rounded at every scale, never sharp</p>
+        <div class="spec__demo">
+          <div style="width:76px;height:76px;background:var(--surface-sunk);border-radius:var(--radius-xs);display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px">
+            <code class="ah-body muted" style="font-family:var(--font-mono);font-size:var(--size-micro)">xs</code>
+          </div>
+          <div style="width:76px;height:76px;background:var(--surface-sunk);border-radius:var(--radius-sm);display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px">
+            <code class="ah-body muted" style="font-family:var(--font-mono);font-size:var(--size-micro)">sm</code>
+          </div>
+          <div style="width:76px;height:76px;background:var(--surface-sunk);border-radius:var(--radius-md);display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px">
+            <code class="ah-body muted" style="font-family:var(--font-mono);font-size:var(--size-micro)">md</code>
+          </div>
+          <div style="width:76px;height:76px;background:var(--surface-sunk);border-radius:var(--radius-lg);display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px">
+            <code class="ah-body muted" style="font-family:var(--font-mono);font-size:var(--size-micro)">lg</code>
+          </div>
+          <div style="width:76px;height:76px;background:var(--surface-sunk);border-radius:var(--radius-xl);display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px">
+            <code class="ah-body muted" style="font-family:var(--font-mono);font-size:var(--size-micro)">xl</code>
+          </div>
+          <div style="width:76px;height:76px;background:var(--surface-sunk);border-radius:var(--radius-2xl);display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px">
+            <code class="ah-body muted" style="font-family:var(--font-mono);font-size:var(--size-micro)">2xl</code>
+          </div>
+          <div style="width:76px;height:76px;background:var(--surface-sunk);border-radius:var(--radius-3xl);display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px">
+            <code class="ah-body muted" style="font-family:var(--font-mono);font-size:var(--size-micro)">3xl</code>
+          </div>
+          <div style="width:76px;height:76px;background:var(--surface-sunk);border-radius:var(--radius-full);display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px">
+            <code class="ah-body muted" style="font-family:var(--font-mono);font-size:var(--size-micro)">full</code>
+          </div>
+        </div>
+        <p class="ah-body secondary ah-measure" style="margin:0">Sharp corners in an interface carry an implicit threat; rounded corners carry receptiveness. This is a system law rather than a Day preference, which is why Night's radii are identical.</p>
+      </div>
+    </section>
+
+    <section class="ah-section" id="elevation">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Elevation</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Paper in Day, light in Night</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Day's shadows are warm brown-tinted and layered, never harsh and never
+     black. <code>--shadow-md</code> carries an inner white highlight, and that
+     highlight is what makes a card read as paper rather than as a floating
+     rectangle.</p>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Night cannot use shadow — a drop shadow is invisible on a dark ground. The
+     same token names do a different job there: an inset hairline ring
+     establishes the edge, an inner top highlight suggests a lit surface, and
+     emphasis comes from <code>--glow-*</code> rather than from a brighter fill.</p>
+      <div class="spec">
+        <p class="ah-caps" style="margin:0">The shadow scale</p>
+        <div class="spec__demo spec__demo--pad" style="gap:var(--space-6);padding:var(--space-8)">
+          <div style="width:96px;height:96px;background:var(--surface-elevated);border-radius:var(--radius-lg);box-shadow:var(--shadow-xs);display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px">
+            <code class="ah-body muted" style="font-family:var(--font-mono);font-size:var(--size-micro)">xs</code>
+          </div>
+          <div style="width:96px;height:96px;background:var(--surface-elevated);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px">
+            <code class="ah-body muted" style="font-family:var(--font-mono);font-size:var(--size-micro)">sm</code>
+          </div>
+          <div style="width:96px;height:96px;background:var(--surface-elevated);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px">
+            <code class="ah-body muted" style="font-family:var(--font-mono);font-size:var(--size-micro)">md</code>
+          </div>
+          <div style="width:96px;height:96px;background:var(--surface-elevated);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px">
+            <code class="ah-body muted" style="font-family:var(--font-mono);font-size:var(--size-micro)">lg</code>
+          </div>
+          <div style="width:96px;height:96px;background:var(--surface-elevated);border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px">
+            <code class="ah-body muted" style="font-family:var(--font-mono);font-size:var(--size-micro)">xl</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ah-section" id="motion">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Motion</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Settling, not pouncing</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Nothing snaps and nothing overshoots. Every easing curve in the system ends
+     at 1.0 with no value above it, which is a mechanical guarantee that no
+     transition can bounce. A press shrinks by 3%; a sheet rises over 550ms and
+     decelerates into place. Motion mimics settling, not predator movement.</p>
+      <div class="spec">
+        <p class="ah-caps" style="margin:0">Durations and easings</p>
+        <table class="tbl">
+          <thead><tr><th>Token</th><th>Value</th><th>For</th></tr></thead>
+          <tbody>
+            <tr><td><code>--duration-instant</code></td><td><code>100ms</code></td><td class="secondary">the smallest acknowledgements</td></tr>
+            <tr><td><code>--duration-fast</code></td><td><code>200ms</code></td><td class="secondary">hover and press</td></tr>
+            <tr><td><code>--duration-base</code></td><td><code>300ms</code></td><td class="secondary">state changes</td></tr>
+            <tr><td><code>--duration-slow</code></td><td><code>400ms</code></td><td class="secondary">card flips</td></tr>
+            <tr><td><code>--duration-slower</code></td><td><code>550ms</code></td><td class="secondary">sheet slide-ups</td></tr>
+            <tr><td><code>--duration-slowest</code></td><td><code>800ms</code></td><td class="secondary">onboarding transitions</td></tr>
+            <tr><td><code>--duration-reveal</code></td><td><code>620ms</code></td><td class="secondary">clip-path wipes of a large surface</td></tr>
+            <tr><td><code>--ease-standard</code></td><td><code>cubic-bezier(0.4, 0.0, 0.2, 1.0)</code></td><td class="secondary">small state changes</td></tr>
+            <tr><td><code>--ease-emphasized</code></td><td><code>cubic-bezier(0.32, 0.72, 0.32, 1.0)</code></td><td class="secondary">carousels, card reveals, sheets</td></tr>
+            <tr><td><code>--ease-decelerate</code></td><td><code>cubic-bezier(0.0, 0.0, 0.2, 1.0)</code></td><td class="secondary">anything entering</td></tr>
+            <tr><td><code>--ease-accelerate</code></td><td><code>cubic-bezier(0.4, 0.0, 1.0, 1.0)</code></td><td class="secondary">anything leaving</td></tr>
+            <tr><td><code>--ease-reveal</code></td><td><code>cubic-bezier(0.76, 0, 0.24, 1)</code></td><td class="secondary">clip-path wipes</td></tr>
+            <tr><td><code>--ease-expo</code></td><td><code>cubic-bezier(0.22, 1, 0.36, 1)</code></td><td class="secondary">a long, soft settle</td></tr>
+          </tbody>
+        </table>
+        <p class="ah-body secondary ah-measure" style="margin:0">Under <code>prefers-reduced-motion</code> the system removes animation outright rather than shortening it — and it does <em>not</em> lower durations, because reduced motion must not mean slower or less legible, only stiller.</p>
+      </div>
+    </section>
+
+    <section class="ah-section" id="ambient">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Ambient</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Night's field, and why it asks for nothing</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Night ships an optional decorative layer: a dark field with additive bloom,
+     film grain, scanlines, a vignette, and line geometry. The references for it
+     are WebGL pieces with a full postprocessing chain — but additive blending is
+     <code>mix-blend-mode: plus-lighter</code>, noise is
+     <code>feTurbulence</code>, scanlines are a repeating gradient, and RGB shift
+     is a per-channel <code>feOffset</code>. None of it needs a renderer, a
+     canvas, or a byte of JavaScript.</p>
+      <div class="spec" style="margin-bottom:var(--space-6)">
+        <p class="ah-caps" style="margin:0">The layer, composed</p>
+        <div style="position:relative;min-height:280px;border-radius:var(--radius-xl);overflow:hidden;background:#0e131a">
+          <div class="ah-ambient ah-ambient--void ah-ambient--bloom ah-ambient--grain ah-ambient--isolines ah-ambient--vignette" aria-hidden="true"></div>
+          <div style="position:relative;z-index:1;padding:var(--space-8);display:grid;gap:var(--space-3);place-content:center;min-height:280px;text-align:center">
+            <p class="ah-small-caps" style="margin:0;font-family:var(--font-mono);color:#8ecbd1">ambient · decorative · aria-hidden</p>
+            <p style="margin:0;font-family:var(--font-body);font-weight:200;font-size:clamp(1.75rem,5vw,2.75rem);letter-spacing:0.03em;color:#eef2f7;line-height:1.1">It has nothing to tell you.</p>
+          </div>
+        </div>
+        <p class="ah-body secondary ah-measure" style="margin:0">Switch to Night to see it against the rest of the system.</p>
+      </div>
+      <div class="ah-card ah-card--sunk">
+        <p class="ah-caps" style="margin:0 0 var(--space-3)">Hard constraints, not stylistic ones</p>
+        <ul class="ah-body" style="margin:0;padding-left:1.2em;display:grid;gap:var(--space-2)">
+          <li>It never encodes state or progress. Nothing can be missed by ignoring it.</li>
+          <li>It never reacts to error. A glitch effect on failure tells someone their screen is broken.</li>
+          <li>It never flashes. Nothing pulses faster than 0.1Hz and no animation is shorter than 2s — well outside WCAG 2.3.1's three-flash threshold.</li>
+          <li>It animates opacity and hue only, never position. Movement in peripheral vision is a demand for attention.</li>
+          <li>It disappears entirely under <code>prefers-reduced-motion</code>, <code>prefers-reduced-transparency</code>, and <code>forced-colors</code>.</li>
+        </ul>
+        <p class="ah-body secondary" style="margin:var(--space-4) 0 0">Spectacle that asks for nothing is the only kind this system allows. <code>tools/check-attention.mjs</code> enforces the timing and the no-transform rule.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-foot">
+    <p class="ah-caption" style="margin:0">Ahimsa Design System v1.0.0 · MIT · fonts under SIL OFL-1.1</p>
+    <p class="ah-caption" style="margin:0">No analytics. No cookies. Nothing here is loaded over a network.</p>
+  </footer>
+
+</div>
+<script src="site.js"></script>
+</body>
+</html>

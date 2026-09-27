@@ -1,0 +1,76 @@
+/* Ahimsa Night — raw palette.
+   Night is built from the cool end of the Day palette. Peacock, indigo,
+   monsoon and bodhi carry across unchanged, each gaining one lighter step
+   because a dark ground needs brighter ink than a cream one. Two families
+   are new: frost, and ember.
+
+   That shared lineage is the whole reason Night reads as the same system
+   in a different register rather than as a second, unrelated theme.
+
+   Ahimsa's colour law holds without exception: NEVER PURE BLACK, NEVER
+   PURE WHITE. The deepest ground here is #080b10 and the lightest ink
+   #eef2f7. And as in Day, there is no red. */
+
+.ahimsa-night {
+  /* ---- Neutral: ice -> deep blue-black. 50 is still "lightest"; it is
+     the semantic layer that flips which end is ground and which is ink. ---- */
+  --neutral-50:  #eef2f7; /* heading ink */
+  --neutral-100: #dce3ec; /* body ink */
+  --neutral-200: #bcc6d4;
+  --neutral-300: #93a0b2;
+  --neutral-400: #6d7a8c; /* disabled state, faint text */
+  --neutral-500: #4e5a6b;
+  --neutral-600: #38424f;
+  --neutral-700: #232c37; /* hairline-adjacent wells */
+  --neutral-800: #161d26; /* elevated surface */
+  --neutral-900: #0e131a; /* canvas */
+  --neutral-950: #080b10; /* sunk — the deepest ground in the system */
+
+  /* ---- Carried across from Day, unchanged at 300-700. ---- */
+  --peacock-200: #bfe6ea;
+  --peacock-300: #8ecbd1;
+  --peacock-400: #5fb0bb;
+  --peacock-500: #3b93a3;
+  --peacock-600: #2c7787;
+  --peacock-700: #215d6b;
+
+  --indigo-200: #c7cdec;
+  --indigo-300: #9ba4d6;
+  --indigo-400: #7480c4;
+  --indigo-500: #545fae;
+  --indigo-600: #414a92;
+  --indigo-700: #313876;
+
+  --monsoon-200: #c6d1de;
+  --monsoon-300: #9dadc2;
+  --monsoon-400: #7a8fab;
+  --monsoon-500: #5d7492;
+  --monsoon-600: #475b77;
+  --monsoon-700: #36465d;
+
+  --bodhi-200: #d8e8cc;
+  --bodhi-300: #b5cf9e;
+  --bodhi-400: #93b976;
+  --bodhi-500: #729e53;
+  --bodhi-600: #5a8340;
+  --bodhi-700: #456631;
+
+  /* ---- Frost — pale ice. Night's equivalent of cream: the quietest
+     luminous register, and the core colour of every glow. ---- */
+  --frost-200: #e4f1f5;
+  --frost-300: #c3e2ea;
+  --frost-400: #9ccfdb;
+  --frost-500: #74b8c8;
+  --frost-600: #549cad;
+  --frost-700: #3d7c8c;
+
+  /* ---- Ember — warm copper, the only warning hue Night has. Deliberately
+     on the warm side so it reads as heat rather than as an alarm. A klaxon
+     colour would be a violation; so would red. ---- */
+  --ember-200: #f3cdb2;
+  --ember-300: #e7ac86;
+  --ember-400: #d78c60;
+  --ember-500: #c07046;
+  --ember-600: #a05935;
+  --ember-700: #7e4429;
+}

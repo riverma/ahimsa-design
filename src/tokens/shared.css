@@ -1,0 +1,116 @@
+/* Ahimsa — shared tokens.
+   Geometry and time. These do NOT change between Day and Night: switching
+   aesthetic changes colour, type voice and surface character, never the
+   grid, the corners or the timing. That stability is why both themes read
+   as one system.
+
+   Sizes are in rem, at the same computed values the system has always
+   rendered (13px = 0.8125rem at a 16px root). px would silently override
+   a person's own browser font-size setting, which is the opposite of what
+   this system is for. See docs/accessibility. */
+
+:root {
+  /* ---- Spacing — 4px grid. Generous negative space is a core principle;
+     err toward the larger step. If a section feels crowded, remove
+     elements before shrinking type. ---- */
+  --space-0:  0px;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  28px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ---- Radius — rounded at every scale, never sharp. Sharp corners in UI
+     carry an implicit threat; rounded corners carry receptiveness. This is
+     a system law, not a Day preference. ---- */
+  --radius-xs:   4px;    /* small pill-adjacent elements */
+  --radius-sm:   8px;    /* small buttons, tags */
+  --radius-md:   12px;   /* standard inputs, small cards */
+  --radius-lg:   16px;   /* cards */
+  --radius-xl:   20px;   /* featured cards */
+  --radius-2xl:  24px;   /* bottom sheets, panels */
+  --radius-3xl:  32px;   /* large frames, phone-inset outer */
+  --radius-full: 9999px; /* pills, monograms, circular buttons */
+
+  /* ---- Type sizes — a musical, deliberately-uneven scale. Note there is
+     no 12px or 14px step; the gaps are the point. ---- */
+  --size-micro: 0.5625rem; /* 9px  */
+  --size-xs:    0.625rem;  /* 10px */
+  --size-sm:    0.6875rem; /* 11px */
+  --size-base:  0.8125rem; /* 13px — a LABEL size, not a reading size */
+  --size-md:    0.9375rem; /* 15px */
+  --size-lg:    1.0625rem; /* 17px */
+  --size-xl:    1.375rem;  /* 22px */
+  --size-2xl:   1.75rem;   /* 28px */
+  --size-3xl:   2.125rem;  /* 34px */
+  --size-4xl:   2.5rem;    /* 40px */
+  --size-5xl:   3rem;      /* 48px */
+
+  /* Running prose uses this, always. --size-base is for UI labels. */
+  --size-reading: 1rem;    /* 16px */
+
+  /* Fluid display, for editorial moments that want to fill a viewport.
+     Both themes; the tracking differs (Day pulls tight, Night opens up). */
+  --size-fluid-display: clamp(2.75rem, 9vw, 7.5rem);
+  --size-fluid-heading: clamp(1.75rem, 4.5vw, 3.25rem);
+
+  /* ---- Weights ---- */
+  --weight-extralight: 200;
+  --weight-light:      300;
+  --weight-regular:    400;
+  --weight-medium:     500;
+  --weight-semibold:   600;
+  --weight-bold:       700;
+
+  /* ---- Line heights ---- */
+  --leading-tight:   1.0;  /* large display type */
+  --leading-snug:    1.15; /* headings */
+  --leading-base:    1.4;  /* body copy */
+  --leading-relaxed: 1.55; /* long reads */
+
+  /* ---- Letter spacing. Day pulls display tight and opens small caps
+     wide; Night inverts the display end. ---- */
+  --tracking-tightest: -0.02em;  /* very large display */
+  --tracking-tight:    -0.01em;  /* serif headings */
+  --tracking-normal:   0;
+  --tracking-wide:     0.15em;   /* small caps utility labels */
+  --tracking-wider:    0.22em;   /* standard small caps */
+  --tracking-widest:   0.32em;   /* very quiet meta */
+  --tracking-letter:   0.4em;    /* sparse — dividers, section labels */
+
+  /* ---- Layout ---- */
+  --gutter:       20px;
+  --gutter-fluid: clamp(20px, 5.2vw, 106px); /* opt-in editorial mode */
+
+  /* ---- Motion — gentle and decelerating. Nothing snaps, nothing
+     overshoots. Motion mimics settling, not predator movement. Every
+     easing below ends at 1.0, with no value above it. ---- */
+  --duration-instant: 100ms;
+  --duration-fast:    200ms;
+  --duration-base:    300ms;
+  --duration-slow:    400ms;
+  --duration-slower:  550ms; /* sheet slide-ups, card flips */
+  --duration-slowest: 800ms; /* onboarding transitions */
+  --duration-reveal:  620ms; /* clip-path reveals of large surfaces */
+
+  --ease-standard:   cubic-bezier(0.4, 0.0, 0.2, 1.0);    /* small state changes */
+  --ease-emphasized: cubic-bezier(0.32, 0.72, 0.32, 1.0); /* carousels, card reveals, sheets */
+  --ease-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1.0);    /* entering elements */
+  --ease-accelerate: cubic-bezier(0.4, 0.0, 1.0, 1.0);    /* exiting elements */
+  --ease-reveal:     cubic-bezier(0.76, 0, 0.24, 1);      /* clip-path wipes */
+  --ease-expo:       cubic-bezier(0.22, 1, 0.36, 1);      /* long, soft settle */
+
+  /* ---- The growing underline (.ah-link) ---- */
+  --underline-thickness: max(1.5px, 0.045em);
+  --underline-gap:       0.22em;
+  --underline-duration:  220ms;
+  --underline-ease:      cubic-bezier(0.65, 0, 0.35, 1);
+}

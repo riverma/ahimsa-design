@@ -1,0 +1,147 @@
+/* Ahimsa patterns — shells.
+   Two of them, and picking the right one matters.
+
+   .ah-page — a normal document. Fluid gutters, a reading measure, scrolls
+     the way the browser intends. Use this for sites, docs, anything read.
+
+   .ah-app — a fixed full-viewport application frame with safe-area insets,
+     widening in steps on larger screens so a desktop window gets a
+     comfortable app rather than a narrow strip. Use this for installed
+     PWAs. It is a deliberate trade: a fixed shell cannot reflow the way a
+     document can, so do not reach for it to hold an article. */
+
+/* ================================================================
+   Page shell
+   ================================================================ */
+.ah-page {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-inline: var(--gutter-fluid);
+  background: var(--surface-canvas);
+}
+/* The reading measure. Long lines are a readability problem long before
+   they are an aesthetic one. */
+.ah-measure { max-width: 68ch; }
+.ah-measure--wide { max-width: 88ch; }
+
+.ah-stack { display: flex; flex-direction: column; gap: var(--space-4); }
+.ah-stack--tight { gap: var(--space-2); }
+.ah-stack--loose { gap: var(--space-8); }
+/* Magazine composition: at least one full unit of air above and below a
+   heading. If a section feels crowded, remove elements before shrinking
+   type. */
+.ah-section { padding-block: var(--space-16); }
+
+/* ================================================================
+   App shell
+   ================================================================ */
+.ah-app {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: var(--surface-canvas);
+  --gutter: 20px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --top-pad: calc(var(--safe-top) + 14px);
+  --scroll-tail: calc(var(--safe-bottom) + var(--space-12));
+}
+/* Requires <meta name="viewport" content="width=device-width,
+   initial-scale=1, viewport-fit=cover"> for env(safe-area-inset-*) to be
+   live. Note what is NOT in that meta: no maximum-scale, no
+   user-scalable=no. Pinch zoom stays. */
+
+@media (min-width: 560px) {
+  .ah-app {
+    max-width: 480px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: var(--shadow-xl);
+  }
+}
+@media (min-width: 900px)  { .ah-app { max-width: 720px; --gutter: 32px; } }
+@media (min-width: 1200px) { .ah-app { max-width: 900px; --gutter: 40px; } }
+
+.ah-screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--top-pad);
+  background: var(--surface-canvas);
+}
+.ah-screen > *:not(.ah-scroll) { flex-shrink: 0; }
+.ah-screen--over { z-index: 6; }
+
+.ah-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  /* y only. Setting this on x swallows horizontal trackpad swipes and can
+     turn a pager into a one-way trap with no pointer route back. */
+  overscroll-behavior-y: contain;
+  padding: 6px var(--gutter) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+/* A spacer BLOCK, not bottom padding. End padding on a flex scroll
+   container is not reliably part of what the browser will scroll to; a
+   block is content, and every engine scrolls to the end of its content. */
+.ah-scroll::after {
+  content: '';
+  display: block;
+  flex: 0 0 auto;
+  height: var(--scroll-tail, 0px);
+}
+
+/* Header row */
+.ah-hdr {
+  padding: 6px var(--gutter) var(--space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+/* A horizontal row of chips that fades at the edge instead of ending
+   abruptly, and wraps rather than scrolling once there is room. A
+   horizontal scroller is a drag-only interaction, so pair it with the
+   same choices reachable another way. */
+.ah-hrow {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-inline: var(--gutter);
+  mask-image: linear-gradient(90deg, #000 calc(100% - 18px), transparent);
+  -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 18px), transparent);
+}
+@media (min-width: 900px) {
+  .ah-hrow { flex-wrap: wrap; overflow-x: visible; mask-image: none; -webkit-mask-image: none; }
+}
+
+/* A list of self-contained rows: one column on a phone, two when the
+   window allows it. */
+.ah-list { display: flex; flex-direction: column; gap: var(--space-2); }
+@media (min-width: 900px) {
+  .ah-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* A sticky footer over a gradient uses strong glass rather than restarting
+   the gradient, which would read as a seam. */
+.ah-footer {
+  flex-shrink: 0;
+  padding: var(--space-3) var(--gutter) calc(var(--space-5) + var(--safe-bottom, 0px));
+  background: var(--glass-overlay-strong);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Opt-in, and only inside an app shell: hiding scrollbars removes a
+   pointer target that some people rely on, so it is never the default. */
+.ah-scroll--bare { scrollbar-width: none; }
+.ah-scroll--bare::-webkit-scrollbar { display: none; }

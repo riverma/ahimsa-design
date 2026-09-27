@@ -1,0 +1,54 @@
+/* Ahimsa Day — typography.
+   Two families doing different jobs. Fraunces (variable serif) carries
+   emotional weight: display type, titles, italic pull quotes. DM Sans
+   handles utility: labels, small caps, buttons, dates.
+
+   Two signature styles define the fingerprint:
+     .ah-small-caps  — wide-tracked uppercase sans, the utility voice
+     .ah-pull-quote  — italic serif, the emotional voice
+
+   The split IS the tone. An emotional line goes in italics; a factual line
+   stays upright. Never put quotation marks on a pull quote — the italic
+   styling is already doing that job. */
+
+.ahimsa-day {
+  --font-display: "Fraunces", Georgia, "Iowan Old Style", serif;
+  --font-body:    "DM Sans", -apple-system, system-ui, sans-serif;
+  --font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.ahimsa-day .ah-display-xl { font-family: var(--font-display); font-size: var(--size-5xl);   font-weight: 400; line-height: 1.0;  letter-spacing: -0.015em; }
+.ahimsa-day .ah-display-l  { font-family: var(--font-display); font-size: var(--size-4xl);   font-weight: 400; line-height: 1.0;  letter-spacing: -0.015em; }
+.ahimsa-day .ah-display-m  { font-family: var(--font-display); font-size: var(--size-3xl);   font-weight: 400; line-height: 1.05; letter-spacing: -0.01em; }
+.ahimsa-day .ah-heading-l  { font-family: var(--font-display); font-size: var(--size-2xl);   font-weight: 400; line-height: 1.1;  letter-spacing: -0.01em; }
+.ahimsa-day .ah-heading-m  { font-family: var(--font-display); font-size: var(--size-xl);    font-weight: 400; line-height: 1.15; }
+.ahimsa-day .ah-title-l    { font-family: var(--font-display); font-size: var(--size-lg);    font-weight: 400; line-height: 1.2; }
+.ahimsa-day .ah-title-m    { font-family: var(--font-display); font-size: var(--size-md);    font-weight: 400; line-height: 1.2; }
+.ahimsa-day .ah-body       { font-family: var(--font-body);    font-size: var(--size-base);  font-weight: 400; line-height: 1.4; }
+.ahimsa-day .ah-body-serif { font-family: var(--font-display); font-size: var(--size-md);    font-weight: 400; line-height: 1.55; }
+.ahimsa-day .ah-caption    { font-family: var(--font-display); font-size: var(--size-sm);    font-weight: 300; line-height: 1.4;  font-style: italic; }
+.ahimsa-day .ah-pull-quote { font-family: var(--font-display); font-size: var(--size-lg);    font-weight: 400; line-height: 1.35; font-style: italic; }
+.ahimsa-day .ah-label      { font-family: var(--font-body);    font-size: var(--size-sm);    font-weight: 500; line-height: 1.2; }
+.ahimsa-day .ah-small-caps { font-family: var(--font-body);    font-size: var(--size-xs);    font-weight: 500; line-height: 1.2;  letter-spacing: 0.22em; text-transform: uppercase; }
+.ahimsa-day .ah-micro-caps { font-family: var(--font-body);    font-size: var(--size-micro); font-weight: 500; line-height: 1.2;  letter-spacing: 0.32em; text-transform: uppercase; }
+
+/* The editorial moment: display type that fills a viewport, pulled tight.
+   Day's display tracking is negative — the letters lean into each other. */
+.ahimsa-day .ah-display-fluid {
+  font-family: var(--font-display);
+  font-size: var(--size-fluid-display);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: var(--tracking-display);
+  text-wrap: balance;
+}
+
+/* Running prose. Mandatory for anything anyone actually reads: --size-base
+   is a label size and always was. */
+.ahimsa-day .ah-prose {
+  font-family: var(--font-display);
+  font-size: var(--size-reading);
+  font-weight: 400;
+  line-height: var(--leading-relaxed);
+  text-wrap: pretty;
+}

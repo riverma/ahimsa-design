@@ -1,0 +1,14 @@
+/* Ahimsa Day — elevation.
+   Warm brown-tinted, low-opacity, layered. Never harsh, never black
+   (except the one signature deep drop). --shadow-md carries an inner white
+   highlight, which is what makes a card read as paper rather than as a
+   floating rectangle. */
+
+.ahimsa-day {
+  --shadow-xs:    0 1px 2px #3d342814;
+  --shadow-sm:    0 2px 8px #3d342821;
+  --shadow-md:    0 4px 20px #3d342829, inset 0 1px 0 #ffffff99;
+  --shadow-lg:    0 8px 32px #3d342833;
+  --shadow-xl:    0 30px 60px -20px #00000059, 0 12px 24px -12px #00000033;
+  --shadow-sheet: 0 -10px 40px #0000002e;
+}

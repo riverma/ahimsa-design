@@ -1,0 +1,38 @@
+/* Ahimsa Day webfonts — self-hosted, SIL Open Font License 1.1.
+   Licence texts travel with the binaries: fonts/OFL-Fraunces.txt,
+   fonts/OFL-DMSans.txt. Variable fonts, Latin subset. No network requests,
+   ever — a Google Fonts @import would break every offline consumer, and
+   would fail their build checks outright.
+
+   Paths assume the fonts/ directory sits at the site root. If yours lives
+   elsewhere, rewrite these five urls; CSS cannot interpolate a variable
+   into url(). */
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/Fraunces-VariableFont.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/Fraunces-Italic-VariableFont.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("/fonts/DMSans-VariableFont.woff2") format("woff2");
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("/fonts/DMSans-Italic-VariableFont.woff2") format("woff2");
+  font-weight: 100 1000;
+  font-style: italic;
+  font-display: swap;
+}

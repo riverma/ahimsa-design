@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" class="ahimsa-day">
+<head>
+<meta charset="utf-8">
+<!-- viewport-fit=cover for safe areas. Note what is absent: no
+     maximum-scale, no user-scalable=no. Pinch zoom always stays. -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ebe6df">
+<meta name="color-scheme" content="light dark">
+<title>For agents — Ahimsa Design System</title>
+<meta name="description" content="Machine-readable tokens, the class vocabulary, and the constraints that are not negotiable.">
+<link rel="stylesheet" href="ahimsa.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="ah-visually-hidden" href="#main">Skip to content</a>
+<div class="ah-page">
+
+  <header class="site-head">
+    <a class="site-mark" href="index.html">Ahimsa</a>
+    <nav class="site-nav" aria-label="Sections">
+      <a class="ah-link ah-link--quiet ah-body" href="index.html">Overview</a>
+          <a class="ah-link ah-link--quiet ah-body" href="foundations.html">Foundations</a>
+          <a class="ah-link ah-link--quiet ah-body" href="components.html">Components</a>
+          <a class="ah-link ah-link--quiet ah-body" href="patterns.html">Patterns</a>
+          <a class="ah-link ah-link--quiet ah-body" href="principles.html">Principles</a>
+          <a class="ah-link ah-link--quiet ah-body" href="accessibility.html">Accessibility</a>
+          <a class="ah-link ah-link--quiet ah-body" href="agents.html" aria-current="page">For agents</a>
+    </nav>
+    <div class="theme-switch" role="group" aria-label="Aesthetic">
+      <button class="ah-pill ah-pill--outline ah-hit" data-theme-btn="day" aria-pressed="true">Day</button>
+      <button class="ah-pill ah-pill--outline ah-hit" data-theme-btn="night" aria-pressed="false">Night</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <p class="ah-caps ah-caps--rule" style="margin:0">For agents</p>
+      <h1 class="ah-display-l heading-ink" style="margin:0">Building with Ahimsa, without a person in the loop</h1>
+      <p class="ah-prose hero__lede" style="margin:0">
+        This page is the short brief. If you are an agent generating an
+        interface, you need three things: the token vocabulary, the class
+        vocabulary, and the list of things you must not produce.
+      </p>
+    </section>
+
+    <section class="ah-section" id="start">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Setup</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">What to load</h2>
+      <div class="snippet">
+        <pre tabindex="0"><code>ahimsa-design/
+  dist/ahimsa-day.css      one aesthetic, flattened, self-contained
+  dist/ahimsa-night.css    the other
+  dist/ahimsa.css          both, switch with a class on &lt;html&gt;
+  dist/CHECKSUMS           sha256 per file, for a pinned vendored copy
+  fonts/                   6 woff2 + 3 OFL licence texts — copy all of it
+  tokens.json              every token, W3C DTCG format, both themes
+  SKILL.md                 this brief, in full</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Link one stylesheet, put <code>class="ahimsa-day"</code> or
+     <code>class="ahimsa-night"</code> on <code>&lt;html&gt;</code>, and copy
+     <code>fonts/</code> next to it. Never load a font or a script from a CDN.</p>
+    </section>
+
+    <section class="ah-section" id="tokens">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Vocabulary</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Reference semantics, never raw palette steps</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">A component must never reach for <code>--saffron-600</code> or
+     <code>--neutral-200</code> directly. Use the semantic layer, which both
+     aesthetics define with identical names — that is the entire reason markup
+     is theme-portable.</p>
+      <div class="snippet">
+        <pre tabindex="0"><code>surfaces   --surface-canvas  --surface-elevated  --surface-sunk  --surface-inverse
+text       --text-heading  --text-body  --text-secondary  --text-muted  --text-inverse
+borders    --border-subtle  --border-medium  --border-strong  --border-control
+accents    --accent-primary  --accent-secondary  --accent-success  --accent-warning
+focus      --focus-ring  --focus-ring-width
+glass      --glass-overlay  --glass-overlay-strong  --glass-scrim  --glass-blur
+depth      --shadow-xs..xl  --shadow-sheet  --glow-sm  --glow-md  --glow-lg
+space      --space-0..24          radius  --radius-xs..3xl  --radius-full
+type       --size-micro..5xl  --size-reading  --font-display  --font-body  --font-mono
+motion     --duration-*  --ease-*</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      <div class="ah-card ah-card--sunk">
+        <p class="ah-caps" style="margin:0 0 var(--space-3)">Three that will catch you out</p>
+        <p class="ah-body" style="margin:0 0 var(--space-2)"><code>--border-control</code>, not <code>--border-strong</code>, for the edge of an interactive control. The former clears 3:1; the latter is a decorative separator and deliberately does not.</p>
+        <p class="ah-body" style="margin:0 0 var(--space-2)"><code>--size-reading</code>, not <code>--size-base</code>, for running prose. <code>--size-base</code> is a UI label size.</p>
+        <p class="ah-body" style="margin:0"><code>--glow-*</code> is <code>none</code> in Day. Reference it unconditionally; it does the right thing in both.</p>
+      </div>
+    </section>
+
+    <section class="ah-section" id="classes">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Vocabulary</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">The class list, complete</h2>
+      <div class="snippet">
+        <pre tabindex="0"><code>actions    .ah-btn [--sm --ghost --glass --danger --wide]  .ah-pill [--outline --glass --static]
+           .ah-link [--quiet]  .ah-actions  .ah-hit
+forms      .ah-field [--essence]  .ah-field__label  .ah-field__help  .ah-chip
+surfaces   .ah-card [--list --sunk --glass --flat --p0]  .ah-scrim  .ah-sheet
+           .ah-sheet__grab  .ah-sheet__head  .ah-sheet__title  .ah-sheet__close
+display    .ah-caps [--micro --rule]  .ah-quote [--md --xl --bordered]
+           .ah-mono [--sunk --glass --s20..s144]  .ah-dots  .ah-sdot  .ah-rule-row
+feedback   .ah-toast  .ah-notice [--warning]  .ah-notice__title  .ah-notice__row
+type       .ah-display-xl/l/m  .ah-heading-l/m  .ah-title-l/m  .ah-body  .ah-body-serif
+           .ah-prose  .ah-caption  .ah-pull-quote  .ah-label  .ah-small-caps  .ah-micro-caps
+           .ah-display-fluid
+layout     .ah-page  .ah-measure  .ah-stack  .ah-section  .ah-app  .ah-screen  .ah-scroll
+           .ah-hdr  .ah-footer  .ah-list  .ah-hrow
+surface    .ah-surface--&lt;gradient&gt;     ambient  .ah-ambient--&lt;void|bloom|grain|scan|vignette|grid|isolines|horizon&gt;
+state      .is-active  .is-selected  .is-disabled  .is-tappable  .is-on</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">State is <code>.is-*</code>; variants are <code>--modifier</code>. Anything
+     not on this list does not exist — do not invent
+     <code>.ah-alert</code> or <code>.ah-badge</code>, because those are the two
+     the system specifically refuses.</p>
+    </section>
+
+    <section class="ah-section" id="rules">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Constraints</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Not negotiable</h2>
+      <ol class="ah-prose ah-measure" style="margin:0 0 var(--space-6);padding-left:1.3em;display:grid;gap:var(--space-3)">
+        <li><strong>Emit nothing that appears on its own.</strong> No <code>alert()</code>, no modal on load, no banner, no toast that is not the direct consequence of an action the person just took, no <code>role="alert"</code>, no <code>aria-live="assertive"</code>, no <code>setInterval</code>, no autoplay, no <code>beforeunload</code>.</li>
+        <li><strong>Never emit red.</strong> There is no red token. If you are reaching for one, the thing you are building is probably refused for a second reason too.</li>
+        <li><strong>Every destructive or leaving action gets an equal-weight escape.</strong> <code>.ah-btn</code> beside <code>.ah-btn.ah-btn--ghost</code>, labelled warmly.</li>
+        <li><strong>Every interactive element is a real element</strong> with an accessible name, reachable by keyboard, at a 44px target, acting on pointer-up.</li>
+        <li><strong>Never disable pinch zoom.</strong> No <code>maximum-scale</code>, no <code>user-scalable=no</code>.</li>
+        <li><strong>Never load anything over a network.</strong> No CDN, no Google Fonts, no remote <code>@import</code>.</li>
+        <li><strong>One gradient per screen</strong>, via <code>.ah-surface--&lt;name&gt;</code> so the ink comes with it.</li>
+        <li><strong>Run the gates.</strong> <code>npm run check</code> will fail on most violations of the above, which is the point of it existing.</li>
+      </ol>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">If a requirement you have been given conflicts with one of these, say so
+     rather than resolving it quietly. The conflict is usually the most useful
+     thing you have found.</p>
+    </section>
+
+    <section class="ah-section" id="voice-brief">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Copy</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Write it like this</h2>
+      <div class="snippet">
+        <pre tabindex="0"><code>Continue / Not now              not  CONTINUE / cancel
+Keep it / Delete it             not  Are you sure?
+3 remaining                     not  Only 3 left!
+A quiet place to begin.         not  Get started now — don't miss out!
+Ready for your calendar         not  Added!
+That did not go through. Nothing was changed.
+                                not  Error: INVALID_INPUT. Please try again.</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Sentence case. No exclamation marks, no ALL-CAPS, no emoji. Short
+     declarative sentences. When something fails, say what is still true.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-foot">
+    <p class="ah-caption" style="margin:0">Ahimsa Design System v1.0.0 · MIT · fonts under SIL OFL-1.1</p>
+    <p class="ah-caption" style="margin:0">No analytics. No cookies. Nothing here is loaded over a network.</p>
+  </footer>
+
+</div>
+<script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" class="ahimsa-day">
+<head>
+<meta charset="utf-8">
+<!-- viewport-fit=cover for safe areas. Note what is absent: no
+     maximum-scale, no user-scalable=no. Pinch zoom always stays. -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ebe6df">
+<meta name="color-scheme" content="light dark">
+<title>Principles — Ahimsa Design System</title>
+<meta name="description" content="The premise, the voice, the five moves, and the full list of refusals.">
+<link rel="stylesheet" href="ahimsa.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="ah-visually-hidden" href="#main">Skip to content</a>
+<div class="ah-page">
+
+  <header class="site-head">
+    <a class="site-mark" href="index.html">Ahimsa</a>
+    <nav class="site-nav" aria-label="Sections">
+      <a class="ah-link ah-link--quiet ah-body" href="index.html">Overview</a>
+          <a class="ah-link ah-link--quiet ah-body" href="foundations.html">Foundations</a>
+          <a class="ah-link ah-link--quiet ah-body" href="components.html">Components</a>
+          <a class="ah-link ah-link--quiet ah-body" href="patterns.html">Patterns</a>
+          <a class="ah-link ah-link--quiet ah-body" href="principles.html" aria-current="page">Principles</a>
+          <a class="ah-link ah-link--quiet ah-body" href="accessibility.html">Accessibility</a>
+          <a class="ah-link ah-link--quiet ah-body" href="agents.html">For agents</a>
+    </nav>
+    <div class="theme-switch" role="group" aria-label="Aesthetic">
+      <button class="ah-pill ah-pill--outline ah-hit" data-theme-btn="day" aria-pressed="true">Day</button>
+      <button class="ah-pill ah-pill--outline ah-hit" data-theme-btn="night" aria-pressed="false">Night</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <p class="ah-caps ah-caps--rule" style="margin:0">Principles</p>
+      <h1 class="ah-display-l heading-ink" style="margin:0">What this system is for, and what it will not do</h1>
+      <p class="ah-prose hero__lede" style="margin:0">
+        The refusals are as much a part of Ahimsa as the colour tokens. Adopting
+        the look without them produces something that is merely warm, which is
+        worse than neither — warmth is not camouflage.
+      </p>
+    </section>
+
+    <section class="ah-section" id="premise">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">The premise</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Non-harm, applied to interface design</h2>
+      <blockquote class="ah-quote ah-quote--xl ah-quote--bordered ah-measure" style="margin:0 0 var(--space-6)">
+        If a design pattern requires the user to lose for the product to win,
+        this system will not produce it.
+      </blockquote>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)"><strong>Ahimsa</strong> (Sanskrit अहिंसा, <em>ahiṃsā</em>) is the ethical
+     principle of causing no harm, in thought, word and action. It runs through
+     Gandhi, through King, and through the Buddha's teaching on compassion.
+     Applied to design it means refusing the whole vocabulary of extractive UX.</p>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">This is a narrow system on purpose. It belongs to software whose success
+     genuinely correlates with the wellbeing of the person using it. If your
+     product's metrics improve when someone's attention is captured, this is the
+     wrong system and the mismatch will show.</p>
+    </section>
+
+    <section class="ah-section" id="attention">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Attention</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">A strict pull model</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)"><strong>Nothing in an Ahimsa interface appears on its own.</strong> Whatever
+     someone was doing is what they stay doing. Information waits somewhere
+     findable until they come looking for it.</p>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">The test is not "is it dismissible" but: <strong>did the person cause this,
+     here, now?</strong></p>
+      <div class="pair" style="margin-bottom:var(--space-6)">
+        <div class="yes">
+          <p class="ah-caps" style="margin:0">A response — allowed</p>
+          <p class="ah-body" style="margin:0">It appears because the person just acted, in the place they were already looking, without taking focus and without covering their work. A confirmation toast after a save. An inline coaching chip that appears under the text as a consequence of typing.</p>
+        </div>
+        <div class="no">
+          <p class="ah-caps" style="margin:0">An interruption — refused</p>
+          <p class="ah-body" style="margin:0">It arrives on its own schedule, or takes focus, or covers the work. A floating update bar is refused even though it is dismissible, because being dismissible is not the test.</p>
+        </div>
+      </div>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">This is strict enough to rule out a component this system's own reference
+     apps ship. The right conclusion is one step past "make the bar dismissible":
+     don't announce the update at all. Put it in Settings, behind a control the
+     person presses. See
+     <a class="ah-link" href="patterns.html#version">the version-check pattern</a>.</p>
+    </section>
+
+    <section class="ah-section" id="voice">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Voice</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">How Ahimsa writes</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">The voice is as much a part of the system as the colour tokens, and it is
+     the part most often dropped in adoption.</p>
+      <ul class="ah-prose ah-measure" style="margin:0 0 var(--space-6);padding-left:1.2em;display:grid;gap:var(--space-3)">
+        <li><strong>Warm, plain, unhurried.</strong> Short declarative sentences. No exclamation marks, no ALL-CAPS urgency, no growth-hacky punch. "A quiet place to begin." not "Get started now — don't miss out!"</li>
+        <li><strong>Second person, gently.</strong> Invites rather than instructs: "Would you like to continue?" not "CONTINUE→".</li>
+        <li><strong>Declining is a legitimate answer.</strong> "Later", "Not now", "Leave it open", "Keep it" — never a label engineered to make saying no feel like a failure.</li>
+        <li><strong>Emotional lines are set apart; factual lines stay plain.</strong> A reflective sentence takes the emotional register; a date or a count is upright small caps. The split is the tone.</li>
+        <li><strong>No numbers as pressure.</strong> "3 remaining", never "ONLY 3 LEFT!"</li>
+        <li><strong>Lowercase, mostly.</strong> Sentence case in body and display. Small caps are the only uppercase, and they read like magazine captions.</li>
+        <li><strong>No emoji.</strong> The warmth comes from typography and space.</li>
+        <li><strong>Never quotation marks on a pull quote.</strong> The setting is already the quotation.</li>
+      </ul>
+      <p class="ah-quote ah-measure" style="margin:0">Nothing here is designed to grab you. · A supporting line, quietly offered. · Continue / Not now</p>
+    </section>
+
+    <section class="ah-section" id="moves">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">The fingerprint</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">The five moves</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Preserve these and the system stays recognisable; drop one and it stops
+     being Ahimsa. <em>A note on provenance: the original card naming these was
+     lost. What follows is reconstructed from the shipped system, and is
+     labelled as a reconstruction rather than presented as recovered.</em></p>
+      <div class="pair">
+        <div class="ah-card">
+          <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Ahimsa Day</p>
+          <ol class="ah-body" style="margin:0;padding-left:1.3em;display:grid;gap:var(--space-3)">
+            <li><strong>Cream, never white. Warm brown ink, never black.</strong><br><span class="secondary">Pure black on pure white is harsher than any screen needs, and it reads as clinical.</span></li>
+            <li><strong>Two voices in type.</strong><br><span class="secondary">An italic serif for what is felt, wide-tracked small caps for what is known. The split is the tone.</span></li>
+            <li><strong>Rounded at every scale. A bottom rule, not a box.</strong><br><span class="secondary">Sharp corners carry an implicit threat; a box around a field implies something being collected.</span></li>
+            <li><strong>One gradient owns a screen, with frosted glass on top.</strong><br><span class="secondary">Emphasis is a moment, not a texture. Two gradients side by side is the rule this system breaks least gladly.</span></li>
+            <li><strong>Motion that settles.</strong><br><span class="secondary">Every easing ends at 1.0 with nothing above it, so no transition can bounce. Settling, not pouncing.</span></li>
+          </ol>
+        </div>
+        <div class="ah-card">
+          <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Ahimsa Night</p>
+          <ol class="ah-body" style="margin:0;padding-left:1.3em;display:grid;gap:var(--space-3)">
+            <li><strong>Deep blue-black, never pure black. Ice, never pure white.</strong><br><span class="secondary">The same colour law as Day, held from the other end.</span></li>
+            <li><strong>Ultralight sans for what is felt, mono for what is measured.</strong><br><span class="secondary">Night has no serif. The emotional register is weight and space instead.</span></li>
+            <li><strong>Structure by hairline and glow, not shadow.</strong><br><span class="secondary">A drop shadow is invisible on a dark ground. An inset ring draws the edge; light does the lifting.</span></li>
+            <li><strong>One field owns a screen, and it is ambient — never information.</strong><br><span class="secondary">The decorative layer has no state and nothing that can be missed by ignoring it.</span></li>
+            <li><strong>Light that breathes slower than you.</strong><br><span class="secondary">Nothing pulses faster than 0.1Hz, and nothing animates position.</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="ah-section" id="refusals">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">The ethical fingerprint</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Refusals</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">The list below is normative. An interface built on Ahimsa tokens that does
+     any of these is not using the system, whatever it looks like.</p>
+      <table class="tbl tbl--fixed" style="margin-bottom:var(--space-6)">
+        <thead><tr><th style="width:38%">Refused</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td><strong>No red, and no danger token.</strong></td><td class="secondary">Neither aesthetic contains one. Errors are warm clay or warm copper, because a person who hit a problem has not done something wrong.</td></tr>
+          <tr><td><strong>No notification badge component.</strong></td><td class="secondary">Not a styling choice — the component does not exist. Updates surface through the rhythm of use.</td></tr>
+          <tr><td><strong>Nothing appears unasked.</strong></td><td class="secondary">No banners, no modals on load, no floating update bars, no consent interstitials, no push, no autoplay, no beforeunload nag, no hover-delay tooltip that covers content.</td></tr>
+          <tr><td><strong>No aria-live=&quot;assertive&quot;, no role=&quot;alert&quot;.</strong></td><td class="secondary">An assertive region interrupts a screen-reader user mid-sentence. Same harm, different channel.</td></tr>
+          <tr><td><strong>No streaks that punish.</strong></td><td class="secondary">Nothing that turns an absence into a failure, and no gap where something used to be that reads as a telling-off.</td></tr>
+          <tr><td><strong>No numbers used as pressure.</strong></td><td class="secondary">Counts are stated neutrally — &quot;3 remaining&quot;, never &quot;only 3 left&quot;. Stats are reflective, never a scoreboard.</td></tr>
+          <tr><td><strong>No metric between two people.</strong></td><td class="secondary">No score on a relationship, no rank, no tier. A scale invites you to fail at something that is not a test.</td></tr>
+          <tr><td><strong>No manufactured scarcity or urgency.</strong></td><td class="secondary">No countdowns, no timeouts, no &quot;act now&quot;. There is no timing dependency anywhere in the system.</td></tr>
+          <tr><td><strong>No confirmshaming.</strong></td><td class="secondary">Escape hatches get neutral, equal-weight labels. Never &quot;No, I don't want to improve&quot;.</td></tr>
+          <tr><td><strong>No hidden opt-outs.</strong></td><td class="secondary">If it can be turned on, it can be turned off, in the same number of steps and in the place you would look.</td></tr>
+          <tr><td><strong>No endless scroll, no feed.</strong></td><td class="secondary">A list that flies past under your thumb is a feed, and a feed is the interaction pattern this system exists not to be.</td></tr>
+          <tr><td><strong>No traffic-light mapping.</strong></td><td class="secondary">Never red / amber / green for how something is going. Hue may band by warmth; it may not grade you.</td></tr>
+          <tr><td><strong>No claiming what cannot be verified.</strong></td><td class="secondary">The button says &quot;Add to calendar&quot; and the confirmation says &quot;Ready for your calendar&quot; — never &quot;Added&quot;.</td></tr>
+          <tr><td><strong>No silent failure.</strong></td><td class="secondary">A control that goes quiet and stays dead leaves someone tapping at a screen wondering what they did wrong.</td></tr>
+          <tr><td><strong>No emoji, no icon set.</strong></td><td class="secondary">Type and space carry the meaning. A few restrained unicode glyphs are acceptable as quiet affordances.</td></tr>
+          <tr><td><strong>No dead ends.</strong></td><td class="secondary">Every sheet has three ways out. Every link that might not resolve degrades to something that does.</td></tr>
+        </tbody>
+      </table>
+      <div class="ah-card ah-card--sunk">
+        <p class="ah-caps" style="margin:0 0 var(--space-3)">The audit, before you ship</p>
+        <ol class="ah-body" style="margin:0;padding-left:1.3em;display:grid;gap:var(--space-2)">
+          <li>Does anything appear that the person did not cause? Run <code>tools/check-attention.mjs</code> and then look with your own eyes.</li>
+          <li>Is every escape hatch a real control at equal metrics, labelled for what it is?</li>
+          <li>Is any number on screen capable of reading as a score, a streak, or a shortfall?</li>
+          <li>Does any colour carry meaning that no word or shape also carries?</li>
+          <li>If a control fails, does the person find out — and are they told what is still true?</li>
+          <li>Can every interaction be completed without a drag, a hover, or a gesture?</li>
+          <li>Does anything claim an outcome the app cannot actually verify?</li>
+          <li>Is there a way out of every surface, reachable by keyboard?</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="ah-section" id="themes">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">A note on themes</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Night is not a dark mode</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Day and Night are different characters, not different brightnesses. Night
+     has its own type voice, its own approach to elevation, and its own ambient
+     layer; it is a sibling aesthetic that happens to be dark.</p>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">So the system deliberately does not wire the theme to
+     <code>prefers-color-scheme</code>. Flipping an interface's whole character
+     because of an operating-system setting is exactly the kind of surprise this
+     system refuses — and someone who set their OS to dark at night did not ask
+     your app to become a different product. Let a person choose, and remember
+     what they chose.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-foot">
+    <p class="ah-caption" style="margin:0">Ahimsa Design System v1.0.0 · MIT · fonts under SIL OFL-1.1</p>
+    <p class="ah-caption" style="margin:0">No analytics. No cookies. Nothing here is loaded over a network.</p>
+  </footer>
+
+</div>
+<script src="site.js"></script>
+</body>
+</html>

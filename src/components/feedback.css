@@ -1,0 +1,98 @@
+/* Ahimsa components — feedback.
+   Toast, Notice.
+
+   This is the file where the attention principle is load-bearing, so read
+   this before adding anything to it:
+
+   NOTHING IN AN AHIMSA INTERFACE APPEARS ON ITS OWN. The test is not "is it
+   dismissible" but DID THE PERSON CAUSE THIS, HERE, NOW?
+
+   There is deliberately no UpdateBar, no InstallBar, no banner, no modal
+   and no badge in this system. A floating bar that slides in to announce
+   something the person did not ask about spends their attention on the
+   product's behalf, and whatever they were doing is what they should still
+   be doing. Version news belongs in Settings, behind a control they press.
+   See patterns/version-check. */
+
+/* ================================================================
+   Toast — the acknowledgement of an action just taken. That is its ONLY
+   legitimate use. It never carries news, never announces an arrival, and
+   never appears on a timer the person did not start.
+
+   Always role="status" with aria-live="polite". NEVER role="alert" or
+   aria-live="assertive": an assertive region interrupts a screen-reader
+   user mid-sentence, which is the same harm in a different channel.
+   ================================================================ */
+.ah-toast {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--safe-bottom, 0px) + var(--space-6));
+  z-index: 60;
+  display: flex;
+  justify-content: center;
+  /* It cannot be in the way of anything, because it was not invited to be. */
+  pointer-events: none;
+  padding: 0 var(--space-5);
+}
+.ah-toast > * {
+  background: var(--glass-overlay-strong);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) 18px;
+  box-shadow: var(--shadow-md);
+  max-width: 320px;
+  color: var(--text-heading);
+  animation: ah-rise var(--duration-base) var(--ease-standard);
+}
+.ahimsa-night .ah-toast > * {
+  box-shadow: var(--shadow-md), var(--glow-sm);
+}
+
+@keyframes ah-rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================================================
+   Notice — the replacement for every banner this system refuses.
+   It sits IN the document flow, where the person already is, and it is
+   rendered because they navigated to it or because they just acted. It
+   does not float, does not cover anything, and does not take focus.
+   ================================================================ */
+.ah-notice {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--surface-sunk);
+  color: var(--text-body);
+  font-size: var(--size-base);
+}
+.ah-notice__title {
+  font-family: var(--font-body);
+  font-size: var(--size-xs);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-secondary); /* small text owes 4.5:1 — see .ah-caps */
+}
+.ahimsa-night .ah-notice__title { font-family: var(--font-mono); }
+
+/* Something did not work. Stated in the same voice as everything else:
+   a warm tint and a sentence, not a red box and an exclamation mark.
+   The person has not done anything wrong. */
+.ah-notice--warning {
+  background: color-mix(in srgb, var(--accent-warning) 14%, var(--surface-elevated));
+  color: var(--text-body);
+}
+.ah-notice--warning .ah-notice__title { color: var(--accent-warning); }
+
+.ah-notice__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
