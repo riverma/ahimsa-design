@@ -1,0 +1,135 @@
+/* Ahimsa components — forms.
+   Field, ToggleChip.
+
+   Inputs have no box. A single bottom rule that strengthens on focus does
+   the whole job: a full border around a text field is a container, and a
+   container implies something being collected. */
+
+/* ================================================================
+   Field
+   ================================================================ */
+.ah-field { display: block; width: 100%; }
+
+.ah-field__label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--size-xs);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-secondary); /* small text owes 4.5:1 — see .ah-caps */
+  margin-bottom: 6px;
+}
+
+.ah-field input,
+.ah-field textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: var(--space-2) 0;
+  resize: vertical;
+  line-height: 1.4;
+  border-bottom: 1px solid var(--border-medium);
+  transition: border-color var(--duration-base) var(--ease-standard);
+  font-family: var(--font-body);
+  /* 16px, not the 13px this was extracted at. Safari on iOS zooms the
+     viewport when a field under 16px takes focus, and a zoomed
+     position: fixed app cannot be scrolled — which reads as the app
+     breaking the moment you try to type. */
+  font-size: var(--size-reading);
+  font-weight: 400;
+  color: var(--text-body);
+  border-radius: 0;
+}
+.ah-field input:focus,
+.ah-field textarea:focus {
+  border-bottom-color: var(--border-strong);
+}
+/* The bottom rule is reinforcement, not the focus indicator: a keyboard
+   user gets the real ring from base.css as well. A 25%-to-35% alpha shift
+   is not a visible focus state on its own. */
+.ah-field input:focus-visible,
+.ah-field textarea:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+/* The large, reflective variant — for the one answer that matters on a
+   screen. Italic serif in Day; Night has no serif, so it opens up instead. */
+.ah-field--essence input,
+.ah-field--essence textarea {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--size-lg);
+  color: var(--text-heading);
+}
+.ahimsa-night .ah-field--essence input,
+.ahimsa-night .ah-field--essence textarea {
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+/* --text-secondary, not --text-faint: a placeholder is text, and text
+   owes 4.5:1. The visible label above it is what actually carries the
+   field's meaning, but an unreadable hint is still an unreadable hint. */
+.ah-field input::placeholder,
+.ah-field textarea::placeholder {
+  color: var(--text-secondary);
+  font-style: italic;
+  font-family: var(--font-display);
+}
+.ahimsa-night .ah-field input::placeholder,
+.ahimsa-night .ah-field textarea::placeholder {
+  font-style: normal;
+  font-family: var(--font-body);
+}
+
+.ah-field__help {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-secondary);
+  font-size: var(--size-base);
+}
+
+/* ================================================================
+   ToggleChip — multi-select, in the emotional voice. Fills dark when
+   chosen. Nothing is pre-selected and nothing is required.
+   ================================================================ */
+.ah-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: var(--space-2) var(--space-4);
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--size-md);
+  font-weight: 400;
+  line-height: 1.2;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  background: var(--glass-overlay);
+  color: var(--text-heading);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  box-shadow: inset 0 0 0 1px var(--border-control);
+  transition: background var(--duration-base) var(--ease-standard),
+              color var(--duration-base) var(--ease-standard);
+}
+.ah-chip.is-selected {
+  background: var(--text-heading);
+  color: var(--text-inverse);
+  box-shadow: none;
+}
+.ah-chip__dot { width: 7px; height: 7px; border-radius: var(--radius-full); flex-shrink: 0; }
+
+.ahimsa-night .ah-chip {
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  box-shadow: inset 0 0 0 1px var(--border-control);
+}
+.ahimsa-night .ah-chip.is-selected { box-shadow: var(--glow-sm); }

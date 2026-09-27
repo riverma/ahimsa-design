@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" class="ahimsa-day">
+<head>
+<meta charset="utf-8">
+<!-- viewport-fit=cover for safe areas. Note what is absent: no
+     maximum-scale, no user-scalable=no. Pinch zoom always stays. -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ebe6df">
+<meta name="color-scheme" content="light dark">
+<title>A design system rooted in non-harm — Ahimsa Design System</title>
+<meta name="description" content="Ahimsa is a design system with two aesthetics, built on one premise: if a pattern requires the user to lose for the product to win, this system will not produce it.">
+<link rel="stylesheet" href="ahimsa.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="ah-visually-hidden" href="#main">Skip to content</a>
+<div class="ah-page">
+
+  <header class="site-head">
+    <a class="site-mark" href="index.html">Ahimsa</a>
+    <nav class="site-nav" aria-label="Sections">
+      <a class="ah-link ah-link--quiet ah-body" href="index.html" aria-current="page">Overview</a>
+          <a class="ah-link ah-link--quiet ah-body" href="foundations.html">Foundations</a>
+          <a class="ah-link ah-link--quiet ah-body" href="components.html">Components</a>
+          <a class="ah-link ah-link--quiet ah-body" href="patterns.html">Patterns</a>
+          <a class="ah-link ah-link--quiet ah-body" href="principles.html">Principles</a>
+          <a class="ah-link ah-link--quiet ah-body" href="accessibility.html">Accessibility</a>
+          <a class="ah-link ah-link--quiet ah-body" href="agents.html">For agents</a>
+    </nav>
+    <div class="theme-switch" role="group" aria-label="Aesthetic">
+      <button class="ah-pill ah-pill--outline ah-hit" data-theme-btn="day" aria-pressed="true">Day</button>
+      <button class="ah-pill ah-pill--outline ah-hit" data-theme-btn="night" aria-pressed="false">Night</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <p class="ah-caps ah-caps--rule" style="margin:0">Ahimsa · अहिंसा · v1.0.0</p>
+      <h1 class="ah-display-fluid heading-ink hero__title" style="margin:0">Nothing here is designed to grab you.</h1>
+      <p class="ah-prose hero__lede" style="margin:0">
+        Ahimsa is a design system rooted in non-harm. It ships colour, type, space
+        and motion, ten primitives, and an explicit list of the things it refuses
+        to build.
+      </p>
+      <div class="ah-actions">
+        <a class="ah-btn" href="foundations.html">Foundations</a>
+        <a class="ah-btn ah-btn--ghost" href="principles.html">Read the principles</a>
+      </div>
+    </section>
+
+    <section class="ah-section" id="premise">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">The premise</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">One sentence, and everything follows from it</h2>
+      <blockquote class="ah-quote ah-quote--xl ah-quote--bordered ah-measure" style="margin:0 0 var(--space-6)">
+        If a design pattern requires the user to lose for the product to win, this
+        system will not produce it.
+      </blockquote>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)"><strong>Ahimsa</strong> (Sanskrit अहिंसा, <em>ahiṃsā</em>) is the ethical
+     principle of causing no harm. Applied to design, it means refusing the whole
+     vocabulary of extractive UX: no dark patterns, no manufactured urgency, no
+     shame-based nudges, no red badge dots.</p>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">It belongs to soft-hearted software — journals, personal tools, reading
+     tools, well-being and grief-support apps, correspondence tools — anywhere
+     the product's success genuinely correlates with the user's wellbeing.</p>
+    </section>
+
+    <section class="ah-section" id="aesthetics">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Two aesthetics</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Day and Night</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Both are the same system. They share the spacing grid, the corner radii, the
+     size scale and the easing curves exactly; what changes is colour, the voice
+     of the type, and how a surface establishes its edge. Night's accents are
+     literally the cool end of Day's palette.</p>
+      <div class="pair" style="margin-bottom:var(--space-6)">
+        <div style="border-radius:var(--radius-xl);padding:var(--space-6);background:linear-gradient(155deg,#f4a578 0%,#f5be8e 30%,#f6d3a8 60%,#fae7c6 100%);box-shadow:var(--shadow-md)">
+          <p style="margin:0 0 var(--space-3);font-family:'DM Sans',system-ui,sans-serif;font-size:0.625rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#1a1310b0">Ahimsa Day</p>
+          <p style="margin:0 0 var(--space-3);font-family:Fraunces,Georgia,serif;font-size:1.375rem;line-height:1.15;color:#1a1310">Cream, never white. Warm brown ink, never black.</p>
+          <p style="margin:0 0 var(--space-4);font-family:Fraunces,Georgia,serif;font-style:italic;font-size:1.0625rem;line-height:1.35;color:#1a1310d0">The italic serif carries what is felt.</p>
+          <p style="margin:0;font-family:'DM Sans',system-ui,sans-serif;font-size:0.8125rem;line-height:1.4;color:#1a1310cc">Editorial and unhurried. Wide-tracked small caps carry what is known, and depth is warm paper shadow.</p>
+        </div>
+        <div style="position:relative;overflow:hidden;border-radius:var(--radius-xl);padding:var(--space-6);background:radial-gradient(120% 90% at 50% 0%, #1d2a36 0%, #0e131a 55%, #080b10 100%);box-shadow:var(--shadow-md)">
+          <div aria-hidden="true" style="position:absolute;inset:-20%;mix-blend-mode:plus-lighter;opacity:.5;background:radial-gradient(38% 28% at 22% 18%,#3b93a340 0,transparent 70%),radial-gradient(30% 24% at 78% 32%,#545fae33 0,transparent 72%)"></div>
+          <div style="position:relative">
+            <p style="margin:0 0 var(--space-3);font-family:'DM Mono',ui-monospace,monospace;font-size:0.625rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#8ecbd1">Ahimsa Night</p>
+            <p style="margin:0 0 var(--space-3);font-family:'DM Sans',system-ui,sans-serif;font-weight:300;font-size:1.375rem;line-height:1.2;letter-spacing:0.02em;color:#eef2f7">Deep blue-black, never pure black. Ice, never pure white.</p>
+            <p style="margin:0 0 var(--space-4);font-family:'DM Sans',system-ui,sans-serif;font-weight:200;font-size:1.375rem;line-height:1.45;letter-spacing:0.03em;color:#c3e2ea">The hairline sans carries what is felt.</p>
+            <p style="margin:0;font-family:'DM Sans',system-ui,sans-serif;font-size:0.8125rem;line-height:1.45;color:#dce3ec">Futuristic and still. Mono carries what is measured, and depth is hairline and glow rather than shadow.</p>
+          </div>
+        </div>
+      </div>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Switch the aesthetic with the control in the header. Night is <em>not</em> a
+     dark mode, and the system deliberately does not wire it to
+     <code>prefers-color-scheme</code> — see
+     <a class="ah-link" href="principles.html#themes">why</a>.</p>
+    </section>
+
+    <section class="ah-section" id="install">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Getting started</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">One stylesheet and a class on &lt;html&gt;</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Put the theme class on <code>&lt;html&gt;</code> rather than
+     <code>&lt;body&gt;</code>, so the page background resolves too.</p>
+      <div class="snippet">
+        <pre tabindex="0"><code>&lt;!-- one theme --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;ahimsa-day.css&quot;&gt;
+&lt;html lang=&quot;en&quot; class=&quot;ahimsa-day&quot;&gt;
+
+&lt;!-- both, switchable at runtime --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;ahimsa.css&quot;&gt;
+&lt;html lang=&quot;en&quot; class=&quot;ahimsa-night&quot;&gt;</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Copy <code>fonts/</code> alongside it, licence texts included. Nothing is
+     ever fetched from a CDN: a remote font stops working on a plane and tells a
+     third party who is using your app.</p>
+    </section>
+
+    <section class="ah-section" id="refuses">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">The short version</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">What this system will not build</h2>
+      <ul class="ah-prose ah-measure" style="margin:0;padding-left:1.2em;display:grid;gap:var(--space-2)">
+        <li><strong>No red.</strong> There is no danger token in either aesthetic. Errors are warm clay or warm copper, because a person who hit a problem has not done something wrong.</li>
+        <li><strong>Nothing appears unasked.</strong> No banners, no modals on load, no notification badges, no floating "update available" bar. Version news lives in Settings, behind a control you press.</li>
+        <li><strong>No numbers as pressure.</strong> No streaks, no scores, no counts framed as scarcity.</li>
+        <li><strong>Leaving weighs the same as continuing.</strong> Every escape hatch is a real control at equal metrics, never grey text.</li>
+        <li><strong>No emoji, no icon set.</strong> Type and space carry the meaning.</li>
+      </ul>
+      <p style="margin:var(--space-6) 0 0"><a class="ah-link" href="principles.html#refusals">The full list, with the reasoning →</a></p>
+    </section>
+
+  </main>
+
+  <footer class="site-foot">
+    <p class="ah-caption" style="margin:0">Ahimsa Design System v1.0.0 · MIT · fonts under SIL OFL-1.1</p>
+    <p class="ah-caption" style="margin:0">No analytics. No cookies. Nothing here is loaded over a network.</p>
+  </footer>
+
+</div>
+<script src="site.js"></script>
+</body>
+</html>

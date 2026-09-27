@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ahimsa Night — chromatic aberration (the RGBShift pass).
+
+     Inline this into your document (a hidden <svg> at the end of <body>)
+     and reference it as filter: url(#ah-aberration). An EXTERNAL filter
+     reference is unreliable in Safari, and Safari is the browser most of
+     this system's consumers actually run on, so inlining is the supported
+     path rather than a nicety.
+
+     The offset is capped at 0.4px on purpose. A visible RGB split reads as
+     a malfunction, and telling someone their screen is broken is a harm —
+     so this is a whisper of depth on large display type, never an effect.
+     Do not raise it. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <filter id="ah-aberration" x="-4%" y="-4%" width="108%" height="108%" color-interpolation-filters="sRGB">
+    <!-- isolate red, nudge it one way -->
+    <feColorMatrix in="SourceGraphic" type="matrix" result="r"
+      values="1 0 0 0 0
+              0 0 0 0 0
+              0 0 0 0 0
+              0 0 0 1 0"/>
+    <feOffset in="r" dx="-0.4" dy="0" result="rOff"/>
+    <!-- isolate blue, nudge it the other -->
+    <feColorMatrix in="SourceGraphic" type="matrix" result="b"
+      values="0 0 0 0 0
+              0 0 0 0 0
+              0 0 1 0 0
+              0 0 0 1 0"/>
+    <feOffset in="b" dx="0.4" dy="0" result="bOff"/>
+    <!-- green stays put, holding the letterforms in place -->
+    <feColorMatrix in="SourceGraphic" type="matrix" result="g"
+      values="0 0 0 0 0
+              0 1 0 0 0
+              0 0 0 0 0
+              0 0 0 1 0"/>
+    <feBlend in="rOff" in2="g"    mode="screen" result="rg"/>
+    <feBlend in="rg"   in2="bOff" mode="screen"/>
+  </filter>
+</svg>

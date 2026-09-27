@@ -1,0 +1,118 @@
+/* Ahimsa components — surfaces.
+   Card, Sheet.
+
+   Three surface levels plus one glass level, expressed as background FIRST
+   and shadow second. Sunk surfaces get no shadow at all; the colour is the
+   elevation. No coloured-left-border cards, no hard outlines. */
+
+/* ================================================================
+   Card
+   ================================================================ */
+.ah-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  overflow: hidden;
+  background: var(--surface-elevated);
+  color: var(--text-body);
+  box-shadow: var(--shadow-md);
+  flex-shrink: 0;
+}
+.ah-card--list { box-shadow: var(--shadow-sm); }
+.ah-card--sunk { background: var(--surface-sunk); box-shadow: none; }
+.ah-card--glass {
+  background: var(--glass-overlay);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: none;
+}
+/* A gradient card is the one featured moment on a screen. Set the gradient
+   inline or with your own class: --gradient-dawn, --gradient-aurora, etc.
+   Two gradient cards side by side is the rule this system breaks least
+   gladly. */
+.ah-card--gradient {
+  background: var(--gradient-dawn);
+  color: var(--text-heading);
+  box-shadow: var(--shadow-lg);
+}
+.ah-card--flat { box-shadow: none; }
+.ah-card--p0 { padding: 0; }
+
+.ah-card.is-tappable { cursor: pointer; }
+/* Gentler than a button: a whole card moving 3% would read as a lurch. */
+.ah-card.is-tappable:active { transform: scale(0.99); }
+
+.ahimsa-night .ah-card--gradient { box-shadow: var(--shadow-lg), var(--glow-md); }
+
+/* ================================================================
+   Sheet — the bottom sheet, and the only modal this system has.
+
+   THREE WAYS OUT, ALWAYS: the scrim, the grab handle, and a visible Close.
+   Never a trap. The Close is a real surface at equal weight, not a ghost —
+   leaving is as legitimate as staying.
+   ================================================================ */
+.ah-scrim {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: var(--glass-scrim);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 50;
+}
+
+.ah-sheet {
+  width: 100%;
+  max-height: 88%;
+  overflow-y: auto;
+  background: var(--surface-elevated);
+  border-top-left-radius: var(--radius-3xl);
+  border-top-right-radius: var(--radius-3xl);
+  box-shadow: var(--shadow-sheet);
+  padding: var(--space-3) var(--space-6) calc(var(--space-7) + var(--safe-bottom, 0px));
+  animation: ah-sheet-up var(--duration-slower) var(--ease-decelerate);
+}
+
+.ah-sheet__grab {
+  width: 40px;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--border-strong);
+  margin: 0 auto var(--space-5);
+}
+
+.ah-sheet__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+  gap: var(--space-3);
+}
+.ah-sheet__title {
+  font-family: var(--font-display);
+  font-size: var(--size-xl);
+  color: var(--text-heading);
+  line-height: 1.15;
+  margin: 0;
+}
+.ah-sheet__close {
+  border: none;
+  background: var(--surface-sunk);
+  color: var(--text-secondary);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  font-size: var(--size-lg);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+@keyframes ah-sheet-up {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+.ahimsa-night .ah-sheet { border-top: 1px solid var(--border-medium); }

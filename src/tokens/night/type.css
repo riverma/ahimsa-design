@@ -1,0 +1,69 @@
+/* Ahimsa Night — typography. The inversion.
+   Night ships NO SERIF. Where Day's two voices are italic serif (feeling)
+   and wide-tracked small caps (fact), Night's are ultralight wide-set sans
+   (feeling) and mono small caps (measurement).
+
+   Both reference sites speak exactly this language: Uberviz sets its HUD at
+   weight 100 / 50px / 2px tracking, and Track sets its single title as
+   spaced capitals. There is nothing else in either interface.
+
+   Accessibility constraint, and it is a real one: hairline weights lose
+   effective contrast on a dark ground because the stems thin out. Weight
+   200 is therefore reserved for display sizes (>= 1.75rem). Body copy is
+   400 and never lighter. Ultralight is a gesture for large type, not a
+   way to make small text look elegant. */
+
+.ahimsa-night {
+  --font-display: "DM Sans", -apple-system, system-ui, sans-serif;
+  --font-body:    "DM Sans", -apple-system, system-ui, sans-serif;
+  --font-mono:    "DM Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* Display — ultralight, opened up. The positive tracking is the whole
+   difference from Day, which pulls the same sizes tight. */
+.ahimsa-night .ah-display-xl { font-family: var(--font-display); font-size: var(--size-5xl);   font-weight: 200; line-height: 1.02; letter-spacing: 0.04em; }
+.ahimsa-night .ah-display-l  { font-family: var(--font-display); font-size: var(--size-4xl);   font-weight: 200; line-height: 1.04; letter-spacing: 0.035em; }
+.ahimsa-night .ah-display-m  { font-family: var(--font-display); font-size: var(--size-3xl);   font-weight: 200; line-height: 1.08; letter-spacing: 0.03em; }
+.ahimsa-night .ah-heading-l  { font-family: var(--font-display); font-size: var(--size-2xl);   font-weight: 250; line-height: 1.15; letter-spacing: 0.025em; }
+.ahimsa-night .ah-heading-m  { font-family: var(--font-display); font-size: var(--size-xl);    font-weight: 300; line-height: 1.2;  letter-spacing: 0.02em; }
+.ahimsa-night .ah-title-l    { font-family: var(--font-display); font-size: var(--size-lg);    font-weight: 300; line-height: 1.25; letter-spacing: 0.015em; }
+.ahimsa-night .ah-title-m    { font-family: var(--font-display); font-size: var(--size-md);    font-weight: 400; line-height: 1.25; letter-spacing: 0.01em; }
+
+/* Body — 400 and no lighter, at any size. */
+.ahimsa-night .ah-body       { font-family: var(--font-body);    font-size: var(--size-base);  font-weight: 400; line-height: 1.45; }
+.ahimsa-night .ah-body-serif { font-family: var(--font-body);    font-size: var(--size-md);    font-weight: 400; line-height: 1.6;  letter-spacing: 0.005em; }
+.ahimsa-night .ah-label      { font-family: var(--font-body);    font-size: var(--size-sm);    font-weight: 500; line-height: 1.2; }
+
+/* The emotional voice. Day italicises a serif; Night opens a hairline sans
+   and tints it toward the light. Still never quotation marks — the setting
+   is already doing that job. */
+.ahimsa-night .ah-pull-quote {
+  font-family: var(--font-display);
+  font-size: var(--size-xl);
+  font-weight: 200;
+  line-height: 1.45;
+  letter-spacing: 0.03em;
+  color: var(--frost-300);
+}
+
+/* The utility voice: mono. This is the Track / Uberviz HUD label exactly. */
+.ahimsa-night .ah-caption    { font-family: var(--font-mono); font-size: var(--size-sm);    font-weight: 400; line-height: 1.45; letter-spacing: 0.01em; }
+.ahimsa-night .ah-small-caps { font-family: var(--font-mono); font-size: var(--size-xs);    font-weight: 500; line-height: 1.2;  letter-spacing: 0.22em; text-transform: uppercase; }
+.ahimsa-night .ah-micro-caps { font-family: var(--font-mono); font-size: var(--size-micro); font-weight: 500; line-height: 1.2;  letter-spacing: 0.32em; text-transform: uppercase; }
+
+.ahimsa-night .ah-display-fluid {
+  font-family: var(--font-display);
+  font-size: var(--size-fluid-display);
+  font-weight: 200;
+  line-height: 1.0;
+  letter-spacing: var(--tracking-display);
+  text-wrap: balance;
+}
+
+.ahimsa-night .ah-prose {
+  font-family: var(--font-body);
+  font-size: var(--size-reading);
+  font-weight: 400;
+  line-height: var(--leading-relaxed);
+  text-wrap: pretty;
+}

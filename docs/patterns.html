@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" class="ahimsa-day">
+<head>
+<meta charset="utf-8">
+<!-- viewport-fit=cover for safe areas. Note what is absent: no
+     maximum-scale, no user-scalable=no. Pinch zoom always stays. -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ebe6df">
+<meta name="color-scheme" content="light dark">
+<title>Patterns — Ahimsa Design System</title>
+<meta name="description" content="Compositions: the shell, the equal-weight choice, the version check, error without alarm.">
+<link rel="stylesheet" href="ahimsa.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="ah-visually-hidden" href="#main">Skip to content</a>
+<div class="ah-page">
+
+  <header class="site-head">
+    <a class="site-mark" href="index.html">Ahimsa</a>
+    <nav class="site-nav" aria-label="Sections">
+      <a class="ah-link ah-link--quiet ah-body" href="index.html">Overview</a>
+          <a class="ah-link ah-link--quiet ah-body" href="foundations.html">Foundations</a>
+          <a class="ah-link ah-link--quiet ah-body" href="components.html">Components</a>
+          <a class="ah-link ah-link--quiet ah-body" href="patterns.html" aria-current="page">Patterns</a>
+          <a class="ah-link ah-link--quiet ah-body" href="principles.html">Principles</a>
+          <a class="ah-link ah-link--quiet ah-body" href="accessibility.html">Accessibility</a>
+          <a class="ah-link ah-link--quiet ah-body" href="agents.html">For agents</a>
+    </nav>
+    <div class="theme-switch" role="group" aria-label="Aesthetic">
+      <button class="ah-pill ah-pill--outline ah-hit" data-theme-btn="day" aria-pressed="true">Day</button>
+      <button class="ah-pill ah-pill--outline ah-hit" data-theme-btn="night" aria-pressed="false">Night</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <p class="ah-caps ah-caps--rule" style="margin:0">Patterns</p>
+      <h1 class="ah-display-l heading-ink" style="margin:0">Compositions, and the reasoning inside them</h1>
+      <p class="ah-prose hero__lede" style="margin:0">
+        A primitive tells you what a button looks like. A pattern tells you what
+        to do when someone is about to lose something.
+      </p>
+    </section>
+
+    <section class="ah-section" id="choice">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">The core pattern</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">An equal-weight choice</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Wherever this system offers a way out, that way out is a real control with
+     the same metrics as the way forward. This is the single most repeated
+     decision in the whole system, and it is the one most often got wrong.</p>
+      <div class="pair">
+        <div class="yes">
+          <p class="ah-caps" style="margin:0">Do this</p>
+          <div class="ah-actions"><button class="ah-btn" type="button">Delete it</button><button class="ah-btn ah-btn--ghost" type="button">Keep it</button></div>
+          <p class="ah-body secondary" style="margin:0">An outlined pill beside a filled one. Both are buttons, both are the same size, and declining is a legitimate answer.</p>
+        </div>
+        <div class="no">
+          <p class="ah-caps" style="margin:0">Not this</p>
+          <div class="ah-actions"><button class="ah-btn" type="button">Delete it</button><span class="ah-body muted">no, I don't want to keep my data safe</span></div>
+          <p class="ah-body secondary" style="margin:0">Grey text reads as a caption rather than a choice, and confirmshaming puts a cost on saying no. Both are refused.</p>
+        </div>
+      </div>
+      <div class="snippet">
+        <pre tabindex="0"><code>&lt;div class=&quot;ah-actions&quot;&gt;
+  &lt;button class=&quot;ah-btn&quot; type=&quot;button&quot;&gt;Delete it&lt;/button&gt;
+  &lt;button class=&quot;ah-btn ah-btn--ghost&quot; type=&quot;button&quot;&gt;Keep it&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Label the escape hatch for what it <em>is</em>, not for what it is not:
+     "Keep it", "Not now", "Leave it open", "Stay here". Never "Cancel" where a
+     warmer word is true, and never a sentence engineered to make you feel small.</p>
+    </section>
+
+    <section class="ah-section" id="version">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">The pull model</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Checking for a new version</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Most systems ship a bar that slides in to tell you an update is ready.
+     Ahimsa does not, and this is the replacement. Version news is something you
+     look up, never something you are told — whatever you were doing is what you
+     should still be doing.</p>
+      <div class="pair">
+        <div class="yes">
+          <p class="ah-caps" style="margin:0">Do this — in Settings</p>
+          <div class="ah-notice">
+            <p class="ah-notice__title" style="margin:0">Version</p>
+            <div class="ah-notice__row">
+              <p class="ah-body" style="margin:0">You are running 1.4.0.</p>
+              <button class="ah-btn ah-btn--sm ah-btn--ghost ah-hit" type="button">Check</button>
+            </div>
+          </div>
+          <p class="ah-body secondary" style="margin:0">The person presses. The answer lands inline, beside the control that asked for it.</p>
+        </div>
+        <div class="no">
+          <p class="ah-caps" style="margin:0">Not this</p>
+          <div style="border-radius:var(--radius-lg);padding:var(--space-3) var(--space-4);background:var(--surface-sunk);display:flex;gap:var(--space-3);align-items:center;justify-content:space-between">
+            <span class="ah-body">A newer version is ready.</span>
+            <span class="ah-pill ah-pill--static">Update</span>
+          </div>
+          <p class="ah-body secondary" style="margin:0">A bar that slides in over your work. It is dismissible, and it is still an interruption: it arrived on its own schedule and spent your attention to do it.</p>
+        </div>
+      </div>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">The same reasoning rules out modals on load, cookie banners, rating prompts,
+     push notifications, <code>beforeunload</code> nags and autoplay.
+     <code>tools/check-attention.mjs</code> fails the build on all of them.</p>
+    </section>
+
+    <section class="ah-section" id="error">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">When something breaks</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Error without alarm</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">There is no red in this system, and no error banner. If something did not
+     work, the app says so in the same voice it says everything else — and it
+     says what is still true, because the thing a person most needs to know is
+     whether they have lost anything.</p>
+      <div class="pair">
+        <div class="yes">
+          <p class="ah-caps" style="margin:0">Do this</p>
+          <div class="ah-notice ah-notice--warning">
+            <p class="ah-notice__title" style="margin:0">That did not go through</p>
+            <p class="ah-body" style="margin:0">The file could not be read. Nothing was changed, and your cards are as they were.</p>
+          </div>
+        </div>
+        <div class="no">
+          <p class="ah-caps" style="margin:0">Not this</p>
+          <p class="ah-body" style="margin:0"><strong>Error: IMPORT_FAILED (0x2F)</strong> — invalid input. Please try again.</p>
+          <p class="ah-body secondary" style="margin:0">A code, a scold, and no answer to the only question that matters. "Invalid input" also puts the fault on the person.</p>
+        </div>
+      </div>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">And <strong>failures are never silent</strong>. A control that goes quiet and
+     stays dead leaves someone tapping at a screen with no idea whether they did
+     something wrong. Say what happened.</p>
+    </section>
+
+    <section class="ah-section" id="shell">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Layout</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Two shells, and picking the right one</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)"><code>.ah-page</code> is a normal document: fluid gutters, a reading measure,
+     scrolling the way the browser intends. <code>.ah-app</code> is a fixed
+     full-viewport application frame with safe-area insets, widening in steps so
+     a desktop window gets a comfortable app rather than a narrow strip.</p>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">The trade is real: a fixed shell cannot reflow the way a document can, so do
+     not reach for it to hold an article. This site uses <code>.ah-page</code>.</p>
+      <div class="snippet">
+        <pre tabindex="0"><code>&lt;!-- a document --&gt;
+&lt;div class=&quot;ah-page&quot;&gt;
+  &lt;article class=&quot;ah-measure ah-stack&quot;&gt;…&lt;/article&gt;
+&lt;/div&gt;
+
+&lt;!-- an installed app --&gt;
+&lt;div class=&quot;ah-app&quot;&gt;
+  &lt;section class=&quot;ah-screen&quot;&gt;
+    &lt;header class=&quot;ah-hdr&quot;&gt;…&lt;/header&gt;
+    &lt;div class=&quot;ah-scroll&quot;&gt;…&lt;/div&gt;
+    &lt;footer class=&quot;ah-footer&quot;&gt;…&lt;/footer&gt;
+  &lt;/section&gt;
+&lt;/div&gt;</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">The app shell needs
+     <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1,
+     viewport-fit=cover"&gt;</code>. Note what is absent from that: no
+     <code>maximum-scale</code>, no <code>user-scalable=no</code>. Pinch zoom
+     always stays.</p>
+      <div class="ah-card ah-card--sunk">
+        <p class="ah-caps" style="margin:0 0 var(--space-3)">Two details worth keeping</p>
+        <p class="ah-body" style="margin:0 0 var(--space-3)"><strong>The scroll tail is a block, not padding.</strong> End padding on a flex scroll container is not reliably part of what the browser will scroll to. A block is content, and every engine scrolls to the end of its content.</p>
+        <p class="ah-body" style="margin:0"><strong><code>overscroll-behavior-y</code>, not both axes.</strong> Setting it on x swallows horizontal trackpad swipes, which can turn a pager into a one-way trap with no pointer route back.</p>
+      </div>
+    </section>
+
+    <section class="ah-section" id="gradient">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Surfaces</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Putting text on a gradient</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Use <code>.ah-surface--&lt;name&gt;</code> rather than setting a gradient by
+     hand. The class carries the gradient <em>and</em> the ink measured against
+     its worst stop, so anything inside reads correctly without you checking.</p>
+      <div class="pair">
+        <div class="ah-surface--bodhi" style="padding:var(--space-6);border-radius:var(--radius-lg)">
+          <p class="ah-caps" style="margin:0 0 var(--space-2)">carries text</p>
+          <p class="ah-heading-m" style="margin:0 0 var(--space-2)">The surface brings its own ink.</p>
+          <p class="ah-body" style="margin:0">Heading, body and muted are all measured against this ramp's darkest stop.</p>
+        </div>
+        <div style="background:var(--gradient-indigo);padding:var(--space-6);border-radius:var(--radius-lg)">
+          <div class="ah-card">
+            <p class="ah-caps" style="margin:0 0 var(--space-2)">surface only</p>
+            <p class="ah-body" style="margin:0">Five of Day's gradients span too wide a lightness range for any ink to clear AA across them. They are backdrops — text on them goes in an opaque card, exactly like this one.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-foot">
+    <p class="ah-caption" style="margin:0">Ahimsa Design System v1.0.0 · MIT · fonts under SIL OFL-1.1</p>
+    <p class="ah-caption" style="margin:0">No analytics. No cookies. Nothing here is loaded over a network.</p>
+  </footer>
+
+</div>
+<script src="site.js"></script>
+</body>
+</html>

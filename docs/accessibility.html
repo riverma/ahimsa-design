@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="ahimsa-day">
+<head>
+<meta charset="utf-8">
+<!-- viewport-fit=cover for safe areas. Note what is absent: no
+     maximum-scale, no user-scalable=no. Pinch zoom always stays. -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ebe6df">
+<meta name="color-scheme" content="light dark">
+<title>Accessibility — Ahimsa Design System</title>
+<meta name="description" content="WCAG 2.2 AA, checked by machine rather than claimed — including what is only partially met.">
+<link rel="stylesheet" href="ahimsa.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="ah-visually-hidden" href="#main">Skip to content</a>
+<div class="ah-page">
+
+  <header class="site-head">
+    <a class="site-mark" href="index.html">Ahimsa</a>
+    <nav class="site-nav" aria-label="Sections">
+      <a class="ah-link ah-link--quiet ah-body" href="index.html">Overview</a>
+          <a class="ah-link ah-link--quiet ah-body" href="foundations.html">Foundations</a>
+          <a class="ah-link ah-link--quiet ah-body" href="components.html">Components</a>
+          <a class="ah-link ah-link--quiet ah-body" href="patterns.html">Patterns</a>
+          <a class="ah-link ah-link--quiet ah-body" href="principles.html">Principles</a>
+          <a class="ah-link ah-link--quiet ah-body" href="accessibility.html" aria-current="page">Accessibility</a>
+          <a class="ah-link ah-link--quiet ah-body" href="agents.html">For agents</a>
+    </nav>
+    <div class="theme-switch" role="group" aria-label="Aesthetic">
+      <button class="ah-pill ah-pill--outline ah-hit" data-theme-btn="day" aria-pressed="true">Day</button>
+      <button class="ah-pill ah-pill--outline ah-hit" data-theme-btn="night" aria-pressed="false">Night</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <p class="ah-caps ah-caps--rule" style="margin:0">Accessibility</p>
+      <h1 class="ah-display-l heading-ink" style="margin:0">Inherited, not owed</h1>
+      <p class="ah-prose hero__lede" style="margin:0">
+        The position this system was extracted from was that it "is not
+        accessible by default — the consumer has to check". That is no longer
+        the position. Adopting Ahimsa should mean inheriting accessibility
+        rather than acquiring a debt.
+      </p>
+    </section>
+
+    <section class="ah-section" id="conformance">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Conformance</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">WCAG 2.2 AA, criterion by criterion</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Target is WCAG 2.2 Level AA, the standard the US Department of Justice's
+     2024 ADA Title II rule adopts. Rows below marked <em>Met</em> are enforced
+     by a gate in <code>tools/</code>, by construction, or both. Rows that are
+     only partially met say so.</p>
+      <table class="tbl">
+        <thead><tr><th>SC</th><th>Criterion</th><th>Status</th><th>How</th></tr></thead>
+        <tbody>
+          <tr><td><code>1.4.1</code></td><td>Use of colour</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">Every status has a text or shape channel. The pill dot never carries meaning alone.</td></tr>
+          <tr><td><code>1.4.3</code></td><td>Contrast (minimum)</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">Machine-checked across both aesthetics and all 28 gradients by tools/check-contrast.mjs. Three inherited token values were raised to reach it — see below.</td></tr>
+          <tr><td><code>1.4.4</code></td><td>Resize text</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">The whole type scale is rem. Nothing sets a px font-size on the root.</td></tr>
+          <tr><td><code>1.4.10</code></td><td>Reflow</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-warning)"></span>Met for .ah-page</span></td><td class="secondary">The document shell reflows to 320px. The fixed app shell is a deliberate trade — do not use it to hold an article.</td></tr>
+          <tr><td><code>1.4.11</code></td><td>Non-text contrast</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">--border-control (a control's edge) clears 3:1. --border-strong is a separator and deliberately does not — it carries no information.</td></tr>
+          <tr><td><code>1.4.12</code></td><td>Text spacing</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">No fixed line heights that clip, no max-height on text containers.</td></tr>
+          <tr><td><code>1.4.13</code></td><td>Content on hover or focus</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">No hover-revealed content anywhere. The system has no tooltips.</td></tr>
+          <tr><td><code>2.1.1</code></td><td>Keyboard</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">Every control is a real button or input. No div handlers.</td></tr>
+          <tr><td><code>2.1.2</code></td><td>No keyboard trap</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">Escape closes the only modal the system has.</td></tr>
+          <tr><td><code>2.2.1</code></td><td>Timing adjustable</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">There is no timing. No timeouts, no auto-advance, no session expiry.</td></tr>
+          <tr><td><code>2.3.1</code></td><td>Three flashes</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">The ambient layer cannot animate faster than 0.1Hz; check-attention.mjs enforces a 2s floor.</td></tr>
+          <tr><td><code>2.3.3</code></td><td>Animation from interactions</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">prefers-reduced-motion removes animation outright, without lowering durations.</td></tr>
+          <tr><td><code>2.4.7</code></td><td>Focus visible</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">A :focus-visible ring on every focusable element. The blanket outline:none this was extracted from is gone.</td></tr>
+          <tr><td><code>2.4.11</code></td><td>Focus not obscured</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">Nothing in the system is position:fixed over content. The site header is in the flow.</td></tr>
+          <tr><td><code>2.5.1</code></td><td>Pointer gestures</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">No path-based or multipoint gesture is required anywhere.</td></tr>
+          <tr><td><code>2.5.2</code></td><td>Pointer cancellation</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">Press feedback is :active and actions fire on up, so sliding off aborts.</td></tr>
+          <tr><td><code>2.5.5</code></td><td>Target size (AAA)</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">.ah-hit gives a 44px target without moving a painted pixel.</td></tr>
+          <tr><td><code>2.5.7</code></td><td>Dragging movements</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">Pagination dots are buttons. Any drag affordance must be paired with a single-pointer route.</td></tr>
+          <tr><td><code>4.1.2</code></td><td>Name, role, value</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">Every snippet on the Components page ships its ARIA.</td></tr>
+          <tr><td><code>1.4.3 (hints)</code></td><td>--text-faint</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-warning)"></span>Partial, by declaration</span></td><td class="secondary">At 2.07:1 it does not meet AA and is not intended to: it is for hints, no component uses it, and it must never be the sole carrier of meaning.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="ah-section" id="deviations">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">The cost</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Three inherited values had to change</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Ahimsa Day is a restructure of a system already shipping in two apps, so the
+     rule was that no colour value moves. Three had to. Each is declared in
+     <code>tools/check-parity.mjs</code>, which fails the build if a declared
+     deviation disappears <em>or</em> if any undeclared value moves.</p>
+      <table class="tbl tbl--fixed">
+        <thead><tr><th style="width:26%">Token</th><th>Reason</th></tr></thead>
+        <tbody>
+          <tr><td><code>--text-secondary</code></td><td class="secondary">WCAG 1.4.3: the original 65% alpha measures 3.64:1 on the darkest Day ground and fails AA for the descriptions and captions it exists to set. Raised to 76% (4.79:1) — the value a shipping consumer had already independently arrived at.</td></tr>
+          <tr><td><code>--text-muted</code></td><td class="secondary">WCAG 1.4.3: the original 45% alpha measures 2.30:1 and fails even the 3:1 large-text floor, for small-caps labels and metadata. Raised to 60% (3.23:1).</td></tr>
+          <tr><td><code>--text-faint</code></td><td class="secondary">The original 28% alpha measures 1.63:1. Raised to 40% (2.07:1) and redefined as hints only — it is now used by no component and must never be the sole carrier of meaning.</td></tr>
+        </tbody>
+      </table>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Two of the three are not invented values: a shipping consumer had already
+     independently arrived at exactly them, for an unrelated reason. That is a
+     reasonable sign they are right.</p>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">The type scale also moved from <code>px</code> to <code>rem</code> at
+     identical computed sizes. Nothing renders differently at default settings,
+     but a px scale silently overrides a person's own browser font size, which
+     for this system is the wrong way round.</p>
+    </section>
+
+    <section class="ah-section" id="gaps">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Honestly</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">What is still imperfect</h2>
+      <ul class="ah-prose ah-measure" style="margin:0;padding-left:1.2em;display:grid;gap:var(--space-3)">
+        <li><strong>Five Day gradients cannot carry text.</strong> clay, indigo, monsoon, periwinkle and periwinkle-soft span too wide a lightness range for any ink to clear AA across them. They ship as surface-only, and text on them belongs in an opaque card. They were not narrowed because they are the system's signature ramps and two apps already render them.</li>
+        <li><strong><code>--text-faint</code> is 2.07:1</strong> and does not meet AA. It is for hints, no component uses it, and the docs say plainly that it must never be the sole carrier of meaning. If you find yourself reaching for it to set real content, reach for <code>--text-muted</code> instead.</li>
+        <li><strong>The fixed app shell does not reflow like a document.</strong> <code>.ah-app</code> meets 320px, but at 200% zoom a fixed-viewport application is inherently tighter than a flowing page. Use <code>.ah-page</code> for anything read rather than operated.</li>
+        <li><strong>Night's hairline weights are capped at display sizes.</strong> Weight 200 loses effective contrast at small sizes because the stems thin out, so body copy in Night is 400 and never lighter. This is enforced by convention, not by a gate.</li>
+        <li><strong>The two apps this was extracted from do not yet comply.</strong> Both ship a floating update bar that this system now refuses, and one has a drag-driven card deck with no single-pointer alternative. Those are theirs to fix, and naming them here is more useful than implying otherwise.</li>
+      </ul>
+    </section>
+
+    <section class="ah-section" id="running">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Verifying</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Run the gates yourself</h2>
+      <div class="snippet">
+        <pre tabindex="0"><code>npm run check        # parity, contrast, attention, offline
+npm run check:a11y   # axe-core through Playwright, both themes, 320/390/1280 + 200% zoom</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">The contrast gate composites translucent ink onto its actual ground before
+     measuring, which most checkers do not — quiet text in this system is the
+     ink colour at low alpha, and a ratio computed without compositing is
+     meaningless.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-foot">
+    <p class="ah-caption" style="margin:0">Ahimsa Design System v1.0.0 · MIT · fonts under SIL OFL-1.1</p>
+    <p class="ah-caption" style="margin:0">No analytics. No cookies. Nothing here is loaded over a network.</p>
+  </footer>
+
+</div>
+<script src="site.js"></script>
+</body>
+</html>

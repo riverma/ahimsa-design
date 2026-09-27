@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" class="ahimsa-day">
+<head>
+<meta charset="utf-8">
+<!-- viewport-fit=cover for safe areas. Note what is absent: no
+     maximum-scale, no user-scalable=no. Pinch zoom always stays. -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ebe6df">
+<meta name="color-scheme" content="light dark">
+<title>Components — Ahimsa Design System</title>
+<meta name="description" content="Ten primitives, as framework-free CSS classes with the markup to paste.">
+<link rel="stylesheet" href="ahimsa.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="ah-visually-hidden" href="#main">Skip to content</a>
+<div class="ah-page">
+
+  <header class="site-head">
+    <a class="site-mark" href="index.html">Ahimsa</a>
+    <nav class="site-nav" aria-label="Sections">
+      <a class="ah-link ah-link--quiet ah-body" href="index.html">Overview</a>
+          <a class="ah-link ah-link--quiet ah-body" href="foundations.html">Foundations</a>
+          <a class="ah-link ah-link--quiet ah-body" href="components.html" aria-current="page">Components</a>
+          <a class="ah-link ah-link--quiet ah-body" href="patterns.html">Patterns</a>
+          <a class="ah-link ah-link--quiet ah-body" href="principles.html">Principles</a>
+          <a class="ah-link ah-link--quiet ah-body" href="accessibility.html">Accessibility</a>
+          <a class="ah-link ah-link--quiet ah-body" href="agents.html">For agents</a>
+    </nav>
+    <div class="theme-switch" role="group" aria-label="Aesthetic">
+      <button class="ah-pill ah-pill--outline ah-hit" data-theme-btn="day" aria-pressed="true">Day</button>
+      <button class="ah-pill ah-pill--outline ah-hit" data-theme-btn="night" aria-pressed="false">Night</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <p class="ah-caps ah-caps--rule" style="margin:0">Components</p>
+      <h1 class="ah-display-l heading-ink" style="margin:0">Ten primitives, and the markup to paste</h1>
+      <p class="ah-prose hero__lede" style="margin:0">
+        Plain CSS classes. No framework, no runtime, no build step — they drop
+        into Svelte, React, a static page, or anything else that emits HTML.
+        Every snippet below is complete and correct, including its ARIA.
+      </p>
+    </section>
+
+    <section class="ah-section" id="button">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Actions</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Button</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">A quiet CTA in wide-tracked uppercase small caps. Press shrinks by 3% and
+     never bounces. The feedback is <code>:active</code> rather than a pointerdown
+     handler, so sliding your finger off still cancels the action — which matters
+     to anyone whose aim is not precise.</p>
+      <div class="spec">
+        <p class="ah-caps" style="margin:0">Variants</p>
+        <div class="spec__demo">
+          <button class="ah-btn" type="button">Continue</button>
+          <button class="ah-btn ah-btn--ghost" type="button">Not now</button>
+          <button class="ah-btn ah-btn--sm ah-hit" type="button">Small</button>
+          <button class="ah-btn ah-btn--danger" type="button">Remove it</button>
+          <button class="ah-btn" type="button" disabled>Disabled</button></div>
+        <p class="ah-body secondary ah-measure" style="margin:0"><code>--ghost</code> is an <em>outlined</em> pill, not grey text. Grey text beside a filled pill reads as a caption, and a caption is not a choice. <code>--danger</code> is warm earth, never red: removing something is not an emergency.</p>
+      <div class="snippet">
+        <pre tabindex="0"><code>&lt;button class=&quot;ah-btn&quot; type=&quot;button&quot;&gt;Continue&lt;/button&gt;
+&lt;button class=&quot;ah-btn ah-btn--ghost&quot; type=&quot;button&quot;&gt;Not now&lt;/button&gt;
+&lt;button class=&quot;ah-btn ah-btn--sm ah-hit&quot; type=&quot;button&quot;&gt;Small&lt;/button&gt;
+&lt;button class=&quot;ah-btn ah-btn--danger&quot; type=&quot;button&quot;&gt;Remove it&lt;/button&gt;</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      </div>
+      <div class="spec">
+        <p class="ah-caps" style="margin:0">On a gradient</p>
+        <div class="spec__demo"><div class="ah-surface--dawn" style="padding:var(--space-6);border-radius:var(--radius-lg);display:flex;gap:var(--space-3);flex-wrap:wrap">
+            <button class="ah-btn ah-btn--glass" type="button">Glass</button>
+            <button class="ah-btn ah-btn--ghost" type="button">Not now</button>
+          </div></div>
+        <p class="ah-body secondary ah-measure" style="margin:0">Glass needs something behind it. On flat cream it reads as nothing — keep it for surfaces sitting on a gradient.</p>
+      <div class="snippet">
+        <pre tabindex="0"><code>&lt;div class=&quot;ah-surface--dawn&quot;&gt;
+  &lt;button class=&quot;ah-btn ah-btn--glass&quot; type=&quot;button&quot;&gt;Glass&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      </div>
+    </section>
+
+    <section class="ah-section" id="pill">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Actions</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Pill</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">The workhorse: tags, switchers, filters, quiet actions. Always wrap small
+     pills in <code>.ah-hit</code> — the painted control is under the 44px target
+     floor, and that class grows what the finger hits without moving a pixel of
+     what the eye sees.</p>
+      <div class="spec">
+        <p class="ah-caps" style="margin:0">Variants and states</p>
+        <div class="spec__demo">
+          <button class="ah-pill ah-hit" type="button">Default</button>
+          <button class="ah-pill is-active ah-hit" type="button">Active</button>
+          <button class="ah-pill ah-pill--outline ah-hit" type="button">Outline</button>
+          <button class="ah-pill ah-pill--outline is-active ah-hit" type="button">Outline active</button>
+          <span class="ah-pill ah-pill--static"><span class="ah-pill__dot"></span>With a dot</span></div>
+        <p class="ah-body secondary ah-measure" style="margin:0">The dot is never the only carrier of its meaning — the pill's own text says the same thing, because colour is not a channel everyone has.</p>
+      <div class="snippet">
+        <pre tabindex="0"><code>&lt;button class=&quot;ah-pill ah-hit&quot; type=&quot;button&quot;&gt;Default&lt;/button&gt;
+&lt;button class=&quot;ah-pill is-active ah-hit&quot; type=&quot;button&quot; aria-pressed=&quot;true&quot;&gt;Active&lt;/button&gt;
+&lt;span class=&quot;ah-pill ah-pill--static&quot;&gt;
+  &lt;span class=&quot;ah-pill__dot&quot;&gt;&lt;/span&gt;With a dot
+&lt;/span&gt;</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      </div>
+    </section>
+
+    <section class="ah-section" id="link">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Actions</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Link</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">The rule under a link draws itself in rather than the text changing colour
+     and jumping. Taken from the reference this aesthetic was tuned against, and
+     it fills a gap: the system previously had no link treatment at all.</p>
+      <div class="spec">
+        <p class="ah-caps" style="margin:0">Two registers</p>
+        <div class="spec__demo"><p class="ah-prose" style="margin:0">A <a class="ah-link" href="#link">standing link</a> keeps a faint rule at rest. A <a class="ah-link ah-link--quiet" href="#link">quiet link</a> draws its rule only when you reach for it — for running prose, where a permanent underline on every reference would be noise.</p></div>
+
+      <div class="snippet">
+        <pre tabindex="0"><code>&lt;a class=&quot;ah-link&quot; href=&quot;/somewhere&quot;&gt;A standing link&lt;/a&gt;
+&lt;a class=&quot;ah-link ah-link--quiet&quot; href=&quot;/somewhere&quot;&gt;A quiet link&lt;/a&gt;</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      </div>
+    </section>
+
+    <section class="ah-section" id="field">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Forms</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Field</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">No box. A single bottom rule that strengthens on focus does the whole job:
+     a full border around a text field is a container, and a container implies
+     something being collected.</p>
+      <div class="spec">
+        <p class="ah-caps" style="margin:0">Utility and essence</p>
+        <div class="spec__demo"><div style="display:grid;gap:var(--space-6);width:100%;max-width:34rem">
+            <label class="ah-field">
+              <span class="ah-field__label">Their name</span>
+              <input type="text" placeholder="Someone you are thinking of">
+            </label>
+            <label class="ah-field ah-field--essence">
+              <span class="ah-field__label">What is alive in you</span>
+              <textarea rows="2" placeholder="Say it however it comes"></textarea>
+            </label>
+          </div></div>
+        <p class="ah-body secondary ah-measure" style="margin:0">Inputs are 1rem, not the 0.8125rem the rest of the UI uses. Safari on iOS zooms the viewport when a field under 16px takes focus, and a zoomed fixed-position app cannot be scrolled — which reads as the app breaking the moment you try to type.</p>
+      <div class="snippet">
+        <pre tabindex="0"><code>&lt;label class=&quot;ah-field&quot;&gt;
+  &lt;span class=&quot;ah-field__label&quot;&gt;Their name&lt;/span&gt;
+  &lt;input type=&quot;text&quot; placeholder=&quot;Someone you are thinking of&quot;&gt;
+&lt;/label&gt;
+
+&lt;label class=&quot;ah-field ah-field--essence&quot;&gt;
+  &lt;span class=&quot;ah-field__label&quot;&gt;What is alive in you&lt;/span&gt;
+  &lt;textarea rows=&quot;2&quot; placeholder=&quot;Say it however it comes&quot;&gt;&lt;/textarea&gt;
+&lt;/label&gt;</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      </div>
+    </section>
+
+    <section class="ah-section" id="chip">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Forms</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">ToggleChip</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Multi-select in the emotional voice. Nothing is pre-selected and nothing is
+     required.</p>
+      <div class="spec">
+        <p class="ah-caps" style="margin:0">Selected and not</p>
+        <div class="spec__demo">
+          <button class="ah-chip" type="button" role="checkbox" aria-checked="false">seen</button>
+          <button class="ah-chip is-selected" type="button" role="checkbox" aria-checked="true">held</button>
+          <button class="ah-chip" type="button" role="checkbox" aria-checked="false">at ease</button>
+          <button class="ah-chip" type="button" role="checkbox" aria-checked="false">tender</button></div>
+
+      <div class="snippet">
+        <pre tabindex="0"><code>&lt;button class=&quot;ah-chip&quot; type=&quot;button&quot; role=&quot;checkbox&quot; aria-checked=&quot;false&quot;&gt;seen&lt;/button&gt;
+&lt;button class=&quot;ah-chip is-selected&quot; type=&quot;button&quot; role=&quot;checkbox&quot; aria-checked=&quot;true&quot;&gt;held&lt;/button&gt;</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      </div>
+    </section>
+
+    <section class="ah-section" id="card">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Surfaces</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Card</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Three surface levels plus one glass level, expressed as background first and
+     shadow second. A sunk surface gets no shadow at all — the colour <em>is</em>
+     the elevation.</p>
+      <div class="spec">
+        <p class="ah-caps" style="margin:0">Variants</p>
+        <div class="spec__demo"><div style="display:grid;gap:var(--space-4);grid-template-columns:repeat(auto-fit,minmax(200px,1fr));width:100%">
+            <div class="ah-card"><p class="ah-caps" style="margin:0 0 6px">elevated</p><p class="ah-body" style="margin:0">The default. Warm paper shadow with an inner highlight.</p></div>
+            <div class="ah-card ah-card--list"><p class="ah-caps" style="margin:0 0 6px">list</p><p class="ah-body" style="margin:0">A lighter shadow, for rows that repeat.</p></div>
+            <div class="ah-card ah-card--sunk"><p class="ah-caps" style="margin:0 0 6px">sunk</p><p class="ah-body" style="margin:0">Recessed. No shadow at all.</p></div>
+            <div class="ah-card ah-surface--cream"><p class="ah-caps" style="margin:0 0 6px">gradient</p><p class="ah-body" style="margin:0">One featured moment per screen.</p></div>
+          </div></div>
+        <p class="ah-body secondary ah-measure" style="margin:0">No coloured-left-border cards and no hard outlines. Two gradient cards side by side is the rule this system breaks least gladly.</p>
+      <div class="snippet">
+        <pre tabindex="0"><code>&lt;div class=&quot;ah-card&quot;&gt;…&lt;/div&gt;
+&lt;div class=&quot;ah-card ah-card--list&quot;&gt;…&lt;/div&gt;
+&lt;div class=&quot;ah-card ah-card--sunk&quot;&gt;…&lt;/div&gt;
+
+&lt;!-- a gradient card carries its own measured ink --&gt;
+&lt;div class=&quot;ah-card ah-surface--cream&quot;&gt;…&lt;/div&gt;</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      </div>
+    </section>
+
+    <section class="ah-section" id="sheet">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Surfaces</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Sheet</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">The bottom sheet, and the only modal this system has. <strong>Three ways out,
+     always</strong>: the scrim, the grab handle, and a visible Close at equal
+     weight. Never a trap. Putting the Close in the shared chrome is what makes
+     omitting it structurally impossible rather than something to remember.</p>
+      <div class="spec">
+        <p class="ah-caps" style="margin:0">Structure</p>
+        <div class="spec__demo"><div style="width:100%;max-width:26rem;border-radius:var(--radius-2xl);overflow:hidden;box-shadow:var(--shadow-lg)">
+            <div class="ah-sheet" style="animation:none;position:relative">
+              <div class="ah-sheet__grab"></div>
+              <div class="ah-sheet__head">
+                <h3 class="ah-sheet__title">Share this card</h3>
+                <button class="ah-sheet__close" type="button" aria-label="Close">×</button>
+              </div>
+              <p class="ah-body secondary" style="margin:0 0 var(--space-5)">It leaves this device only when you send it.</p>
+              <div class="ah-actions">
+                <button class="ah-btn" type="button">Save a file</button>
+                <button class="ah-btn ah-btn--ghost" type="button">Not now</button>
+              </div>
+            </div>
+          </div></div>
+        <p class="ah-body secondary ah-measure" style="margin:0">Wire <kbd>Escape</kbd> to close as well. A sheet you can only leave by dragging is not leaveable by everyone.</p>
+      <div class="snippet">
+        <pre tabindex="0"><code>&lt;div class=&quot;ah-scrim&quot; role=&quot;presentation&quot;&gt;
+  &lt;div class=&quot;ah-sheet&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot; aria-labelledby=&quot;t&quot;&gt;
+    &lt;div class=&quot;ah-sheet__grab&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;ah-sheet__head&quot;&gt;
+      &lt;h2 class=&quot;ah-sheet__title&quot; id=&quot;t&quot;&gt;Share this card&lt;/h2&gt;
+      &lt;button class=&quot;ah-sheet__close&quot; type=&quot;button&quot; aria-label=&quot;Close&quot;&gt;×&lt;/button&gt;
+    &lt;/div&gt;
+    …
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      </div>
+    </section>
+
+    <section class="ah-section" id="display">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Display</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Small caps, pull quote, monogram, dots</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">This system is deliberately icon-light, and its most distinctive "icon" is
+     the absence of one: <strong>there is no notification badge component, by
+     design</strong>. Updates surface through the rhythm of use, never a red dot.</p>
+      <div class="spec">
+        <p class="ah-caps" style="margin:0">SmallCapsLabel</p>
+        <div class="spec__demo"><div style="display:grid;gap:var(--space-3)">
+            <span class="ah-caps">Last together</span>
+            <span class="ah-caps ah-caps--rule">With a rule</span>
+            <span class="ah-caps ah-caps--micro">Micro, for the quietest metadata</span>
+          </div></div>
+
+      <div class="snippet">
+        <pre tabindex="0"><code>&lt;span class=&quot;ah-caps&quot;&gt;Last together&lt;/span&gt;
+&lt;span class=&quot;ah-caps ah-caps--rule&quot;&gt;With a rule&lt;/span&gt;
+&lt;span class=&quot;ah-caps ah-caps--micro&quot;&gt;Quietest metadata&lt;/span&gt;</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      </div>
+      <div class="spec">
+        <p class="ah-caps" style="margin:0">PullQuote</p>
+        <div class="spec__demo"><div style="display:grid;gap:var(--space-6);width:100%">
+            <p class="ah-quote" style="margin:0">Nothing here is designed to grab you.</p>
+            <p class="ah-quote ah-quote--bordered" style="margin:0">In NVC, every no is a yes to something else.</p>
+          </div></div>
+        <p class="ah-body secondary ah-measure" style="margin:0"><strong>Never quotation marks.</strong> The setting is already the quotation; the marks would only shout.</p>
+      <div class="snippet">
+        <pre tabindex="0"><code>&lt;p class=&quot;ah-quote&quot;&gt;Nothing here is designed to grab you.&lt;/p&gt;
+&lt;p class=&quot;ah-quote ah-quote--bordered&quot;&gt;Every no is a yes to something else.&lt;/p&gt;</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      </div>
+      <div class="spec">
+        <p class="ah-caps" style="margin:0">Monogram — an initial, never a photograph</p>
+        <div class="spec__demo">
+          <span class="ah-mono ah-mono--s44">A</span>
+          <span class="ah-mono">R</span>
+          <span class="ah-mono ah-mono--s84 ah-mono--sunk">M</span>
+          <span class="ah-mono ah-mono--s84 ah-mono--glass" style="background-image:var(--gradient-dawn)">J</span></div>
+        <p class="ah-body secondary ah-measure" style="margin:0">Mark it <code>aria-hidden</code> when the person's name is already beside it — otherwise a screen reader reads the initial twice.</p>
+      <div class="snippet">
+        <pre tabindex="0"><code>&lt;span class=&quot;ah-mono&quot; aria-hidden=&quot;true&quot;&gt;R&lt;/span&gt;
+&lt;span class=&quot;ah-mono ah-mono--s84 ah-mono--sunk&quot; aria-hidden=&quot;true&quot;&gt;M&lt;/span&gt;</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      </div>
+      <div class="spec">
+        <p class="ah-caps" style="margin:0">ProgressDots — where you are, with no count</p>
+        <div class="spec__demo"><div class="ah-dots">
+            <button type="button" class="is-on" aria-label="Page 1 of 4" aria-current="true"></button>
+            <button type="button" aria-label="Page 2 of 4"></button>
+            <button type="button" aria-label="Page 3 of 4"></button>
+            <button type="button" aria-label="Page 4 of 4"></button>
+          </div></div>
+        <p class="ah-body secondary ah-measure" style="margin:0">Each dot is a real button. Pagination you can only reach by dragging is not reachable at all for some people (WCAG 2.5.7), and the 44px target is added invisibly.</p>
+      <div class="snippet">
+        <pre tabindex="0"><code>&lt;div class=&quot;ah-dots&quot;&gt;
+  &lt;button type=&quot;button&quot; class=&quot;is-on&quot; aria-label=&quot;Page 1 of 4&quot; aria-current=&quot;true&quot;&gt;&lt;/button&gt;
+  &lt;button type=&quot;button&quot; aria-label=&quot;Page 2 of 4&quot;&gt;&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      </div>
+      <div class="spec">
+        <p class="ah-caps" style="margin:0">SectionRule</p>
+        <div class="spec__demo"><p class="ah-rule-row ah-caps" style="margin:0;width:100%">This week</p></div>
+
+      <div class="snippet">
+        <pre tabindex="0"><code>&lt;p class=&quot;ah-rule-row ah-caps&quot;&gt;This week&lt;/p&gt;</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      </div>
+    </section>
+
+    <section class="ah-section" id="feedback">
+      <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Feedback</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Toast and Notice</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">This is where the attention principle is load-bearing. <strong>Nothing in an
+     Ahimsa interface appears on its own.</strong> The test is not "is it
+     dismissible" but <em>did the person cause this, here, now?</em></p>
+      <div class="spec">
+        <p class="ah-caps" style="margin:0">Toast — the acknowledgement of an action just taken</p>
+        <div class="spec__demo"><div style="position:relative;width:100%;height:100px;background:var(--surface-sunk);border-radius:var(--radius-lg);overflow:hidden">
+            <div class="ah-toast" style="bottom:var(--space-4)"><div class="ah-caption">Saved to this device. You can undo this.</div></div>
+          </div></div>
+        <p class="ah-body secondary ah-measure" style="margin:0">Always <code>role="status"</code> with <code>aria-live="polite"</code>. <strong>Never <code>role="alert"</code> or <code>aria-live="assertive"</code></strong>: an assertive region interrupts a screen-reader user mid-sentence, which is the same harm in a different channel.</p>
+      <div class="snippet">
+        <pre tabindex="0"><code>&lt;div class=&quot;ah-toast&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;
+  &lt;div class=&quot;ah-caption&quot;&gt;Saved to this device. You can undo this.&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      </div>
+      <div class="spec">
+        <p class="ah-caps" style="margin:0">Notice — what replaces every banner this system refuses</p>
+        <div class="spec__demo"><div style="display:grid;gap:var(--space-4);width:100%">
+            <div class="ah-notice">
+              <p class="ah-notice__title" style="margin:0">Version</p>
+              <div class="ah-notice__row">
+                <p class="ah-body" style="margin:0">You are running 1.4.0.</p>
+                <button class="ah-btn ah-btn--sm ah-btn--ghost ah-hit" type="button">Check for a new one</button>
+              </div>
+            </div>
+            <div class="ah-notice ah-notice--warning">
+              <p class="ah-notice__title" style="margin:0">That did not go through</p>
+              <p class="ah-body" style="margin:0">The file could not be read. Nothing was changed, and your cards are as they were.</p>
+            </div>
+          </div></div>
+        <p class="ah-body secondary ah-measure" style="margin:0">A notice sits <em>in</em> the document flow, where the person already is. It does not float, does not cover anything, and does not take focus. There is deliberately no UpdateBar, no InstallBar, no banner and no modal in this system.</p>
+      <div class="snippet">
+        <pre tabindex="0"><code>&lt;div class=&quot;ah-notice&quot;&gt;
+  &lt;p class=&quot;ah-notice__title&quot;&gt;Version&lt;/p&gt;
+  &lt;div class=&quot;ah-notice__row&quot;&gt;
+    &lt;p class=&quot;ah-body&quot;&gt;You are running 1.4.0.&lt;/p&gt;
+    &lt;button class=&quot;ah-btn ah-btn--sm ah-btn--ghost ah-hit&quot;&gt;Check for a new one&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
+      </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-foot">
+    <p class="ah-caption" style="margin:0">Ahimsa Design System v1.0.0 · MIT · fonts under SIL OFL-1.1</p>
+    <p class="ah-caption" style="margin:0">No analytics. No cookies. Nothing here is loaded over a network.</p>
+  </footer>
+
+</div>
+<script src="site.js"></script>
+</body>
+</html>

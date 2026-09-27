@@ -1,0 +1,30 @@
+{
+  "name": "ahimsa-design",
+  "version": "1.0.0",
+  "description": "A design system rooted in non-harm. Two aesthetics: Ahimsa Day and Ahimsa Night.",
+  "license": "MIT",
+  "homepage": "https://ahimsa-design.riverma.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riverma/ahimsa-design.git"
+  },
+  "type": "module",
+  "files": [
+    "dist",
+    "src",
+    "fonts",
+    "tokens.json",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node tools/build.mjs && node tools/build-tokens.mjs",
+    "check": "node tools/check-parity.mjs && node tools/check-contrast.mjs && node tools/check-attention.mjs && node tools/check-offline.mjs",
+    "check:a11y": "node tools/check-a11y.mjs",
+    "serve": "python3 -m http.server 8173 --directory docs",
+    "shots": "node tools/shots.mjs"
+  },
+  "devDependencies": {
+    "axe-core": "^4.13.0"
+  }
+}

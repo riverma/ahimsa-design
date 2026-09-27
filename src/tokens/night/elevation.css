@@ -1,0 +1,14 @@
+/* Ahimsa Night — elevation.
+   A drop shadow is invisible on a dark ground, so the same token names do
+   a different job: an inset hairline ring establishes the edge, an inner
+   top highlight suggests a lit surface, and ambient darkness beneath does
+   the lifting. Emphasis comes from --glow-*, never from a brighter fill. */
+
+.ahimsa-night {
+  --shadow-xs:    inset 0 0 0 1px #dce3ec14;
+  --shadow-sm:    inset 0 0 0 1px #dce3ec1f, 0 1px 0 #ffffff0a;
+  --shadow-md:    inset 0 0 0 1px #dce3ec29, inset 0 1px 0 #ffffff14, 0 8px 32px -12px #000000a6;
+  --shadow-lg:    inset 0 0 0 1px #dce3ec33, 0 16px 48px -16px #000000b8;
+  --shadow-xl:    0 40px 80px -24px #000000cc, 0 0 0 1px #dce3ec1f;
+  --shadow-sheet: 0 -16px 48px #000000a6, inset 0 1px 0 #ffffff14;
+}

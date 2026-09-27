@@ -1,0 +1,12 @@
+changelog:
+  categories:
+    - title: Added
+      labels: [enhancement, feature]
+    - title: Changed
+      labels: [change, breaking]
+    - title: Fixed
+      labels: [bug, accessibility]
+    - title: Documentation
+      labels: [documentation]
+    - title: Other
+      labels: ["*"]

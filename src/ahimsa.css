@@ -1,0 +1,69 @@
+/* =====================================================================
+   Ahimsa Design System — authoring entry point.
+   =====================================================================
+
+   Put the theme class on <html>, not <body>:
+
+     <html lang="en" class="ahimsa-day">
+
+   (html, so that the page background resolves too. A class on body leaves
+   the root element without tokens and you get a white band on overscroll.)
+
+   Ahimsa Night is the sibling aesthetic, not a dark mode:
+
+     <html lang="en" class="ahimsa-night">
+
+   Do NOT wire the theme to prefers-color-scheme. Day and Night are
+   different characters, not different brightnesses, and switching an app's
+   whole character because of an OS setting is exactly the sort of surprise
+   this system refuses. Let a person choose, and remember what they chose.
+
+   ---------------------------------------------------------------------
+   This file is a chain of @imports, which is fine for a page and hostile
+   to an offline consumer. For anything shipped, use the flattened builds:
+
+     dist/ahimsa-day.css     one theme
+     dist/ahimsa-night.css   one theme
+     dist/ahimsa.css         both, theme-scoped
+
+   Run `node tools/build.mjs` to regenerate them.
+   --------------------------------------------------------------------- */
+
+/* Fonts — self-hosted, OFL-1.1. Drop the one you don't use. */
+@import url("fonts/day.css");
+@import url("fonts/night.css");
+
+/* Geometry and time. Shared: switching theme never moves the grid. */
+@import url("tokens/shared.css");
+
+/* Ahimsa Day */
+@import url("tokens/day/palette.css");
+@import url("tokens/day/gradients.css");
+@import url("tokens/day/semantic.css");
+@import url("tokens/day/elevation.css");
+@import url("tokens/day/type.css");
+@import url("tokens/day/surfaces.css");   /* generated */
+
+/* Ahimsa Night */
+@import url("tokens/night/palette.css");
+@import url("tokens/night/gradients.css");
+@import url("tokens/night/semantic.css");
+@import url("tokens/night/elevation.css");
+@import url("tokens/night/type.css");
+@import url("tokens/night/surfaces.css"); /* generated */
+
+/* Reset plus the accessibility floor. */
+@import url("base.css");
+
+/* Primitives. */
+@import url("components/actions.css");
+@import url("components/forms.css");
+@import url("components/surfaces.css");
+@import url("components/display.css");
+@import url("components/feedback.css");
+
+/* Composition. */
+@import url("patterns/shell.css");
+
+/* Night's decorative field. Purely optional. */
+@import url("ambient/ambient.css");
