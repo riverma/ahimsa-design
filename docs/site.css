@@ -55,6 +55,12 @@ body {
 }
 
 /* ---- Specimen scaffolding ---- */
+/* Specimens are siblings inside a section, and two panels sharing an edge
+   read as one panel. Anything following another block in a section gets a
+   full unit of air; margins collapse, so this never doubles up with the
+   margin-bottom the prose already carries. */
+.ah-section > * + * { margin-top: var(--space-6); }
+
 .spec {
   display: grid;
   gap: var(--space-4);
@@ -131,8 +137,14 @@ body {
   gap: var(--space-3);
   align-content: start;
 }
-.yes { box-shadow: var(--shadow-sm), inset 3px 0 0 var(--accent-success); }
-.no  { box-shadow: var(--shadow-sm), inset 3px 0 0 var(--accent-warning); }
+/* A full ring, not a left accent. "No coloured-left-border cards, no hard
+   outlines" is one of this system's own rules, and a 3px stripe down one
+   edge was quietly breaking it. The ring uses the same ink as the label,
+   so the panel reads as one marked thing rather than a card wearing a
+   flag. --ah-yes-ink / --ah-no-ink are the -700 steps, which clear 3:1
+   against the surface (WCAG 1.4.11). */
+.yes { box-shadow: inset 0 0 0 1.5px var(--ah-yes-ink); }
+.no  { box-shadow: inset 0 0 0 1.5px var(--ah-no-ink); }
 .yes > .ah-caps { color: var(--ah-yes-ink); }
 .no  > .ah-caps { color: var(--ah-no-ink); }
 /* The -700 step, not --accent-success / --accent-warning. Those are tuned
