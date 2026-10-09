@@ -4,16 +4,34 @@
    zoom — plus the checks axe cannot make: target size, forced-colors
    coverage, suppressed focus, and px font sizes.
 
-   Playwright is borrowed from a sibling repo; axe-core is a devDependency.
+   Playwright is optional and developer-only; axe-core is a devDependency.
    Neither reaches the shipped CSS, which has no dependencies at all. */
 
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, extname } from 'node:path';
-import { createRequire } from 'node:module';
+import { createRequire as _cr } from 'node:module';
 
-const require = createRequire('/home/pez/workspace/assets/giraffy/package.json');
-const { webkit } = require('@playwright/test');
+/* Playwright is an optional, developer-only dependency — nothing this
+   system ships depends on it. Resolve it from this package first, then
+   from a checkout named by AHIMSA_PLAYWRIGHT_FROM. */
+function loadPlaywright() {
+  const candidates = [import.meta.url];
+  if (process.env.AHIMSA_PLAYWRIGHT_FROM) candidates.push(process.env.AHIMSA_PLAYWRIGHT_FROM);
+  for (const from of candidates) {
+    try { return _cr(from)('@playwright/test'); } catch { /* try the next */ }
+  }
+  console.error(
+    'Playwright not found.\n' +
+    '  npm i -D @playwright/test && npx playwright install webkit\n' +
+    'or point at an existing checkout that already has it:\n' +
+    '  AHIMSA_PLAYWRIGHT_FROM=/path/to/package.json npm run shots'
+  );
+  process.exit(2);
+}
+
+const { webkit } = loadPlaywright();
 const axeSource = readFileSync(new URL('../node_modules/axe-core/axe.min.js', import.meta.url), 'utf8');
+
 
 const BASE = process.env.AHIMSA_URL || 'http://127.0.0.1:8173';
 const PAGES = ['index', 'foundations', 'components', 'patterns', 'principles', 'accessibility', 'agents'];

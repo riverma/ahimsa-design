@@ -16,8 +16,10 @@ npm run check:a11y   # axe, both aesthetics, 4 widths  (needs the site served)
 ```
 
 `npm run serve` puts the docs site on <http://127.0.0.1:8173>, which the two
-browser-driven tools expect. They borrow Playwright from a sibling checkout
-and run WebKit — see `tools/shots.mjs` for why.
+browser-driven tools expect. They run WebKit — see `tools/shots.mjs` for why.
+Playwright is optional and not a dependency of this package: install it
+(`npm i -D @playwright/test && npx playwright install webkit`) or point at a
+checkout that already has it with `AHIMSA_PLAYWRIGHT_FROM=/path/package.json`.
 
 Generated files must be regenerated, not hand-edited:
 `src/tokens/*/surfaces.css`, `dist/*`, `docs/*.html`, `docs/ahimsa.css`,

@@ -2,20 +2,37 @@
 /* Capture the review set: every page, both aesthetics, phone and desktop.
    Filenames are stable across rounds so successive rounds diff cleanly.
 
-   Playwright is borrowed from a sibling repo rather than installed here —
-   this repo ships no runtime dependencies and there is no reason for a
-   screenshot tool to change that. */
+   Playwright is optional and developer-only; this repo ships no runtime
+   dependencies and a screenshot tool is no reason to change that. */
 
 import { mkdirSync } from 'node:fs';
-import { createRequire } from 'node:module';
+import { createRequire as _cr } from 'node:module';
 
-const require = createRequire('/home/pez/workspace/assets/giraffy/package.json');
-const { webkit, chromium } = require('@playwright/test');
+/* Playwright is an optional, developer-only dependency — nothing this
+   system ships depends on it. Resolve it from this package first, then
+   from a checkout named by AHIMSA_PLAYWRIGHT_FROM. */
+function loadPlaywright() {
+  const candidates = [import.meta.url];
+  if (process.env.AHIMSA_PLAYWRIGHT_FROM) candidates.push(process.env.AHIMSA_PLAYWRIGHT_FROM);
+  for (const from of candidates) {
+    try { return _cr(from)('@playwright/test'); } catch { /* try the next */ }
+  }
+  console.error(
+    'Playwright not found.\n' +
+    '  npm i -D @playwright/test && npx playwright install webkit\n' +
+    'or point at an existing checkout that already has it:\n' +
+    '  AHIMSA_PLAYWRIGHT_FROM=/path/to/package.json npm run shots'
+  );
+  process.exit(2);
+}
+
+const { webkit, chromium } = loadPlaywright();
 /* WebKit, not Chromium: the cached Chromium build does not match this
    Playwright, and WebKit is the engine this system's consumers actually run
    on iOS anyway — backdrop-filter and mix-blend-mode are exactly where it
    differs from Blink. */
 const engine = process.env.AHIMSA_ENGINE === 'chromium' ? chromium : webkit;
+
 
 const BASE = process.env.AHIMSA_URL || 'http://127.0.0.1:8173';
 const OUT = process.argv[2] || 'shots';
