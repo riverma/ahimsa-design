@@ -53,7 +53,12 @@ console.log('dist/CHECKSUMS     written');
 /* The docs site is served with docs/ as its root, so it needs its own copy
    of the bundle and the fonts. Both are generated; edit src/ and fonts/. */
 mkdirSync('docs/fonts', { recursive: true });
-copyFileSync('dist/ahimsa.css', 'docs/ahimsa.css');
+/* The docs copy uses RELATIVE font urls. @font-face resolves against the
+   stylesheet, so "fonts/x.woff2" works from a web root, from a
+   subdirectory, and from a file:// path — the absolute "/fonts/x.woff2"
+   the shipped build uses only works at a web root. Same reason a consumer
+   vendoring this into a subfolder has to rewrite those five urls. */
+writeFileSync('docs/ahimsa.css', out['ahimsa.css'].replace(/url\("\/fonts\//g, 'url("fonts/'));
 for (const f of readdirSync('fonts')) copyFileSync(`fonts/${f}`, `docs/fonts/${f}`);
 copyFileSync('src/ambient/aberration.svg', 'docs/aberration.svg');
 console.log(`docs/ahimsa.css + docs/fonts/ (${readdirSync('fonts').length} files) synced`);
