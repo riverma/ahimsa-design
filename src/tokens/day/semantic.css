@@ -5,7 +5,7 @@
 .ahimsa-day {
   /* ---- Surfaces ---- */
   --surface-canvas:      var(--neutral-200); /* default app background */
-  --surface-canvas-flat: #ebe6df;            /* for html/body, where a gradient can't go */
+  --surface-canvas-flat: #e7e7e4;            /* for html/body, where a gradient can't go */
   --surface-elevated:    var(--neutral-50);  /* cards, sheets, elevated surfaces */
   --surface-sunk:        var(--neutral-300); /* recessed surfaces, subtle wells */
   --surface-inverse:     var(--neutral-800); /* dark surface, used sparingly */
@@ -27,29 +27,29 @@
      gate still catches any change nobody decided on. ---- */
   --text-heading:   var(--neutral-800); /* titles, display type */
   --text-body:      var(--neutral-700); /* body copy */
-  --text-secondary: #3d3428c2;          /* 76% — descriptions, captions. 4.79:1 worst case */
-  --text-muted:     #3d342899; /* NON-TEXT ONLY — status dots, rules, disabled marks.
+  --text-secondary: #2d3036c2;          /* 76% — descriptions, captions. 4.79:1 worst case */
+  --text-muted:     #2d303699; /* NON-TEXT ONLY — status dots, rules, disabled marks.
                                    Measures 3.23:1, which clears 3:1 for non-text
                                    (1.4.11) but NOT the 4.5:1 small text owes. No component
                                    sets type in this. */
-  --text-faint:     #3d342866;          /* 40% — hints ONLY. 2.07:1: never the sole carrier of anything */
+  --text-faint:     #2d303666;          /* 40% — hints ONLY. 2.07:1: never the sole carrier of anything */
   --text-inverse:   var(--neutral-50);  /* text on dark surfaces */
 
   /* ---- Borders. Mostly absent by design: inputs use a single bottom rule
      rather than a box, and separators are warm brown at low alpha. ---- */
-  --border-subtle: #3d342814; /* ~8%  — barely-there divisions */
-  --border-medium: #3d34282e; /* ~18% — clear separators */
-  --border-strong: #3d342859; /* ~35% — emphatic, but DECORATIVE only: 1.90:1 */
+  --border-subtle: #2d303614; /* ~8%  — barely-there divisions */
+  --border-medium: #2d30362e; /* ~18% — clear separators */
+  --border-strong: #2d303659; /* ~35% — emphatic, but DECORATIVE only: 1.90:1 */
 
   /* The boundary of an interactive control — a ghost button's ring, an
      outline pill. That line IS the control's edge, so it owes 3:1
      (WCAG 1.4.11) in a way a separator does not. --border-strong cannot
      carry it. Additive; nothing upstream had this. */
-  --border-control: #3d342899; /* 60% — 3.23:1 worst case */
+  --border-control: #2d303699; /* 60% — 3.23:1 worst case */
 
   /* ---- Accents ---- */
-  --accent-primary:   var(--saffron-600); /* brand — primary CTA */
-  --accent-secondary: var(--indigo-500);  /* interactive — links, active tabs */
+  --accent-primary:   var(--peacock-700); /* brand — the one hint of colour */
+  --accent-secondary: var(--indigo-600);  /* interactive — links, active tabs */
   --accent-success:   var(--bodhi-600);
   --accent-warning:   var(--clay-600);    /* the ONLY error colour. Warm, not alarming.
                                              There is no red token in this system. */
@@ -65,7 +65,7 @@
 
   /* ---- Focus. Must clear 3:1 against both the element and its ground
      (WCAG 1.4.11). Never suppressed — see base.css. ---- */
-  --focus-ring:        var(--saffron-700);
+  --focus-ring:        var(--peacock-700);
   --focus-ring-offset: var(--surface-canvas-flat);
   --focus-ring-width:  2px;
 
@@ -74,7 +74,7 @@
      decoratively on flat cream. ---- */
   --glass-overlay:        #ffffff6b; /* 42% white — frosted glass surfaces */
   --glass-overlay-strong: #ffffff8f; /* 56% white — more opaque frosted panels */
-  --glass-scrim:          #140f0a73; /* 45% dark — modal / sheet scrims */
+  --glass-scrim:          #0c0e1273; /* 45% dark — modal / sheet scrims */
   --glass-blur:           12px;
 
   /* ---- Glow. Day has none: depth here comes from warm paper shadow.

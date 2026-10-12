@@ -52,7 +52,7 @@ export function page({ file, title, lede, body, theme = 'day' }) {
 <!-- viewport-fit=cover for safe areas. Note what is absent: no
      maximum-scale, no user-scalable=no. Pinch zoom always stays. -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#ebe6df">
+<meta name="theme-color" content="#e7e7e4">
 <meta name="color-scheme" content="light dark">
 <title>${esc(title)} — Ahimsa Design System</title>
 <meta name="description" content="${esc(lede)}">

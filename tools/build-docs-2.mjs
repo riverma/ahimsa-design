@@ -11,14 +11,15 @@ const btnDemo = `
 export const components = page({
   file: 'components.html',
   title: 'Components',
-  lede: 'Ten primitives, as framework-free CSS classes with the markup to paste.',
+  lede: 'Ten primitives, with a framework-free web implementation and the markup to paste.',
   body: `
     <section class="hero">
       <p class="ah-caps ah-caps--rule" style="margin:0">Components</p>
       <h1 class="ah-display-l heading-ink" style="margin:0">Ten primitives, and the markup to paste</h1>
       <p class="ah-prose hero__lede" style="margin:0">
-        Plain CSS classes. No framework, no runtime, no build step — they drop
-        into Svelte, React, a static page, or anything else that emits HTML.
+        These are the web reference implementation: plain CSS classes, no framework,
+        no runtime, no build step. On a phone or desktop app, take the same
+        proportions, tokens and refusals and build the native equivalent.
         Every snippet below is complete and correct, including its ARIA.
       </p>
     </section>

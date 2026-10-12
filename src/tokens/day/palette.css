@@ -1,5 +1,5 @@
 /* Ahimsa Day — raw palette.
-   Warm cream neutrals and muted, warm-adjusted accents. These are raw
+   Newsprint neutrals — near-black ink on off-white paper, a breath of cool blue — and accents desaturated to a hint. These are raw
    values; components must reference the semantic aliases in semantic.css,
    never a step from this file.
 
@@ -7,17 +7,17 @@
    danger value anywhere in this palette — errors use warm clay. */
 
 .ahimsa-day {
-  /* ---- Neutral: warm cream -> warm dark brown. The workhorse. ---- */
-  --neutral-50:  #faf8f5; /* softest cream — elevated surfaces, sheets, cards */
-  --neutral-100: #f4f0ea; /* very light cream — inline elevated blocks */
-  --neutral-200: #ebe6df; /* canvas — the default app background */
-  --neutral-300: #e0dcd5; /* sunk / recessed surfaces */
-  --neutral-400: #b8b0a4; /* disabled state, faint text */
-  --neutral-500: #8a8078; /* muted mid-tone */
-  --neutral-600: #605850; /* secondary text */
-  --neutral-700: #3d3428; /* body text */
-  --neutral-800: #2a1f18; /* heading text — darkest warm brown */
-  --neutral-900: #1a1310; /* inverse surface */
+  /* ---- Neutral: paper -> ink. Faintly cool, in step with Night's blue-black. The workhorse. ---- */
+  --neutral-50: #f8f8f6; /* softest cream — elevated surfaces, sheets, cards */
+  --neutral-100: #f1f1ef; /* very light cream — inline elevated blocks */
+  --neutral-200: #e7e7e4; /* canvas — the default app background */
+  --neutral-300: #dadad7; /* sunk / recessed surfaces */
+  --neutral-400: #b1b3b5; /* disabled state, faint text */
+  --neutral-500: #878b90; /* muted mid-tone */
+  --neutral-600: #5b5f66; /* secondary text */
+  --neutral-700: #2d3036; /* body text */
+  --neutral-800: #17191e; /* heading text — darkest warm brown */
+  --neutral-900: #0c0e12; /* inverse surface */
 
   /* ================================================================
      The ahimsa-tradition accents — the recommended family.
@@ -28,47 +28,47 @@
      skies). Nothing high-chroma, nothing "poppy".
      ================================================================ */
 
-  --saffron-300: #f8b877;
-  --saffron-400: #f29e4e;
-  --saffron-500: #e8862e;
-  --saffron-600: #c96d1e; /* primary saffron — marigold-robe orange */
-  --saffron-700: #a05415;
+  --saffron-300: #d0b89f;
+  --saffron-400: #bf9f81;
+  --saffron-500: #ae8968;
+  --saffron-600: #947153; /* primary saffron — marigold-robe orange */
+  --saffron-700: #755840;
 
-  --turmeric-300: #edd07e;
-  --turmeric-400: #e3b94f;
-  --turmeric-500: #d4a02b;
-  --turmeric-600: #b3841f;
-  --turmeric-700: #8d6716;
+  --turmeric-300: #c8bfa3;
+  --turmeric-400: #b2a480;
+  --turmeric-500: #9c8b63;
+  --turmeric-600: #827250;
+  --turmeric-700: #66593d;
 
-  --clay-300: #dda184;
-  --clay-400: #cd8060;
-  --clay-500: #b96144;
-  --clay-600: #9c4c33; /* fired-earth terracotta */
-  --clay-700: #7c3a27;
+  --clay-300: #c2aa9f;
+  --clay-400: #ac8e81;
+  --clay-500: #967367;
+  --clay-600: #7d5d53; /* fired-earth terracotta */
+  --clay-700: #624841;
 
-  --bodhi-300: #b5cf9e;
-  --bodhi-400: #93b976;
-  --bodhi-500: #729e53;
-  --bodhi-600: #5a8340;
-  --bodhi-700: #456631;
+  --bodhi-300: #b6c1ac;
+  --bodhi-400: #96a689;
+  --bodhi-500: #768869;
+  --bodhi-600: #5e7053;
+  --bodhi-700: #495740;
 
-  --peacock-300: #8ecbd1;
-  --peacock-400: #5fb0bb;
-  --peacock-500: #3b93a3;
-  --peacock-600: #2c7787;
-  --peacock-700: #215d6b;
+  --peacock-300: #a1bbbe;
+  --peacock-400: #7a9ca0;
+  --peacock-500: #597e85;
+  --peacock-600: #46666d;
+  --peacock-700: #365056;
 
-  --indigo-300: #9ba4d6;
-  --indigo-400: #7480c4;
-  --indigo-500: #545fae;
-  --indigo-600: #414a92;
-  --indigo-700: #313876;
+  --indigo-300: #acb0c5;
+  --indigo-400: #8b90ad;
+  --indigo-500: #6e7394;
+  --indigo-600: #585c7b;
+  --indigo-700: #454862;
 
-  --monsoon-300: #9dadc2;
-  --monsoon-400: #7a8fab;
-  --monsoon-500: #5d7492;
-  --monsoon-600: #475b77;
-  --monsoon-700: #36465d;
+  --monsoon-300: #a8aeb7;
+  --monsoon-400: #88919d;
+  --monsoon-500: #6c7683;
+  --monsoon-600: #555d69;
+  --monsoon-700: #414852;
 
   /* ================================================================
      The classic accents — the alternate family.
@@ -82,45 +82,45 @@
      value. Tradition indigo keeps the name; this one moved.
      ================================================================ */
 
-  --amber-300: #f5c391;
-  --amber-400: #ecb078;
-  --amber-500: #d4a574;
-  --amber-600: #b8895a;
-  --amber-700: #96683f;
+  --amber-300: #d2c3b4;
+  --amber-400: #c3b1a1;
+  --amber-500: #b2a496;
+  --amber-600: #97897b;
+  --amber-700: #786a5d;
 
-  --rose-300: #f4bdbf;
-  --rose-400: #ed9fa5;
-  --rose-500: #e08591;
-  --rose-600: #c26875;
-  --rose-700: #9f4e5a;
+  --rose-300: #e0d1d1;
+  --rose-400: #d1bbbd;
+  --rose-500: #bfa6a9;
+  --rose-600: #a2888c;
+  --rose-700: #826b6f;
 
-  --terracotta-300: #d6aa95;
-  --terracotta-400: #c89178;
-  --terracotta-500: #b87859;
-  --terracotta-600: #99613f;
-  --terracotta-700: #7a4a2d;
+  --terracotta-300: #bfb2ac;
+  --terracotta-400: #ac9b94;
+  --terracotta-500: #97847a;
+  --terracotta-600: #7a695f;
+  --terracotta-700: #5f5148;
 
-  --sage-300: #b9cdc0;
-  --sage-400: #9ab5a0;
-  --sage-500: #7a9d7f;
-  --sage-600: #5f8467;
-  --sage-700: #47694f;
+  --sage-300: #bfc7c2;
+  --sage-400: #a2ada4;
+  --sage-500: #849386;
+  --sage-600: #6a796d;
+  --sage-700: #515f54;
 
-  --violet-300: #cebede;
-  --violet-400: #bba8d2;
-  --violet-500: #a692c4;
-  --violet-600: #8c78ac;
-  --violet-700: #705d90;
+  --violet-300: #cec7d5;
+  --violet-400: #bcb4c6;
+  --violet-500: #a9a1b6;
+  --violet-600: #8f879d;
+  --violet-700: #746c81;
 
-  --slate-300: #a5b3c7;
-  --slate-400: #8499b5;
-  --slate-500: #6781a3;
-  --slate-600: #4c6788;
-  --slate-700: #3a516d;
+  --slate-300: #afb5bd;
+  --slate-400: #929ba7;
+  --slate-500: #788392;
+  --slate-600: #5d6977;
+  --slate-700: #49525e;
 
-  --periwinkle-300: #b0b6df;
-  --periwinkle-400: #8590cf;
-  --periwinkle-500: #6571b8;
-  --periwinkle-600: #4d5aa0;
-  --periwinkle-700: #3a4488;
+  --periwinkle-300: #bec0d1;
+  --periwinkle-400: #9a9fba;
+  --periwinkle-500: #7d82a0;
+  --periwinkle-600: #656b88;
+  --periwinkle-700: #515571;
 }

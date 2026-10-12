@@ -2,7 +2,7 @@
 
 ## What this is
 
-A design system: tokens, a framework-free CSS component layer, a generated
+A platform-neutral design system: tokens, a framework-free CSS component layer, a generated
 `tokens.json`, and a documentation site. It has **no runtime dependencies**
 and must keep none. The only devDependency is `axe-core`, used by the
 accessibility gate.

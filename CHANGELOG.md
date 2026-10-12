@@ -7,6 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2026-10-11
+
+Day moves from warm cream to newsprint. This is breaking: colour, gradient
+and shadow values in Day change, and two applications render them.
+
+### Changed
+
+- **Ahimsa Day is now newsprint.** Paper-grey canvas, off-white cards, and
+  near-black ink with a faint cool tint, in step with Night's blue-black.
+  Primary buttons are ink on paper.
+- **Accents are a hint, not a palette.** Every ramp is desaturated; the primary
+  accent and focus ring are deep peacock, links and active tabs are indigo.
+- **All Day gradients are muted**, and `dawn` and `cream` are paper greys.
+  Gradient surface classes were regenerated with re-measured ink.
+- **Shadows, scrim and the docs preview card** are tinted to the new ink.
+- **The system is described as platform-neutral**: for phone, desktop and web
+  interfaces. The CSS is the web reference implementation; `tokens.json`
+  carries the values to other toolkits.
+- The parity baseline was re-baselined to the new Day values.
+
+### Removed
+
+- A reference to grief-support apps in the overview copy.
+
 ## [1.0.0] - 2026-09-26
 
 First release. Extracts a design system that had been living inside a single
