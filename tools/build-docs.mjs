@@ -118,9 +118,11 @@ ${section('premise', 'The premise', 'One sentence, and everything follows from i
      principle of causing no harm. Applied to design, it means refusing the whole
      vocabulary of extractive UX: no dark patterns, no manufactured urgency, no
      shame-based nudges, no red badge dots.`),
-  p(`It belongs to soft-hearted software — journals, personal tools, reading
-     tools, well-being and grief-support apps, correspondence tools — anywhere
-     the product's success genuinely correlates with the user's wellbeing.`))}
+  p(`It is for any visual interface — phone apps, desktop apps, the web, wearables,
+     kiosks — wherever the product's success genuinely correlates with the user's
+     wellbeing. The decisions live in the tokens and the refusals, not in a
+     platform; the CSS is the reference implementation, and
+     <code>tokens.json</code> carries the same values to anything else.`))}
 
 ${section('aesthetics', 'Two aesthetics', 'Day and Night',
   p(`Both are the same system. They share the spacing grid, the corner radii, the
@@ -132,11 +134,11 @@ ${section('aesthetics', 'Two aesthetics', 'Day and Night',
      reading it in Night — a swatch that restyles itself with the page is
      not showing you anything. */
   `      <div class="pair" style="margin-bottom:var(--space-6)">
-        <div style="border-radius:var(--radius-xl);padding:var(--space-6);background:linear-gradient(155deg,#f4a578 0%,#f5be8e 30%,#f6d3a8 60%,#fae7c6 100%);box-shadow:var(--shadow-md)">
-          <p style="margin:0 0 var(--space-3);font-family:'DM Sans',system-ui,sans-serif;font-size:0.625rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#1a1310b0">Ahimsa Day</p>
-          <p style="margin:0 0 var(--space-3);font-family:Fraunces,Georgia,serif;font-size:1.375rem;line-height:1.15;color:#1a1310">Cream, never white. Warm brown ink, never black.</p>
-          <p style="margin:0 0 var(--space-4);font-family:Fraunces,Georgia,serif;font-style:italic;font-size:1.0625rem;line-height:1.35;color:#1a1310d0">The italic serif carries what is felt.</p>
-          <p style="margin:0;font-family:'DM Sans',system-ui,sans-serif;font-size:0.8125rem;line-height:1.4;color:#1a1310cc">Editorial and unhurried. Wide-tracked small caps carry what is known, and depth is warm paper shadow.</p>
+        <div style="border-radius:var(--radius-xl);padding:var(--space-6);background:linear-gradient(155deg,#d9d6d2 0%,#e4e2df 30%,#eeedeb 60%,#f7f6f4 100%);box-shadow:var(--shadow-md)">
+          <p style="margin:0 0 var(--space-3);font-family:'DM Sans',system-ui,sans-serif;font-size:0.625rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#0c0e12b0">Ahimsa Day</p>
+          <p style="margin:0 0 var(--space-3);font-family:Fraunces,Georgia,serif;font-size:1.375rem;line-height:1.15;color:#17191e">Paper, never white. Ink, never black.</p>
+          <p style="margin:0 0 var(--space-4);font-family:Fraunces,Georgia,serif;font-style:italic;font-size:1.0625rem;line-height:1.35;color:#17191ed0">The italic serif carries what is felt.</p>
+          <p style="margin:0;font-family:'DM Sans',system-ui,sans-serif;font-size:0.8125rem;line-height:1.4;color:#17191ecc">Editorial and unhurried. Wide-tracked small caps carry what is known, and depth is soft paper shadow.</p>
         </div>
         <div style="position:relative;overflow:hidden;border-radius:var(--radius-xl);padding:var(--space-6);background:radial-gradient(120% 90% at 50% 0%, #1d2a36 0%, #0e131a 55%, #080b10 100%);box-shadow:var(--shadow-md)">
           <div aria-hidden="true" style="position:absolute;inset:-20%;mix-blend-mode:plus-lighter;opacity:.5;background:radial-gradient(38% 28% at 22% 18%,#3b93a340 0,transparent 70%),radial-gradient(30% 24% at 78% 32%,#545fae33 0,transparent 72%)"></div>

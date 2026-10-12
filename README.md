@@ -1,6 +1,7 @@
 # Ahimsa Design System
 
-A design system rooted in **non-harm**, with two aesthetics.
+A design system rooted in **non-harm**, with two aesthetics, for any visual
+interface — phone apps, desktop apps, the web, and beyond.
 
 > If a design pattern requires the user to lose for the product to win, this
 > system will not produce it.
@@ -34,6 +35,11 @@ Night is **not a dark mode.** It is a sibling aesthetic that happens to be
 dark, and the system deliberately does not wire it to `prefers-color-scheme`.
 
 ## Quick start
+
+The system is platform-neutral: the tokens, proportions and refusals apply to
+any visual interface. The CSS in `dist/` is the web reference implementation,
+and `tokens.json` (W3C DTCG) carries every value to native iOS, Android,
+desktop or any other toolkit. The example below is the web path.
 
 ```html
 <!-- one aesthetic -->

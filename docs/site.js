@@ -13,7 +13,7 @@
     root.classList.add('ahimsa-' + theme);
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) {
-      meta.setAttribute('content', theme === 'night' ? '#0e131a' : '#ebe6df');
+      meta.setAttribute('content', theme === 'night' ? '#0e131a' : '#e7e7e4');
     }
     document.querySelectorAll('[data-theme-btn]').forEach(function (b) {
       var on = b.getAttribute('data-theme-btn') === theme;

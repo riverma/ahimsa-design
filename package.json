@@ -1,7 +1,7 @@
 {
   "name": "ahimsa-design",
-  "version": "1.0.0",
-  "description": "A design system rooted in non-harm. Two aesthetics: Ahimsa Day and Ahimsa Night.",
+  "version": "2.0.0",
+  "description": "A design system rooted in non-harm, for any visual interface. Two aesthetics: Ahimsa Day and Ahimsa Night.",
   "license": "MIT",
   "homepage": "https://ahimsa-design.riverma.com",
   "repository": {

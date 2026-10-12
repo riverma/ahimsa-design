@@ -1,16 +1,20 @@
 ---
 name: ahimsa-design
-description: Build an interface with the Ahimsa design system — a non-harm design language with two aesthetics (Day, warm and editorial; Night, dark and futuristic). Use when generating UI that should be calm, non-extractive, and accessible, or when a project already ships Ahimsa tokens.
+description: Build an interface with the Ahimsa design system — a non-harm design language with two aesthetics (Day, warm and editorial; Night, dark and futuristic). Use when generating UI on any platform (web, mobile, desktop) that should be calm, non-extractive, and accessible, or when a project already ships Ahimsa tokens.
 ---
 
 # Ahimsa Design System
 
-A design system rooted in non-harm, with two aesthetics. One premise:
+A design system rooted in non-harm, with two aesthetics, for any visual
+interface — phone, desktop or web. One premise:
 
 > If a design pattern requires the user to lose for the product to win, this
 > system will not produce it.
 
 ## Setup
+
+The web path is below. For a native app, read the values from `tokens.json`
+and keep the same semantic names, proportions and refusals.
 
 Link one stylesheet and put the theme class on `<html>`:
 
