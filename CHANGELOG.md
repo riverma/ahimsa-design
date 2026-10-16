@@ -7,6 +7,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.1.0] - 2026-10-16
+
+Day's sky is a light gray with soft white clouds, in place of the warm haze
+and the sun. No token value moves, so this is a minor release: `.ah-sky`
+composes two new tokens instead of two existing ones.
+
+### Changed
+
+- **`.ah-sky` is a light gray sky with soft white clouds.** A quiet neutral
+  gray, a touch deeper overhead, under three large cloud banks blurred until
+  no edge survives. They sit in a fixed arrangement and never move: Day's
+  counterpart to Night's stars. The docs site's Day ground follows.
+
+### Added
+
+- `--gradient-sky`: the sky, top to bottom (180deg, the one exception to
+  155deg besides cream), with a generated `.ah-surface--sky`.
+- `--ambient-clouds`: the clouds as a static SVG, in the new
+  `src/ambient/clouds.css`, shipped in the Day and combined bundles. Each
+  puff is translucent white, so nothing is pure white.
+
+### Deprecated
+
+- `--gradient-sun`. `.ah-sky` no longer uses it; 4.0 removes it.
+  `--gradient-dawn` stays, as a surface of its own.
+
+### Fixed
+
+- The docs site now shows its sky. `.ah-page` painted the flat canvas over
+  the page background, so neither 3.0's sun nor Night's stars were visible
+  behind the docs.
+
 ## [3.0.0] - 2026-10-16
 
 Both aesthetics are recolored, Night now speaks in Day's type, and Night now
@@ -161,5 +193,8 @@ Deviations from the token set this was extracted from, each declared in
 - **A name collision.** Two different blue-violets were both called
   `--indigo-*`; the lighter one is now `--periwinkle-*`.
 
-[Unreleased]: https://github.com/riverma/ahimsa-design/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/riverma/ahimsa-design/compare/v3.1.0...HEAD
+[3.1.0]: https://github.com/riverma/ahimsa-design/compare/v3.0.0...v3.1.0
+[3.0.0]: https://github.com/riverma/ahimsa-design/compare/v2.0.0...v3.0.0
+[2.0.0]: https://github.com/riverma/ahimsa-design/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/riverma/ahimsa-design/releases/tag/v1.0.0

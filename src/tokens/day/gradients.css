@@ -2,9 +2,9 @@
    All 155 degrees (cream is 170 for large horizontal surfaces), stops
    always at 0 / 30 / 60 / 100%. Named by feeling.
 
-   Day is lit by a sun. --gradient-dawn is the sky (a warm haze that cools
-   toward the far corner) and --gradient-sun is the light falling on it from
-   the top left. Together they are .ah-sky. Everything else is a moment of
+   Day is a light gray sky with soft white clouds. --gradient-sky is the
+   sky (a quiet gray, a touch deeper overhead) and --ambient-clouds lays the
+   clouds over it. Together they are .ah-sky. Everything else is a moment of
    emphasis.
 
    The rule: ONE GRADIENT OWNS A SCREEN. The sky counts as the ground, not
@@ -13,13 +13,19 @@
    No repeating patterns, no textures, no photography direction. */
 
 .ahimsa-day {
-  /* ---- The sky ---- */
+  /* ---- The sky. Lit from above, so it runs top to bottom: 180 degrees,
+     the one exception to 155 besides cream. Neutral gray, so the white of
+     the clouds is the only light in it. ---- */
+  --gradient-sky:   linear-gradient(180deg, #dcdcdc 0%, #e3e3e3 30%, #e9e9e9 60%, #efefef 100%);
+
+  /* ---- The warm haze. The sky before 3.1; still a surface of its own. ---- */
   --gradient-dawn:  linear-gradient(155deg, #fbf3e6 0%, #f3ece2 30%, #e9e6e0 60%, #dfe1e0 100%);
   --gradient-cream: linear-gradient(170deg, #fcf8ef 0%, #f4eee4 50%, #e7e3dc 100%);
 
-  /* The one radial in Day, and the sun itself: a warm light that falls
-     away to nothing before it reaches the middle of the screen. It is a
-     layer to put over --gradient-dawn, never a surface of its own. */
+  /* DEPRECATED in 3.1: .ah-sky no longer uses it, and 4.0 removes it.
+     The one radial in Day, a warm light that falls away to nothing before
+     it reaches the middle of the screen. It was the 3.0 sky's sun, a layer
+     over --gradient-dawn, never a surface of its own. */
   --gradient-sun: radial-gradient(60% 55% at 14% -4%, #fff0b0e6 0%, #fff0b000 70%);
 
   /* ---- The ahimsa-tradition set ---- */

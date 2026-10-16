@@ -4,10 +4,12 @@
    nothing but layout for the specimen pages themselves. */
 
 /* The page is lit by its own sky. The gradient lives on <html> (the canvas)
-   and body stays transparent, so the stars can sit between the two. Both
+   and body stays transparent, so the stars can sit between the two (Day's
+   clouds are a layer of the html background itself). Both
    layers are decorative and fixed; the flat canvas color is the fallback. */
 html.ahimsa-day {
-  background: var(--gradient-sun), var(--gradient-dawn), var(--surface-canvas-flat);
+  background: var(--ambient-clouds), var(--gradient-sky), var(--surface-canvas-flat);
+  background-size: 100% 100%, auto, auto;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
@@ -34,6 +36,9 @@ body {
   background: transparent;
   min-height: 100%;
 }
+/* .ah-page paints the flat canvas, which would hide the sky and the stars
+   on <html>. On this site the page is see-through and the sky is the ground. */
+.ah-page { background: transparent; }
 
 /* ---- Site header. In the flow, not fixed: a bar that follows you down the
    page is a small, permanent claim on attention. ---- */

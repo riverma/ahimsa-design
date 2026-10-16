@@ -6,7 +6,7 @@ const DEV = /const DEVIATIONS = \{([\s\S]*?)\n\};/.exec(readFileSync('tools/chec
 const deviations = [...(DEV ? DEV[1] : '').matchAll(/'(--[a-z-]+)':\s*'([^']*)'/g)].map((m) => [m[1], m[2]]);
 
 const MOVES_DAY = [
-  ['Paper, never white. Cocoa ink, never black.', 'Pure black on pure white is harsher than any screen needs, and it reads as clinical. Under it, a sun-lit sky: warm haze, with light falling from the top left.'],
+  ['Paper, never white. Cocoa ink, never black.', 'Pure black on pure white is harsher than any screen needs, and it reads as clinical. Under it, a light gray sky with soft white clouds that never move.'],
   ['Two voices in type.', 'An italic serif for what is felt, wide-tracked small caps for what is known. The split is the tone.'],
   ['Rounded at every scale. A bottom rule, not a box.', 'Sharp corners carry an implicit threat; a box around a field implies something being collected.'],
   ['One gradient owns a screen, with frosted glass on top.', 'Emphasis is a moment, not a texture. Two gradients side by side is the rule this system breaks least gladly.'],

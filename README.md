@@ -18,7 +18,7 @@ documentation site, built with the system it documents.
 
 |  | **Ahimsa Day** | **Ahimsa Night** |
 |---|---|---|
-| Ground | Warm paper under a sun-lit sky, never white | Deep midnight under a faint field of stars, never pure black |
+| Ground | Warm paper under a light gray sky with soft white clouds, never white | Deep midnight under a faint field of stars, never pure black |
 | Ink | Cocoa, never black | Frost, never pure white |
 | Felt | Italic serif (Fraunces) | Italic serif (Fraunces) |
 | Known | Wide-tracked small caps (DM Sans) | Wide-tracked small caps (DM Sans) |

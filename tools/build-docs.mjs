@@ -142,11 +142,11 @@ ${section('aesthetics', 'Two aesthetics', 'Day and Night',
      reading it in Night — a swatch that restyles itself with the page is
      not showing you anything. */
   `      <div class="pair" style="margin-bottom:var(--space-6)">
-        <div style="position:relative;overflow:hidden;border-radius:var(--radius-xl);padding:var(--space-6);background:radial-gradient(60% 55% at 14% -4%,#fff0b0e6 0%,#fff0b000 70%),linear-gradient(155deg,#fbf3e6 0%,#f3ece2 30%,#e9e6e0 60%,#dfe1e0 100%);box-shadow:var(--shadow-md)">
+        <div style="position:relative;overflow:hidden;border-radius:var(--radius-xl);padding:var(--space-6);background:var(--ambient-clouds) 0 0/100% 100% no-repeat,linear-gradient(180deg,#dcdcdc 0%,#e3e3e3 30%,#e9e9e9 60%,#efefef 100%);box-shadow:var(--shadow-md)">
           <p style="margin:0 0 var(--space-3);font-family:'DM Sans',system-ui,sans-serif;font-size:0.625rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#1c1410b0">Ahimsa Day</p>
           <p style="margin:0 0 var(--space-3);font-family:Fraunces,Georgia,serif;font-size:1.375rem;line-height:1.15;color:#30221c">Paper, never white. Ink, never black.</p>
           <p style="margin:0 0 var(--space-4);font-family:Fraunces,Georgia,serif;font-style:italic;font-size:1.0625rem;line-height:1.35;color:#30221cd0">The italic serif carries what is felt.</p>
-          <p style="margin:0;font-family:'DM Sans',system-ui,sans-serif;font-size:0.8125rem;line-height:1.4;color:#30221ccc">Editorial and unhurried. Wide-tracked small caps carry what is known, the sun falls from the top left, and depth is soft paper shadow.</p>
+          <p style="margin:0;font-family:'DM Sans',system-ui,sans-serif;font-size:0.8125rem;line-height:1.4;color:#30221ccc">Editorial and unhurried. Wide-tracked small caps carry what is known, soft white clouds drift over a light gray sky, and depth is soft paper shadow.</p>
         </div>
         <div style="position:relative;overflow:hidden;border-radius:var(--radius-xl);padding:var(--space-6);background:linear-gradient(155deg,#060914 0%,#0a1124 30%,#101a35 60%,#182648 100%);box-shadow:var(--shadow-md)">
           <div aria-hidden="true" style="position:absolute;inset:0;background-image:var(--ambient-stars);background-size:100% 100%;background-repeat:no-repeat"></div>
@@ -200,7 +200,7 @@ const foundations = page({
     </section>
 
 ${section('color', 'Color', 'Never pure white, never pure black',
-  p(`The canvas is warm paper under a sun-lit sky, and the darkest ink is cocoa. Pure black on
+  p(`The cards are warm paper under a light gray sky with soft white clouds, and the darkest ink is cocoa. Pure black on
      pure white is a harsher contrast than any screen needs, and it reads as
      clinical — so the system does not contain either. Night holds the same law
      from the other end: its deepest ground is <code>#060914</code> and its
@@ -380,7 +380,7 @@ ${section('ambient', 'Ambient', 'Night\'s field, and why it asks for nothing',
   p(`The quietest layer is <code>.ah-ambient--stars</code>: a faint, static field
      of stars in a fixed arrangement, so the sky is the same every night. It
      does not twinkle and it never moves. Day has its counterpart in
-     <code>.ah-sky</code>, a warm haze with the sun falling from the top left.
+     <code>.ah-sky</code>, a light gray sky with three large, soft white clouds that never move.
      Both are the ground a screen sits on, and neither carries meaning.`),
   `      <div class="spec" style="margin-bottom:var(--space-6)">
         <p class="ah-caps" style="margin:0">The layer, composed</p>
