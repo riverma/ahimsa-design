@@ -1,74 +1,79 @@
 /* Ahimsa Day — raw palette.
-   Newsprint neutrals — near-black ink on off-white paper, a breath of cool blue — and accents desaturated to a hint. These are raw
-   values; components must reference the semantic aliases in semantic.css,
-   never a step from this file.
+   Warm paper and cocoa ink under a sun-lit sky, with accents that carry a
+   little more life than the newsprint they replace. These are raw values;
+   components must reference the semantic aliases in semantic.css, never a
+   step from this file.
 
    Never pure white, never pure black. There is intentionally NO bright-red
-   danger value anywhere in this palette — errors use warm clay. */
+   danger value anywhere in this palette — errors use warm clay.
+
+   Each accent family is anchored on its -600 step (the chosen color, which
+   clears 4.5:1 on a card). Lighter steps are tints toward paper; -700 is a
+   shade toward the darkest ink. */
 
 .ahimsa-day {
-  /* ---- Neutral: paper -> ink. Faintly cool, in step with Night's blue-black. The workhorse. ---- */
-  --neutral-50: #f8f8f6; /* softest cream — elevated surfaces, sheets, cards */
-  --neutral-100: #f1f1ef; /* very light cream — inline elevated blocks */
-  --neutral-200: #e7e7e4; /* canvas — the default app background */
-  --neutral-300: #dadad7; /* sunk / recessed surfaces */
-  --neutral-400: #b1b3b5; /* disabled state, faint text */
-  --neutral-500: #878b90; /* muted mid-tone */
-  --neutral-600: #5b5f66; /* secondary text */
-  --neutral-700: #2d3036; /* body text */
-  --neutral-800: #17191e; /* heading text — darkest warm brown */
-  --neutral-900: #0c0e12; /* inverse surface */
+  /* ---- Neutral: paper -> ink. Warm, in step with the sun. The workhorse. ---- */
+  --neutral-50: #f7f6f1; /* chalk — elevated surfaces, sheets, cards */
+  --neutral-100: #f1eee6; /* inline elevated blocks */
+  --neutral-200: #ece6dc; /* canvas — the flat fallback under the sky */
+  --neutral-300: #e0dbd1; /* sunk / recessed surfaces */
+  --neutral-400: #b5aea6; /* disabled state, faint text */
+  --neutral-500: #8a8179; /* muted mid-tone */
+  --neutral-600: #5e5149; /* secondary text */
+  --neutral-700: #3a2c25; /* body text */
+  --neutral-800: #30221c; /* cocoa — heading text */
+  --neutral-900: #1c1410; /* inverse surface */
 
   /* ================================================================
      The ahimsa-tradition accents — the recommended family.
      Named for the tradition the system takes its ethics from:
      saffron (renunciate robes), turmeric (ritual gold), clay (earthen
      lamps), bodhi (the fig tree of awakening), peacock (India's bird),
-     indigo (the Champaran satyagraha crop), monsoon (grey-blue rain
+     indigo (the Champaran satyagraha crop), monsoon (gray-blue rain
      skies). Nothing high-chroma, nothing "poppy".
      ================================================================ */
 
-  --saffron-300: #d0b89f;
-  --saffron-400: #bf9f81;
-  --saffron-500: #ae8968;
-  --saffron-600: #947153; /* primary saffron — marigold-robe orange */
-  --saffron-700: #755840;
+  --saffron-300: #e0c0a3;
+  --saffron-400: #d4a278;
+  --saffron-500: #c37a40;
+  --saffron-600: #b4560d; /* Marigold Robe — the saffron of renunciate robes */
+  --saffron-700: #80400e;
 
-  --turmeric-300: #c8bfa3;
-  --turmeric-400: #b2a480;
-  --turmeric-500: #9c8b63;
-  --turmeric-600: #827250;
-  --turmeric-700: #66593d;
+  --turmeric-300: #d4c69f;
+  --turmeric-400: #c0ad72;
+  --turmeric-500: #a58b36;
+  --turmeric-600: #8c6c00; /* Gold Leaf — ritual gold */
+  --turmeric-700: #664e05;
 
-  --clay-300: #c2aa9f;
-  --clay-400: #ac8e81;
-  --clay-500: #967367;
-  --clay-600: #7d5d53; /* fired-earth terracotta */
-  --clay-700: #624841;
+  --clay-300: #ddbead;
+  --clay-400: #ce9f89;
+  --clay-500: #ba7659;
+  --clay-600: #a8502e; /* Kiln — fired-earth terracotta */
+  --clay-700: #783c24;
 
-  --bodhi-300: #b6c1ac;
-  --bodhi-400: #96a689;
-  --bodhi-500: #768869;
-  --bodhi-600: #5e7053;
-  --bodhi-700: #495740;
+  --bodhi-300: #bfccad;
+  --bodhi-400: #9db789;
+  --bodhi-500: #709a5a;
+  --bodhi-600: #46802f; /* Young Leaf — the new growth of the awakening tree */
+  --bodhi-700: #385b24;
 
-  --peacock-300: #a1bbbe;
-  --peacock-400: #7a9ca0;
-  --peacock-500: #597e85;
-  --peacock-600: #46666d;
-  --peacock-700: #365056;
+  --peacock-300: #adcbc2;
+  --peacock-400: #7fb4ac;
+  --peacock-500: #42968f;
+  --peacock-600: #0a7a75; /* Verdigris — the primary peacock */
+  --peacock-700: #105753;
 
-  --indigo-300: #acb0c5;
-  --indigo-400: #8b90ad;
-  --indigo-500: #6e7394;
-  --indigo-600: #585c7b;
-  --indigo-700: #454862;
+  --indigo-300: #c0becf;
+  --indigo-400: #9f9ec2;
+  --indigo-500: #7375b0;
+  --indigo-600: #4a4fa0; /* Champaran — the satyagraha crop */
+  --indigo-700: #3a3b6f;
 
-  --monsoon-300: #a8aeb7;
-  --monsoon-400: #88919d;
-  --monsoon-500: #6c7683;
-  --monsoon-600: #555d69;
-  --monsoon-700: #414852;
+  --monsoon-300: #c4c5c4;
+  --monsoon-400: #a5aaaf;
+  --monsoon-500: #7c8793;
+  --monsoon-600: #56677a; /* Rain Cloud — monsoon skies */
+  --monsoon-700: #424b56;
 
   /* ================================================================
      The classic accents — the alternate family.

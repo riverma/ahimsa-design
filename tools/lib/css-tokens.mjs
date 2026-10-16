@@ -24,7 +24,7 @@ export function toPx(v) {
   return null;
 }
 
-/* Normalise for comparison: 0.0 == 0, cubic-bezier spacing, hex case. */
+/* Normalize for comparison: 0.0 == 0, cubic-bezier spacing, hex case. */
 export function norm(v) {
   return String(v)
     .toLowerCase()

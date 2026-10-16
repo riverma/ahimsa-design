@@ -5,7 +5,7 @@
 <!-- viewport-fit=cover for safe areas. Note what is absent: no
      maximum-scale, no user-scalable=no. Pinch zoom always stays. -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#e7e7e4">
+<meta name="theme-color" content="#ece6dc">
 <meta name="color-scheme" content="light dark">
 <title>Principles — Ahimsa Design System</title>
 <meta name="description" content="The premise, the voice, the five moves, and the full list of refusals.">
@@ -39,7 +39,7 @@
       <p class="ah-caps ah-caps--rule" style="margin:0">Principles</p>
       <h1 class="ah-display-l heading-ink" style="margin:0">What this system is for, and what it will not do</h1>
       <p class="ah-prose hero__lede" style="margin:0">
-        The refusals are as much a part of Ahimsa as the colour tokens. Adopting
+        The refusals are as much a part of Ahimsa as the color tokens. Adopting
         the look without them produces something that is merely warm, which is
         worse than neither — warmth is not camouflage.
       </p>
@@ -90,7 +90,7 @@
     <section class="ah-section" id="voice">
       <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Voice</p>
       <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">How Ahimsa writes</h2>
-      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">The voice is as much a part of the system as the colour tokens, and it is
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">The voice is as much a part of the system as the color tokens, and it is
      the part most often dropped in adoption.</p>
       <ul class="ah-prose ah-measure" style="margin:0 0 var(--space-6);padding-left:1.2em;display:grid;gap:var(--space-3)">
         <li><strong>Warm, plain, unhurried.</strong> Short declarative sentences. No exclamation marks, no ALL-CAPS urgency, no growth-hacky punch. "A quiet place to begin." not "Get started now — don't miss out!"</li>
@@ -108,15 +108,15 @@
     <section class="ah-section" id="moves">
       <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">The fingerprint</p>
       <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">The five moves</h2>
-      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Preserve these and the system stays recognisable; drop one and it stops
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Preserve these and the system stays recognizable; drop one and it stops
      being Ahimsa. <em>A note on provenance: the original card naming these was
      lost. What follows is reconstructed from the shipped system, and is
-     labelled as a reconstruction rather than presented as recovered.</em></p>
+     labeled as a reconstruction rather than presented as recovered.</em></p>
       <div class="pair">
         <div class="ah-card">
           <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Ahimsa Day</p>
           <ol class="ah-body" style="margin:0;padding-left:1.3em;display:grid;gap:var(--space-3)">
-            <li><strong>Cream, never white. Warm brown ink, never black.</strong><br><span class="secondary">Pure black on pure white is harsher than any screen needs, and it reads as clinical.</span></li>
+            <li><strong>Paper, never white. Cocoa ink, never black.</strong><br><span class="secondary">Pure black on pure white is harsher than any screen needs, and it reads as clinical. Under it, a sun-lit sky: warm haze, with light falling from the top left.</span></li>
             <li><strong>Two voices in type.</strong><br><span class="secondary">An italic serif for what is felt, wide-tracked small caps for what is known. The split is the tone.</span></li>
             <li><strong>Rounded at every scale. A bottom rule, not a box.</strong><br><span class="secondary">Sharp corners carry an implicit threat; a box around a field implies something being collected.</span></li>
             <li><strong>One gradient owns a screen, with frosted glass on top.</strong><br><span class="secondary">Emphasis is a moment, not a texture. Two gradients side by side is the rule this system breaks least gladly.</span></li>
@@ -126,8 +126,8 @@
         <div class="ah-card">
           <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Ahimsa Night</p>
           <ol class="ah-body" style="margin:0;padding-left:1.3em;display:grid;gap:var(--space-3)">
-            <li><strong>Deep blue-black, never pure black. Ice, never pure white.</strong><br><span class="secondary">The same colour law as Day, held from the other end.</span></li>
-            <li><strong>Ultralight sans for what is felt, mono for what is measured.</strong><br><span class="secondary">Night has no serif. The emotional register is weight and space instead.</span></li>
+            <li><strong>Deep midnight, never pure black. Frost, never pure white.</strong><br><span class="secondary">The same color law as Day, held from the other end, under a faint static field of stars.</span></li>
+            <li><strong>The same type as Day.</strong><br><span class="secondary">Fraunces for what is felt, DM Sans for what is known. A person moving between Day and Night has not moved between two products.</span></li>
             <li><strong>Structure by hairline and glow, not shadow.</strong><br><span class="secondary">A drop shadow is invisible on a dark ground. An inset ring draws the edge; light does the lifting.</span></li>
             <li><strong>One field owns a screen, and it is ambient — never information.</strong><br><span class="secondary">The decorative layer has no state and nothing that can be missed by ignoring it.</span></li>
             <li><strong>Light that breathes slower than you.</strong><br><span class="secondary">Nothing pulses faster than 0.1Hz, and nothing animates position.</span></li>
@@ -166,9 +166,9 @@
         <p class="ah-caps" style="margin:0 0 var(--space-3)">The audit, before you ship</p>
         <ol class="ah-body" style="margin:0;padding-left:1.3em;display:grid;gap:var(--space-2)">
           <li>Does anything appear that the person did not cause? Run <code>tools/check-attention.mjs</code> and then look with your own eyes.</li>
-          <li>Is every escape hatch a real control at equal metrics, labelled for what it is?</li>
+          <li>Is every escape hatch a real control at equal metrics, labeled for what it is?</li>
           <li>Is any number on screen capable of reading as a score, a streak, or a shortfall?</li>
-          <li>Does any colour carry meaning that no word or shape also carries?</li>
+          <li>Does any color carry meaning that no word or shape also carries?</li>
           <li>If a control fails, does the person find out — and are they told what is still true?</li>
           <li>Can every interaction be completed without a drag, a hover, or a gesture?</li>
           <li>Does anything claim an outcome the app cannot actually verify?</li>
@@ -179,22 +179,22 @@
 
     <section class="ah-section" id="themes">
       <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">A note on themes</p>
-      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Night is not a dark mode</h2>
-      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Day and Night are different characters, not different brightnesses. Night
-     has its own type voice, its own approach to elevation, and its own ambient
-     layer; it is a sibling aesthetic that happens to be dark.</p>
-      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">So the system deliberately does not wire the theme to
-     <code>prefers-color-scheme</code>. Flipping an interface's whole character
-     because of an operating-system setting is exactly the kind of surprise this
-     system refuses — and someone who set their OS to dark at night did not ask
-     your app to become a different product. Let a person choose, and remember
-     what they chose.</p>
+      <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Follow the operating system</h2>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Night is the dark aesthetic. It has its own type voice, its own approach
+     to elevation, and its own ambient layer, but it is also what a person who
+     has asked their device for a dark appearance should get.</p>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">So with no stored choice, start in Night when
+     <code>prefers-color-scheme: dark</code> matches and in Day otherwise, and
+     follow the system if it changes. Once someone picks a theme inside your
+     app, that choice wins and is remembered. A person who set their device to
+     dark has already said what they need; making them say it again in every
+     app is a small harm this system declines to cause.</p>
     </section>
 
   </main>
 
   <footer class="site-foot">
-    <p class="ah-caption" style="margin:0">Ahimsa Design System v2.0.0 · MIT · fonts under SIL OFL-1.1</p>
+    <p class="ah-caption" style="margin:0">Ahimsa Design System v3.0.0 · MIT · fonts under SIL OFL-1.1</p>
     <p class="ah-caption" style="margin:0">No analytics. No cookies. Nothing here is loaded over a network.</p>
   </footer>
 

@@ -108,8 +108,8 @@ system specifically refuses.
 2. **Never emit red.** There is no red token. If you are reaching for one, the
    thing you are building is probably refused for a second reason too.
 3. **Every destructive or leaving action gets an equal-weight escape** —
-   `.ah-btn` beside `.ah-btn.ah-btn--ghost`, labelled warmly ("Keep it", "Not
-   now"), never grey text and never confirmshaming.
+   `.ah-btn` beside `.ah-btn.ah-btn--ghost`, labeled warmly ("Keep it", "Not
+   now"), never gray text and never confirmshaming.
 4. **Every interactive element is a real element** with an accessible name,
    reachable by keyboard, at a 44px target (`.ah-hit` if the painted control
    is smaller), acting on pointer-up so a mis-touch can be aborted.
@@ -118,7 +118,7 @@ system specifically refuses.
 7. **No numbers as pressure** — no streaks, no scores, no countdowns, no
    "only N left".
 8. **No emoji and no icon set.** A few restrained unicode glyphs (`←`, `×`,
-   `+`, `·`) are acceptable, set in the type and never coloured.
+   `+`, `·`) are acceptable, set in the type and never colored.
 9. **Never claim what you cannot verify.** "Ready for your calendar", not
    "Added".
 10. **Never fail silently.** Say what happened, and say what is still true.

@@ -3,8 +3,35 @@
    the system, which is the only honest way to document it. This file adds
    nothing but layout for the specimen pages themselves. */
 
+/* The page is lit by its own sky. The gradient lives on <html> (the canvas)
+   and body stays transparent, so the stars can sit between the two. Both
+   layers are decorative and fixed; the flat canvas color is the fallback. */
+html.ahimsa-day {
+  background: var(--gradient-sun), var(--gradient-dawn), var(--surface-canvas-flat);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+html.ahimsa-night {
+  background: var(--gradient-midnight), var(--surface-canvas-flat);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.ahimsa-night body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: var(--ambient-stars);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+@media (forced-colors: active) {
+  html.ahimsa-day, html.ahimsa-night { background: Canvas; }
+  .ahimsa-night body::before { display: none; }
+}
 body {
-  background: var(--surface-canvas);
+  background: transparent;
   min-height: 100%;
 }
 
@@ -26,7 +53,6 @@ body {
   text-decoration: none;
   letter-spacing: -0.01em;
 }
-.ahimsa-night .site-mark { font-weight: 200; letter-spacing: 0.06em; }
 .site-nav { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: baseline; }
 .site-nav a {
   color: var(--text-secondary);
@@ -38,9 +64,8 @@ body {
 }
 .site-nav a[aria-current="page"] { color: var(--text-heading); }
 
-/* The theme switch is a control you press. It does not follow your OS,
-   because Day and Night are different characters rather than different
-   brightnesses. */
+/* The theme switch is a control you press. Until you do, the site follows
+   your operating system's appearance; once you do, your choice wins. */
 .theme-switch { display: flex; gap: 4px; align-items: center; }
 
 .site-foot {
@@ -100,7 +125,7 @@ body {
 .ramp { display: grid; grid-template-columns: repeat(auto-fit, minmax(72px, 1fr)); gap: 2px; }
 /* The label sits BELOW its swatch, on the page background, rather than
    inside it. A mid-tone swatch cannot host legible text in either ink, and
-   a colour chart whose labels you cannot read is not a colour chart. */
+   a color chart whose labels you cannot read is not a color chart. */
 .ramp__step { display: grid; gap: 4px; }
 .ramp__chip { aspect-ratio: 1 / 1; border-radius: var(--radius-xs); }
 .ramp__step code {
@@ -137,7 +162,7 @@ body {
   gap: var(--space-3);
   align-content: start;
 }
-/* A full ring, not a left accent. "No coloured-left-border cards, no hard
+/* A full ring, not a left accent. "No colored-left-border cards, no hard
    outlines" is one of this system's own rules, and a 3px stripe down one
    edge was quietly breaking it. The ring uses the same ink as the label,
    so the panel reads as one marked thing rather than a card wearing a
@@ -150,7 +175,7 @@ body {
 /* The -700 step, not --accent-success / --accent-warning. Those are tuned
    as fills and marks; at 10px they sit around 4.2:1 and owe 4.5:1. */
 .ahimsa-day   { --ah-yes-ink: var(--bodhi-700); --ah-no-ink: var(--clay-700); }
-.ahimsa-night { --ah-yes-ink: var(--bodhi-200); --ah-no-ink: var(--ember-200); }
+.ahimsa-night { --ah-yes-ink: var(--bodhi-200); --ah-no-ink: var(--clay-200); }
 
 /* ---- Tables ---- */
 .tbl { width: 100%; border-collapse: collapse; font-size: var(--size-base); }

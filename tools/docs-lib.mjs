@@ -32,12 +32,12 @@ export function tokens(theme) {
 export function val(t, name) { return resolve(t, t.get(name)); }
 
 /* Pick ink that reads on a given swatch, so the specimen labels themselves
-   are legible. A colour chart you cannot read is not a colour chart. */
+   are legible. A color chart you cannot read is not a color chart. */
 export function inkOn(hex) {
   const bg = parseHex(hex);
   if (!bg) return '#141414';
-  const dark = parseHex('#1a1310'), light = parseHex('#eef2f7');
-  return contrast(dark, bg) >= contrast(light, bg) ? '#1a1310' : '#eef2f7';
+  const dark = parseHex('#1a1310'), light = parseHex('#e4eef5');
+  return contrast(dark, bg) >= contrast(light, bg) ? '#1a1310' : '#e4eef5';
 }
 
 export function page({ file, title, lede, body, theme = 'day' }) {
@@ -52,7 +52,7 @@ export function page({ file, title, lede, body, theme = 'day' }) {
 <!-- viewport-fit=cover for safe areas. Note what is absent: no
      maximum-scale, no user-scalable=no. Pinch zoom always stays. -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#e7e7e4">
+<meta name="theme-color" content="#ece6dc">
 <meta name="color-scheme" content="light dark">
 <title>${esc(title)} — Ahimsa Design System</title>
 <meta name="description" content="${esc(lede)}">

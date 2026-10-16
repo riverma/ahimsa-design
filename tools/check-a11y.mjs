@@ -81,7 +81,7 @@ for (const f of cssFiles) {
     const sel = m[1].trim(), body = m[2];
     if (!/color:\s*var\(--text-muted\)/.test(body)) continue;
     /* a background or a border in --text-muted is non-text and fine */
-    fails.push(`${f}  "${sel.slice(0, 60)}" sets text colour to --text-muted, which does not clear 4.5:1. Use --text-secondary.`);
+    fails.push(`${f}  "${sel.slice(0, 60)}" sets text color to --text-muted, which does not clear 4.5:1. Use --text-secondary.`);
   }
 }
 

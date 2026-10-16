@@ -6,15 +6,15 @@ const DEV = /const DEVIATIONS = \{([\s\S]*?)\n\};/.exec(readFileSync('tools/chec
 const deviations = [...(DEV ? DEV[1] : '').matchAll(/'(--[a-z-]+)':\s*'([^']*)'/g)].map((m) => [m[1], m[2]]);
 
 const MOVES_DAY = [
-  ['Cream, never white. Warm brown ink, never black.', 'Pure black on pure white is harsher than any screen needs, and it reads as clinical.'],
+  ['Paper, never white. Cocoa ink, never black.', 'Pure black on pure white is harsher than any screen needs, and it reads as clinical. Under it, a sun-lit sky: warm haze, with light falling from the top left.'],
   ['Two voices in type.', 'An italic serif for what is felt, wide-tracked small caps for what is known. The split is the tone.'],
   ['Rounded at every scale. A bottom rule, not a box.', 'Sharp corners carry an implicit threat; a box around a field implies something being collected.'],
   ['One gradient owns a screen, with frosted glass on top.', 'Emphasis is a moment, not a texture. Two gradients side by side is the rule this system breaks least gladly.'],
   ['Motion that settles.', 'Every easing ends at 1.0 with nothing above it, so no transition can bounce. Settling, not pouncing.'],
 ];
 const MOVES_NIGHT = [
-  ['Deep blue-black, never pure black. Ice, never pure white.', 'The same colour law as Day, held from the other end.'],
-  ['Ultralight sans for what is felt, mono for what is measured.', 'Night has no serif. The emotional register is weight and space instead.'],
+  ['Deep midnight, never pure black. Frost, never pure white.', 'The same color law as Day, held from the other end, under a faint static field of stars.'],
+  ['The same type as Day.', 'Fraunces for what is felt, DM Sans for what is known. A person moving between Day and Night has not moved between two products.'],
   ['Structure by hairline and glow, not shadow.', 'A drop shadow is invisible on a dark ground. An inset ring draws the edge; light does the lifting.'],
   ['One field owns a screen, and it is ambient — never information.', 'The decorative layer has no state and nothing that can be missed by ignoring it.'],
   ['Light that breathes slower than you.', 'Nothing pulses faster than 0.1Hz, and nothing animates position.'],
@@ -40,7 +40,7 @@ const REFUSALS = [
 ];
 
 const WCAG = [
-  ['1.4.1', 'Use of colour', 'Met', 'Every status has a text or shape channel. The pill dot never carries meaning alone.'],
+  ['1.4.1', 'Use of color', 'Met', 'Every status has a text or shape channel. The pill dot never carries meaning alone.'],
   ['1.4.3', 'Contrast (minimum)', 'Met', 'Machine-checked across both aesthetics and all 28 gradients by tools/check-contrast.mjs. Three inherited token values were raised to reach it — see below.'],
   ['1.4.4', 'Resize text', 'Met', 'The whole type scale is rem. Nothing sets a px font-size on the root.'],
   ['1.4.10', 'Reflow', 'Met for .ah-page', 'The document shell reflows to 320px. The fixed app shell is a deliberate trade — do not use it to hold an article.'],
@@ -59,7 +59,7 @@ const WCAG = [
   ['2.5.5', 'Target size (AAA)', 'Met', '.ah-hit gives a 44px target without moving a painted pixel.'],
   ['2.5.7', 'Dragging movements', 'Met', 'Pagination dots are buttons. Any drag affordance must be paired with a single-pointer route.'],
   ['4.1.2', 'Name, role, value', 'Met', 'Every snippet on the Components page ships its ARIA.'],
-  ['1.4.3 (hints)', '--text-faint', 'Partial, by declaration', 'At 2.07:1 it does not meet AA and is not intended to: it is for hints, no component uses it, and it must never be the sole carrier of meaning.'],
+  ['1.4.3 (hints)', '--text-faint', 'Partial, by declaration', 'At 2.14:1 it does not meet AA and is not intended to: it is for hints, no component uses it, and it must never be the sole carrier of meaning.'],
 ];
 
 export const principles = page({
@@ -71,7 +71,7 @@ export const principles = page({
       <p class="ah-caps ah-caps--rule" style="margin:0">Principles</p>
       <h1 class="ah-display-l heading-ink" style="margin:0">What this system is for, and what it will not do</h1>
       <p class="ah-prose hero__lede" style="margin:0">
-        The refusals are as much a part of Ahimsa as the colour tokens. Adopting
+        The refusals are as much a part of Ahimsa as the color tokens. Adopting
         the look without them produces something that is merely warm, which is
         worse than neither — warmth is not camouflage.
       </p>
@@ -114,7 +114,7 @@ ${section('attention', 'Attention', 'A strict pull model',
      <a class="ah-link" href="patterns.html#version">the version-check pattern</a>.`))}
 
 ${section('voice', 'Voice', 'How Ahimsa writes',
-  p(`The voice is as much a part of the system as the colour tokens, and it is
+  p(`The voice is as much a part of the system as the color tokens, and it is
      the part most often dropped in adoption.`),
   `      <ul class="ah-prose ah-measure" style="margin:0 0 var(--space-6);padding-left:1.2em;display:grid;gap:var(--space-3)">
         <li><strong>Warm, plain, unhurried.</strong> Short declarative sentences. No exclamation marks, no ALL-CAPS urgency, no growth-hacky punch. "A quiet place to begin." not "Get started now — don't miss out!"</li>
@@ -129,10 +129,10 @@ ${section('voice', 'Voice', 'How Ahimsa writes',
   `      <p class="ah-quote ah-measure" style="margin:0">Nothing here is designed to grab you. · A supporting line, quietly offered. · Continue / Not now</p>`)}
 
 ${section('moves', 'The fingerprint', 'The five moves',
-  p(`Preserve these and the system stays recognisable; drop one and it stops
+  p(`Preserve these and the system stays recognizable; drop one and it stops
      being Ahimsa. <em>A note on provenance: the original card naming these was
      lost. What follows is reconstructed from the shipped system, and is
-     labelled as a reconstruction rather than presented as recovered.</em>`),
+     labeled as a reconstruction rather than presented as recovered.</em>`),
   `      <div class="pair">
         <div class="ah-card">
           <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Ahimsa Day</p>
@@ -161,9 +161,9 @@ ${REFUSALS.map(([t, w]) => `          <tr><td><strong>${esc(t)}</strong></td><td
         <p class="ah-caps" style="margin:0 0 var(--space-3)">The audit, before you ship</p>
         <ol class="ah-body" style="margin:0;padding-left:1.3em;display:grid;gap:var(--space-2)">
           <li>Does anything appear that the person did not cause? Run <code>tools/check-attention.mjs</code> and then look with your own eyes.</li>
-          <li>Is every escape hatch a real control at equal metrics, labelled for what it is?</li>
+          <li>Is every escape hatch a real control at equal metrics, labeled for what it is?</li>
           <li>Is any number on screen capable of reading as a score, a streak, or a shortfall?</li>
-          <li>Does any colour carry meaning that no word or shape also carries?</li>
+          <li>Does any color carry meaning that no word or shape also carries?</li>
           <li>If a control fails, does the person find out — and are they told what is still true?</li>
           <li>Can every interaction be completed without a drag, a hover, or a gesture?</li>
           <li>Does anything claim an outcome the app cannot actually verify?</li>
@@ -171,16 +171,16 @@ ${REFUSALS.map(([t, w]) => `          <tr><td><strong>${esc(t)}</strong></td><td
         </ol>
       </div>`)}
 
-${section('themes', 'A note on themes', 'Night is not a dark mode',
-  p(`Day and Night are different characters, not different brightnesses. Night
-     has its own type voice, its own approach to elevation, and its own ambient
-     layer; it is a sibling aesthetic that happens to be dark.`),
-  p(`So the system deliberately does not wire the theme to
-     <code>prefers-color-scheme</code>. Flipping an interface's whole character
-     because of an operating-system setting is exactly the kind of surprise this
-     system refuses — and someone who set their OS to dark at night did not ask
-     your app to become a different product. Let a person choose, and remember
-     what they chose.`))}
+${section('themes', 'A note on themes', 'Follow the operating system',
+  p(`Night is the dark aesthetic. It has its own type voice, its own approach
+     to elevation, and its own ambient layer, but it is also what a person who
+     has asked their device for a dark appearance should get.`),
+  p(`So with no stored choice, start in Night when
+     <code>prefers-color-scheme: dark</code> matches and in Day otherwise, and
+     follow the system if it changes. Once someone picks a theme inside your
+     app, that choice wins and is remembered. A person who set their device to
+     dark has already said what they need; making them say it again in every
+     app is a small harm this system declines to cause.`))}
 `,
 });
 
@@ -214,7 +214,7 @@ ${WCAG.map(([sc, name, status, how]) => `          <tr><td><code>${esc(sc)}</cod
 
 ${section('deviations', 'The cost', 'Three inherited values had to change',
   p(`Ahimsa Day is a restructure of a system already shipping in two apps, so the
-     rule was that no colour value moves. Three had to. Each is declared in
+     rule was that no color value moves. Three had to. Each is declared in
      <code>tools/check-parity.mjs</code>, which fails the build if a declared
      deviation disappears <em>or</em> if any undeclared value moves.`),
   `      <table class="tbl tbl--fixed">
@@ -233,10 +233,9 @@ ${deviations.map(([t, why]) => `          <tr><td><code>${esc(t)}</code></td><td
 
 ${section('gaps', 'Honestly', 'What is still imperfect',
   `      <ul class="ah-prose ah-measure" style="margin:0;padding-left:1.2em;display:grid;gap:var(--space-3)">
-        <li><strong>Five Day gradients cannot carry text.</strong> clay, indigo, monsoon, periwinkle and periwinkle-soft span too wide a lightness range for any ink to clear AA across them. They ship as surface-only, and text on them belongs in an opaque card. They were not narrowed because they are the system's signature ramps and two apps already render them.</li>
-        <li><strong><code>--text-faint</code> is 2.07:1</strong> and does not meet AA. It is for hints, no component uses it, and the docs say plainly that it must never be the sole carrier of meaning. If you find yourself reaching for it to set real content, reach for <code>--text-muted</code> instead.</li>
+        <li><strong>Some Day gradients cannot carry text.</strong> Day's indigo gradient spans too wide a lightness range for any ink to clear AA across it. It ships as surface-only, and text on it belongs in an opaque card. The generator lists exactly which ones.</li>
+        <li><strong><code>--text-faint</code> is 2.14:1</strong> and does not meet AA. It is for hints, no component uses it, and the docs say plainly that it must never be the sole carrier of meaning. If you find yourself reaching for it to set real content, reach for <code>--text-muted</code> instead.</li>
         <li><strong>The fixed app shell does not reflow like a document.</strong> <code>.ah-app</code> meets 320px, but at 200% zoom a fixed-viewport application is inherently tighter than a flowing page. Use <code>.ah-page</code> for anything read rather than operated.</li>
-        <li><strong>Night's hairline weights are capped at display sizes.</strong> Weight 200 loses effective contrast at small sizes because the stems thin out, so body copy in Night is 400 and never lighter. This is enforced by convention, not by a gate.</li>
         <li><strong>The two apps this was extracted from do not yet comply.</strong> Both ship a floating update bar that this system now refuses, and one has a drag-driven card deck with no single-pointer alternative. Those are theirs to fix, and naming them here is more useful than implying otherwise.</li>
       </ul>`)}
 
@@ -245,7 +244,7 @@ ${section('running', 'Verifying', 'Run the gates yourself',
 npm run check:a11y   # axe-core through Playwright, both themes, 320/390/1280 + 200% zoom`),
   p(`The contrast gate composites translucent ink onto its actual ground before
      measuring, which most checkers do not — quiet text in this system is the
-     ink colour at low alpha, and a ratio computed without compositing is
+     ink color at low alpha, and a ratio computed without compositing is
      meaningless.`))}
 `,
 });
@@ -271,7 +270,7 @@ ${section('start', 'Setup', 'What to load',
   dist/ahimsa-night.css    the other
   dist/ahimsa.css          both, switch with a class on <html>
   dist/CHECKSUMS           sha256 per file, for a pinned vendored copy
-  fonts/                   6 woff2 + 3 OFL licence texts — copy all of it
+  fonts/                   4 woff2 + 2 OFL license texts — copy all of it
   tokens.json              every token, W3C DTCG format, both themes
   SKILL.md                 this brief, in full`),
   p(`Link one stylesheet, put <code>class="ahimsa-day"</code> or
@@ -325,7 +324,7 @@ ${section('rules', 'Constraints', 'Not negotiable',
   `      <ol class="ah-prose ah-measure" style="margin:0 0 var(--space-6);padding-left:1.3em;display:grid;gap:var(--space-3)">
         <li><strong>Emit nothing that appears on its own.</strong> No <code>alert()</code>, no modal on load, no banner, no toast that is not the direct consequence of an action the person just took, no <code>role="alert"</code>, no <code>aria-live="assertive"</code>, no <code>setInterval</code>, no autoplay, no <code>beforeunload</code>.</li>
         <li><strong>Never emit red.</strong> There is no red token. If you are reaching for one, the thing you are building is probably refused for a second reason too.</li>
-        <li><strong>Every destructive or leaving action gets an equal-weight escape.</strong> <code>.ah-btn</code> beside <code>.ah-btn.ah-btn--ghost</code>, labelled warmly.</li>
+        <li><strong>Every destructive or leaving action gets an equal-weight escape.</strong> <code>.ah-btn</code> beside <code>.ah-btn.ah-btn--ghost</code>, labeled warmly.</li>
         <li><strong>Every interactive element is a real element</strong> with an accessible name, reachable by keyboard, at a 44px target, acting on pointer-up.</li>
         <li><strong>Never disable pinch zoom.</strong> No <code>maximum-scale</code>, no <code>user-scalable=no</code>.</li>
         <li><strong>Never load anything over a network.</strong> No CDN, no Google Fonts, no remote <code>@import</code>.</li>

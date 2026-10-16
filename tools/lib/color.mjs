@@ -1,4 +1,4 @@
-/* Colour maths for the contrast gate. sRGB only; that is what CSS hex is. */
+/* Color maths for the contrast gate. sRGB only; that is what CSS hex is. */
 
 export function parseHex(h) {
   let s = String(h).trim().replace(/^#/, '');
@@ -9,7 +9,7 @@ export function parseHex(h) {
 }
 
 /* Flatten a translucent ink onto its ground. Quiet text in this system is
-   the ink colour at low alpha, so contrast is meaningless without this. */
+   the ink color at low alpha, so contrast is meaningless without this. */
 export function over(fg, bg) {
   return {
     r: fg.r * fg.a + bg.r * (1 - fg.a),
@@ -32,7 +32,7 @@ export function contrast(a, b) {
   return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05);
 }
 
-/* Every colour stop in a linear/radial-gradient value. */
+/* Every color stop in a linear/radial-gradient value. */
 export function gradientStops(v) {
   return [...String(v).matchAll(/#[0-9a-fA-F]{3,8}/g)].map((m) => m[0]);
 }

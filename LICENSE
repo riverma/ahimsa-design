@@ -22,7 +22,7 @@ SOFTWARE.
 
 ---
 
-The bundled typefaces are NOT covered by the licence above. Fraunces, DM Sans
-and DM Mono are each licensed under the SIL Open Font License 1.1; their
-licence texts travel with the binaries in fonts/ and must be kept alongside
+The bundled typefaces are NOT covered by the license above. Fraunces and DM Sans
+are each licensed under the SIL Open Font License 1.1; their
+license texts travel with the binaries in fonts/ and must be kept alongside
 them in any redistribution.

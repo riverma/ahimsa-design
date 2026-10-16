@@ -3,7 +3,7 @@
 
    The governing rule for every control here: LEAVING CARRIES THE SAME
    WEIGHT AS CONTINUING. An escape hatch gets a real, equal-metric control,
-   never grey text beside a filled pill — grey text reads as a caption, and
+   never gray text beside a filled pill — gray text reads as a caption, and
    a caption is not a choice. */
 
 /* ================================================================
@@ -25,7 +25,9 @@
   padding: 14px var(--space-6);
   font-size: var(--size-xs);
   letter-spacing: 0.22em;
-  background: var(--text-heading);
+  /* The primary control is the brand accent: Verdigris in Day, Glacier
+     Lake in Night. The label is --text-inverse, measured against it. */
+  background: var(--accent-primary);
   color: var(--text-inverse);
   box-shadow: var(--shadow-sm);
   transition: opacity var(--duration-fast) var(--ease-standard),
@@ -58,7 +60,7 @@
 }
 
 /* Destructive. Warm earth in Day, warm copper in Night. Never red:
-   removing something is not an emergency, and the colour should not
+   removing something is not an emergency, and the color should not
    suggest the person has done something wrong. */
 .ah-btn--danger {
   background: var(--accent-warning-surface);
@@ -124,7 +126,7 @@
 .ah-pill--static { cursor: default; }
 
 /* A status dot. It never stands alone — the pill's own text always says the
-   same thing, because colour is not a channel some people have
+   same thing, because color is not a channel some people have
    (WCAG 1.4.1). */
 .ah-pill__dot {
   width: 6px;
@@ -136,10 +138,12 @@
 
 /* ================================================================
    Link — the growing underline. Quiet at rest, and the rule draws itself
-   in on hover and focus rather than the text changing colour and jumping.
+   in on hover and focus rather than the text changing color and jumping.
    ================================================================ */
 .ah-link {
-  color: inherit;
+  /* Links are the interactive accent (Champaran in Day, Nila in Night);
+     --quiet links inherit, for navigation. */
+  color: var(--accent-secondary);
   text-decoration: none;
   position: relative;
   display: inline;
@@ -162,6 +166,7 @@
 
 /* A link whose rule is absent until asked for. Use inside running prose
    where a permanent underline on every reference would be noise. */
+.ah-link--quiet { color: inherit; }
 .ah-link--quiet::after { transform: scaleX(0); opacity: 1; }
 .ah-link--quiet:hover::after,
 .ah-link--quiet:focus-visible::after { transform: scaleX(1); }

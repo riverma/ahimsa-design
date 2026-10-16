@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /* Generate the documentation site.
    The specimen pages read their values out of the real token CSS, so a
-   colour chart or a type scale here cannot drift from what ships. */
+   color chart or a type scale here cannot drift from what ships. */
 
 import { writeFileSync } from 'node:fs';
 import { page, section, p, snippet, spec, esc, tokens, val, inkOn, VERSION,
@@ -12,7 +12,15 @@ const NIGHT = tokens('night');
 
 const TRADITION = ['saffron', 'turmeric', 'clay', 'bodhi', 'peacock', 'indigo', 'monsoon'];
 const CLASSIC = ['amber', 'rose', 'terracotta', 'sage', 'violet', 'slate', 'periwinkle'];
-const NIGHT_FAMILIES = ['peacock', 'indigo', 'monsoon', 'bodhi', 'frost', 'ember'];
+const NIGHT_FAMILIES = ['saffron', 'turmeric', 'clay', 'bodhi', 'peacock', 'indigo', 'monsoon', 'frost'];
+
+/* The names chosen for each hue. The token keeps the stable slug; the name
+   is what a person would call it. */
+const NAMES = [
+  ['saffron', 'Marigold Robe', 'Ghee'], ['turmeric', 'Gold Leaf', 'Gold Dust'], ['clay', 'Kiln', 'Low Embers'],
+  ['bodhi', 'Young Leaf', 'Fig Leaf'], ['peacock', 'Verdigris', 'Glacier Lake'], ['indigo', 'Champaran', 'Nila'],
+  ['monsoon', 'Rain Cloud', 'Rain Cloud'],
+];
 
 /* ---------- reusable renderers ---------- */
 
@@ -99,7 +107,7 @@ const overview = page({
       <p class="ah-caps ah-caps--rule" style="margin:0">Ahimsa · अहिंसा · v${VERSION}</p>
       <h1 class="ah-display-fluid heading-ink hero__title" style="margin:0">Nothing here is designed to grab you.</h1>
       <p class="ah-prose hero__lede" style="margin:0">
-        Ahimsa is a design system rooted in non-harm. It ships colour, type, space
+        Ahimsa is a design system rooted in non-harm. It ships color, type, space
         and motion, ten primitives, and an explicit list of the things it refuses
         to build.
       </p>
@@ -126,34 +134,33 @@ ${section('premise', 'The premise', 'One sentence, and everything follows from i
 
 ${section('aesthetics', 'Two aesthetics', 'Day and Night',
   p(`Both are the same system. They share the spacing grid, the corner radii, the
-     size scale and the easing curves exactly; what changes is colour, the voice
-     of the type, and how a surface establishes its edge. Night's accents are
-     literally the cool end of Day's palette.`),
-  /* Both previews are written in literal colours and literal type, not in
+     size scale and the easing curves exactly; what changes is color, the voice
+     of the type, and how a surface establishes its edge. Night keeps every hue Day
+     chose, one step lighter; and the type is the same in both.`),
+  /* Both previews are written in literal colors and literal type, not in
      tokens. A preview of Day has to look like Day even while you are
      reading it in Night — a swatch that restyles itself with the page is
      not showing you anything. */
   `      <div class="pair" style="margin-bottom:var(--space-6)">
-        <div style="border-radius:var(--radius-xl);padding:var(--space-6);background:linear-gradient(155deg,#d9d6d2 0%,#e4e2df 30%,#eeedeb 60%,#f7f6f4 100%);box-shadow:var(--shadow-md)">
-          <p style="margin:0 0 var(--space-3);font-family:'DM Sans',system-ui,sans-serif;font-size:0.625rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#0c0e12b0">Ahimsa Day</p>
-          <p style="margin:0 0 var(--space-3);font-family:Fraunces,Georgia,serif;font-size:1.375rem;line-height:1.15;color:#17191e">Paper, never white. Ink, never black.</p>
-          <p style="margin:0 0 var(--space-4);font-family:Fraunces,Georgia,serif;font-style:italic;font-size:1.0625rem;line-height:1.35;color:#17191ed0">The italic serif carries what is felt.</p>
-          <p style="margin:0;font-family:'DM Sans',system-ui,sans-serif;font-size:0.8125rem;line-height:1.4;color:#17191ecc">Editorial and unhurried. Wide-tracked small caps carry what is known, and depth is soft paper shadow.</p>
+        <div style="position:relative;overflow:hidden;border-radius:var(--radius-xl);padding:var(--space-6);background:radial-gradient(60% 55% at 14% -4%,#fff0b0e6 0%,#fff0b000 70%),linear-gradient(155deg,#fbf3e6 0%,#f3ece2 30%,#e9e6e0 60%,#dfe1e0 100%);box-shadow:var(--shadow-md)">
+          <p style="margin:0 0 var(--space-3);font-family:'DM Sans',system-ui,sans-serif;font-size:0.625rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#1c1410b0">Ahimsa Day</p>
+          <p style="margin:0 0 var(--space-3);font-family:Fraunces,Georgia,serif;font-size:1.375rem;line-height:1.15;color:#30221c">Paper, never white. Ink, never black.</p>
+          <p style="margin:0 0 var(--space-4);font-family:Fraunces,Georgia,serif;font-style:italic;font-size:1.0625rem;line-height:1.35;color:#30221cd0">The italic serif carries what is felt.</p>
+          <p style="margin:0;font-family:'DM Sans',system-ui,sans-serif;font-size:0.8125rem;line-height:1.4;color:#30221ccc">Editorial and unhurried. Wide-tracked small caps carry what is known, the sun falls from the top left, and depth is soft paper shadow.</p>
         </div>
-        <div style="position:relative;overflow:hidden;border-radius:var(--radius-xl);padding:var(--space-6);background:radial-gradient(120% 90% at 50% 0%, #1d2a36 0%, #0e131a 55%, #080b10 100%);box-shadow:var(--shadow-md)">
-          <div aria-hidden="true" style="position:absolute;inset:-20%;mix-blend-mode:plus-lighter;opacity:.5;background:radial-gradient(38% 28% at 22% 18%,#3b93a340 0,transparent 70%),radial-gradient(30% 24% at 78% 32%,#545fae33 0,transparent 72%)"></div>
+        <div style="position:relative;overflow:hidden;border-radius:var(--radius-xl);padding:var(--space-6);background:linear-gradient(155deg,#060914 0%,#0a1124 30%,#101a35 60%,#182648 100%);box-shadow:var(--shadow-md)">
+          <div aria-hidden="true" style="position:absolute;inset:0;background-image:var(--ambient-stars);background-size:100% 100%;background-repeat:no-repeat"></div>
           <div style="position:relative">
-            <p style="margin:0 0 var(--space-3);font-family:'DM Mono',ui-monospace,monospace;font-size:0.625rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#8ecbd1">Ahimsa Night</p>
-            <p style="margin:0 0 var(--space-3);font-family:'DM Sans',system-ui,sans-serif;font-weight:300;font-size:1.375rem;line-height:1.2;letter-spacing:0.02em;color:#eef2f7">Deep blue-black, never pure black. Ice, never pure white.</p>
-            <p style="margin:0 0 var(--space-4);font-family:'DM Sans',system-ui,sans-serif;font-weight:200;font-size:1.375rem;line-height:1.45;letter-spacing:0.03em;color:#c3e2ea">The hairline sans carries what is felt.</p>
-            <p style="margin:0;font-family:'DM Sans',system-ui,sans-serif;font-size:0.8125rem;line-height:1.45;color:#dce3ec">Futuristic and still. Mono carries what is measured, and depth is hairline and glow rather than shadow.</p>
+            <p style="margin:0 0 var(--space-3);font-family:'DM Sans',system-ui,sans-serif;font-size:0.625rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#7fd0d8">Ahimsa Night</p>
+            <p style="margin:0 0 var(--space-3);font-family:Fraunces,Georgia,serif;font-size:1.375rem;line-height:1.15;color:#e4eef5">Midnight, never pure black. Frost, never pure white.</p>
+            <p style="margin:0 0 var(--space-4);font-family:Fraunces,Georgia,serif;font-style:italic;font-size:1.0625rem;line-height:1.35;color:#c3e2ea">The same italic serif carries what is felt.</p>
+            <p style="margin:0;font-family:'DM Sans',system-ui,sans-serif;font-size:0.8125rem;line-height:1.45;color:#d3dfe9">The same voice as Day, lit from the other side. A faint field of stars sits behind it, and depth is hairline and glow rather than shadow.</p>
           </div>
         </div>
       </div>`,
-  p(`Switch the aesthetic with the control in the header. Night is <em>not</em> a
-     dark mode, and the system deliberately does not wire it to
-     <code>prefers-color-scheme</code> — see
-     <a class="ah-link" href="principles.html#themes">why</a>.`))}
+  p(`Switch the aesthetic with the control in the header. With no choice made,
+     the site follows your operating system's appearance — see
+     <a class="ah-link" href="principles.html#themes">how</a>.`))}
 
 ${section('install', 'Getting started', 'One stylesheet and a class on <html>',
   p(`Put the theme class on <code>&lt;html&gt;</code> rather than
@@ -165,7 +172,7 @@ ${section('install', 'Getting started', 'One stylesheet and a class on <html>',
 <!-- both, switchable at runtime -->
 <link rel="stylesheet" href="ahimsa.css">
 <html lang="en" class="ahimsa-night">`),
-  p(`Copy <code>fonts/</code> alongside it, licence texts included. Nothing is
+  p(`Copy <code>fonts/</code> alongside it, license texts included. Nothing is
      ever fetched from a CDN: a remote font stops working on a plane and tells a
      third party who is using your app.`))}
 
@@ -174,7 +181,7 @@ ${section('refuses', 'The short version', 'What this system will not build',
         <li><strong>No red.</strong> There is no danger token in either aesthetic. Errors are warm clay or warm copper, because a person who hit a problem has not done something wrong.</li>
         <li><strong>Nothing appears unasked.</strong> No banners, no modals on load, no notification badges, no floating "update available" bar. Version news lives in Settings, behind a control you press.</li>
         <li><strong>No numbers as pressure.</strong> No streaks, no scores, no counts framed as scarcity.</li>
-        <li><strong>Leaving weighs the same as continuing.</strong> Every escape hatch is a real control at equal metrics, never grey text.</li>
+        <li><strong>Leaving weighs the same as continuing.</strong> Every escape hatch is a real control at equal metrics, never gray text.</li>
         <li><strong>No emoji, no icon set.</strong> Type and space carry the meaning.</li>
       </ul>`,
   `      <p style="margin:var(--space-6) 0 0"><a class="ah-link" href="principles.html#refusals">The full list, with the reasoning →</a></p>`)}
@@ -184,7 +191,7 @@ ${section('refuses', 'The short version', 'What this system will not build',
 const foundations = page({
   file: 'foundations.html',
   title: 'Foundations',
-  lede: 'Colour, type, space, elevation, motion, and Night\'s ambient layer.',
+  lede: 'Color, type, space, elevation, motion, and Night\'s ambient layer.',
   body: `
     <section class="hero">
       <p class="ah-caps ah-caps--rule" style="margin:0">Foundations</p>
@@ -192,12 +199,12 @@ const foundations = page({
       <p class="ah-prose hero__lede" style="margin:0">Every swatch and every line below is read out of the shipped token files at build time, so nothing on this page can drift from what you get.</p>
     </section>
 
-${section('colour', 'Colour', 'Never pure white, never pure black',
-  p(`The canvas is warm cream and the darkest ink is a warm brown. Pure black on
+${section('color', 'Color', 'Never pure white, never pure black',
+  p(`The canvas is warm paper under a sun-lit sky, and the darkest ink is cocoa. Pure black on
      pure white is a harsher contrast than any screen needs, and it reads as
      clinical — so the system does not contain either. Night holds the same law
-     from the other end: its deepest ground is <code>#080b10</code> and its
-     lightest ink <code>#eef2f7</code>.`),
+     from the other end: its deepest ground is <code>#060914</code> and its
+     lightest ink <code>#e4eef5</code>.`),
   `      <div class="spec" style="margin-bottom:var(--space-6)">
         <p class="ah-caps" style="margin:0">Neutrals — Day</p>
 ${neutralRamp(DAY, [50, 100, 200, 300, 400, 500, 600, 700, 800, 900])}
@@ -208,7 +215,7 @@ ${neutralRamp(NIGHT, [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950])}
      tradition the system takes its ethics from: saffron for renunciate robes,
      turmeric for ritual gold, clay for earthen lamps, bodhi for the fig tree of
      awakening, peacock for India's bird, indigo for the Champaran satyagraha
-     crop, monsoon for grey-blue rain skies. Nothing high-chroma, nothing poppy.`),
+     crop, monsoon for gray-blue rain skies. Nothing high-chroma, nothing poppy.`),
   `      <div class="spec" style="margin-bottom:var(--space-6)">
         <p class="ah-caps" style="margin:0">Day · the ahimsa-tradition set</p>
 ${TRADITION.map((f) => ramp(DAY, f, [300, 400, 500, 600, 700])).join('\n')}
@@ -217,15 +224,22 @@ ${TRADITION.map((f) => ramp(DAY, f, [300, 400, 500, 600, 700])).join('\n')}
      a consuming app built a full range of person-gradients directly on it. One
      rename: its blue-violet is <code>--periwinkle-*</code>, because it used to
      be called <code>--indigo-*</code> at a different value from the tradition
-     set's indigo, and two different colours cannot share one name.`),
+     set's indigo, and two different colors cannot share one name.`),
   `      <div class="spec" style="margin-bottom:var(--space-6)">
         <p class="ah-caps" style="margin:0">Day · the classic set</p>
 ${CLASSIC.map((f) => ramp(DAY, f, [300, 400, 500, 600, 700])).join('\n')}
       </div>`,
-  p(`<strong>Night reuses Day's cool hues</strong> unchanged at 300–700, each
-     gaining a lighter 200 step because a dark ground needs brighter ink. Only
-     two families are new: frost, which is Night's cream, and ember, its only
-     warning hue.`),
+  p(`<strong>Night keeps every hue Day chose</strong>, anchored on its 300 step
+     where Day anchors on 600, with a lighter 200 because a dark ground needs
+     brighter ink. Only one family is new: frost, the pale ice at the core of
+     every glow. Warnings are clay in both — Low Embers at night — and never red.`),
+  `      <table class="tbl" style="margin-bottom:var(--space-6)">
+        <caption class="ah-visually-hidden">The name chosen for each hue, in Day and in Night</caption>
+        <thead><tr><th scope="col">Token</th><th scope="col">Day</th><th scope="col">Night</th></tr></thead>
+        <tbody>
+${NAMES.map(([k, d, n]) => `          <tr><td><code>--${k}-*</code></td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:${val(DAY, '--' + k + '-600')}"></span>${esc(d)}</span></td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:${val(NIGHT, '--' + k + '-300')}"></span>${esc(n)}</span></td></tr>`).join('\n')}
+        </tbody>
+      </table>`,
   `      <div class="spec">
         <p class="ah-caps" style="margin:0">Night</p>
 ${NIGHT_FAMILIES.map((f) => ramp(NIGHT, f, [200, 300, 400, 500, 600, 700])).join('\n')}
@@ -233,13 +247,13 @@ ${NIGHT_FAMILIES.map((f) => ramp(NIGHT, f, [200, 300, 400, 500, 600, 700])).join
 
 ${section('gradients', 'Gradients', 'One gradient owns a screen',
   p(`All of them run at 155°, with stops at 0 / 30 / 60 / 100%. They are moments
-     of emphasis, not decoration — flat cream, or flat deep blue, is the default.
+     of emphasis, not decoration. The sky behind a Day screen and the stars behind a Night one are the ground, not a gradient of their own.
      Two gradients side by side is the rule this system breaks least gladly.`),
   p(`Each one ships as <code>.ah-surface--&lt;name&gt;</code>, which sets the
      gradient <em>and</em> the ink measured to work on it. A 155° ramp spans a
      wide lightness range, so no single ink can carry text across all of it; the
-     surface therefore carries its own. Five of Day's gradients cannot clear AA
-     at any ink opacity and are marked surface-only — put text on them in an
+     surface therefore carries its own. A gradient that cannot clear AA
+     at any ink opacity is marked surface-only — put text on them in an
      opaque card, which is this system's pattern anyway.`),
   `      <p class="ah-caps" style="margin:0 0 var(--space-3)">Day</p>`,
   gradientGrid(DAY, 'day'),
@@ -247,11 +261,11 @@ ${section('gradients', 'Gradients', 'One gradient owns a screen',
   gradientGrid(NIGHT, 'night'))}
 
 ${section('type', 'Type', 'Two voices, and the split is the tone',
-  p(`Day pairs <strong>Fraunces</strong>, a variable serif carrying emotional
-     weight, with <strong>DM Sans</strong> for utility. Night has no serif at
-     all: <strong>DM Sans</strong> at hairline weights carries what is felt, and
-     <strong>DM Mono</strong> carries what is measured. In both, an emotional
-     line is set apart and a factual line stays plain.`),
+  p(`Both aesthetics pair <strong>Fraunces</strong>, a variable serif carrying
+     emotional weight, with <strong>DM Sans</strong> for utility. The type is the
+     same in Day and Night on purpose: a person moving between them has not moved
+     between two products. An emotional line is set apart in italics and a
+     factual line stays plain.`),
   p(`The size scale is musical and deliberately uneven — there is no 12px and no
      14px. It is expressed in <code>rem</code> at the same computed sizes it has
      always rendered, so raising your browser's font size actually works.`),
@@ -363,13 +377,18 @@ ${section('ambient', 'Ambient', 'Night\'s field, and why it asks for nothing',
      <code>feTurbulence</code>, scanlines are a repeating gradient, and RGB shift
      is a per-channel <code>feOffset</code>. None of it needs a renderer, a
      canvas, or a byte of JavaScript.`),
+  p(`The quietest layer is <code>.ah-ambient--stars</code>: a faint, static field
+     of stars in a fixed arrangement, so the sky is the same every night. It
+     does not twinkle and it never moves. Day has its counterpart in
+     <code>.ah-sky</code>, a warm haze with the sun falling from the top left.
+     Both are the ground a screen sits on, and neither carries meaning.`),
   `      <div class="spec" style="margin-bottom:var(--space-6)">
         <p class="ah-caps" style="margin:0">The layer, composed</p>
-        <div style="position:relative;min-height:280px;border-radius:var(--radius-xl);overflow:hidden;background:#0e131a">
+        <div style="position:relative;min-height:280px;border-radius:var(--radius-xl);overflow:hidden;background:#0a1124">
           <div class="ah-ambient ah-ambient--void ah-ambient--bloom ah-ambient--grain ah-ambient--isolines ah-ambient--vignette" aria-hidden="true"></div>
           <div style="position:relative;z-index:1;padding:var(--space-8);display:grid;gap:var(--space-3);place-content:center;min-height:280px;text-align:center">
-            <p class="ah-small-caps" style="margin:0;font-family:var(--font-mono);color:#8ecbd1">ambient · decorative · aria-hidden</p>
-            <p style="margin:0;font-family:var(--font-body);font-weight:200;font-size:clamp(1.75rem,5vw,2.75rem);letter-spacing:0.03em;color:#eef2f7;line-height:1.1">It has nothing to tell you.</p>
+            <p class="ah-small-caps" style="margin:0;font-family:var(--font-mono);color:#7fd0d8">ambient · decorative · aria-hidden</p>
+            <p style="margin:0;font-family:var(--font-body);font-weight:200;font-size:clamp(1.75rem,5vw,2.75rem);letter-spacing:0.03em;color:#e4eef5;line-height:1.1">It has nothing to tell you.</p>
           </div>
         </div>
         <p class="ah-body secondary ah-measure" style="margin:0">Switch to Night to see it against the rest of the system.</p>

@@ -18,21 +18,23 @@ documentation site, built with the system it documents.
 
 |  | **Ahimsa Day** | **Ahimsa Night** |
 |---|---|---|
-| Ground | Warm cream, never white | Deep blue-black, never pure black |
-| Ink | Warm brown, never black | Ice, never pure white |
-| Felt | Italic serif (Fraunces) | Ultralight sans (DM Sans 200) |
-| Known | Wide-tracked small caps | Mono small caps (DM Mono) |
+| Ground | Warm paper under a sun-lit sky, never white | Deep midnight under a faint field of stars, never pure black |
+| Ink | Cocoa, never black | Frost, never pure white |
+| Felt | Italic serif (Fraunces) | Italic serif (Fraunces) |
+| Known | Wide-tracked small caps (DM Sans) | Wide-tracked small caps (DM Sans) |
 | Depth | Warm paper shadow | Hairline and glow |
 | Emphasis | One 155° gradient per screen | One atmospheric field per screen |
 
 They are the same system. The spacing grid, the corner radii, the size scale
-and the easing curves are identical in both, and Night's accents are literally
-the cool end of Day's palette — peacock, indigo, monsoon and bodhi carry across
-unchanged. What differs is colour, the voice of the type, and how a surface
-establishes its edge.
+and the easing curves are identical in both, and so is the type. Night keeps
+every hue Day chose, one step lighter. What differs is color, the light it sits
+in, and how a surface establishes its edge.
 
-Night is **not a dark mode.** It is a sibling aesthetic that happens to be
-dark, and the system deliberately does not wire it to `prefers-color-scheme`.
+Night is the dark aesthetic, and it follows the person's system preference:
+when no choice has been made, an app should start in Night if the operating
+system prefers a dark appearance (`prefers-color-scheme: dark`) and in Day
+otherwise. An explicit choice made inside the app always wins and is
+remembered.
 
 ## Quick start
 
@@ -52,7 +54,7 @@ desktop or any other toolkit. The example below is the web path.
 ```
 
 Put the theme class on `<html>`, not `<body>`, so the page background resolves
-too. Copy `fonts/` next to the stylesheet, licence texts included.
+too. Copy `fonts/` next to the stylesheet, license texts included.
 
 ```html
 <div class="ah-card">
@@ -77,7 +79,7 @@ and tells a third party who is using your app.
   news lives in Settings, behind a control you press.
 - **No numbers as pressure.** No streaks, no scores, no manufactured scarcity.
 - **Leaving weighs the same as continuing.** Every escape hatch is a real
-  control at equal metrics, never grey text, never confirmshaming.
+  control at equal metrics, never gray text, never confirmshaming.
 - **No emoji, no icon set.** Type and space carry the meaning.
 
 The full list, with the reasoning, is in
@@ -97,7 +99,7 @@ npm run check:a11y   # axe-core, both aesthetics, 320/390/1280px and 200% zoom
 ```
 
 The contrast gate composites translucent ink onto its real ground before
-measuring — quiet text here is the ink colour at low alpha, and a ratio
+measuring — quiet text here is the ink color at low alpha, and a ratio
 computed without compositing is meaningless.
 
 ## What's in the box
@@ -107,7 +109,7 @@ dist/ahimsa-day.css      one aesthetic, flattened, self-contained
 dist/ahimsa-night.css    the other
 dist/ahimsa.css          both, theme-scoped
 dist/CHECKSUMS           sha256 per file, for a pinned vendored copy
-fonts/                   6 woff2 + 3 OFL licence texts
+fonts/                   4 woff2 + 2 OFL license texts
 tokens.json              every token, both aesthetics, W3C DTCG format
 src/                     the authoring source — edit this, not dist/
 docs/                    the documentation site
@@ -122,7 +124,7 @@ devDependency is `axe-core`, used by the accessibility gate.
 Issues and pull requests are welcome. Two things to know before opening one:
 
 - **The refusals are not up for negotiation on a case-by-case basis.** A
-  proposal to add a notification badge, an alert colour, or a banner will be
+  proposal to add a notification badge, an alert color, or a banner will be
   declined — not because the implementation would be bad, but because the
   absence is the product.
 - **`npm run check` must pass.** The token-parity gate in particular exists to
@@ -149,10 +151,10 @@ it, and the refusals were reconstructed from the reasoning left behind in two
 codebases. Where something is a reconstruction rather than a recovered
 document, the docs say so.
 
-## Licence
+## License
 
 [MIT](LICENSE) for the system, so that using it costs you nothing.
 
-The bundled typefaces are **not** MIT: Fraunces, DM Sans and DM Mono are each
-under the SIL Open Font License 1.1, and their licence texts must travel with
+The bundled typefaces are **not** MIT: Fraunces and DM Sans are each
+under the SIL Open Font License 1.1, and their license texts must travel with
 the binaries in any redistribution.

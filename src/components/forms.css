@@ -55,7 +55,7 @@
 }
 
 /* The large, reflective variant — for the one answer that matters on a
-   screen. Italic serif in Day; Night has no serif, so it opens up instead. */
+   screen. Italic serif in both aesthetics. */
 .ah-field--essence input,
 .ah-field--essence textarea {
   font-family: var(--font-display);

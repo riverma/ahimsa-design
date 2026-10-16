@@ -3,7 +3,7 @@
    Ahimsa Day is a restructure of an existing, shipping system, not a
    redesign. Every canonical token must still resolve to the same thing:
 
-     - colour, gradients, spacing, radius, shadow, motion -> byte-identical
+     - color, gradients, spacing, radius, shadow, motion -> byte-identical
      - the type scale -> computed-pixel-identical (px moved to rem so that
        a person's own browser font-size is no longer overridden)
 
@@ -21,9 +21,9 @@ const CANON = JSON.parse(readFileSync(new URL('./canonical-tokens.json', import.
    the accessibility page. Anything NOT in this list must match exactly —
    that is the whole point of the gate. */
 const DEVIATIONS = {
-  '--text-secondary': 'WCAG 1.4.3: the original 65% alpha measures 3.64:1 on the darkest Day ground and fails AA for the descriptions and captions it exists to set. Raised to 76% (4.79:1) — the value a shipping consumer had already independently arrived at.',
-  '--text-muted':     'WCAG 1.4.3: the original 45% alpha measures 2.30:1 and fails even the 3:1 large-text floor, for small-caps labels and metadata. Raised to 60% (3.23:1).',
-  '--text-faint':     'The original 28% alpha measures 1.63:1. Raised to 40% (2.07:1) and redefined as hints only — it is now used by no component and must never be the sole carrier of meaning.',
+  '--text-secondary': 'WCAG 1.4.3: the original 65% alpha measures 3.86:1 on the darkest Day ground and fails AA for the descriptions and captions it exists to set. Raised to 76% (5.15:1) — the value a shipping consumer had already independently arrived at.',
+  '--text-muted':     'WCAG 1.4.3: the original 45% alpha measures 2.39:1 and fails even the 3:1 large-text floor, for small-caps labels and metadata. Raised to 60% (3.40:1).',
+  '--text-faint':     'The original 28% alpha measures 1.66:1. Raised to 40% (2.14:1) and redefined as hints only — it is now used by no component and must never be the sole carrier of meaning.',
 };
 
 /* Compared by computed px rather than by bytes. */

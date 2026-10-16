@@ -1,76 +1,87 @@
 /* Ahimsa Night — raw palette.
-   Night is built from the cool end of the Day palette. Peacock, indigo,
-   monsoon and bodhi carry across unchanged, each gaining one lighter step
-   because a dark ground needs brighter ink than a cream one. Two families
-   are new: frost, and ember.
+   Night is the same family as Day, lit from the other side. Every accent
+   keeps the hue Day chose and gains a lighter step, because a dark ground
+   needs brighter ink than paper does. Frost is Night's own: pale ice, the
+   core of every glow.
 
-   That shared lineage is the whole reason Night reads as the same system
-   in a different register rather than as a second, unrelated theme.
+   Ahimsa's color law holds without exception: NEVER PURE BLACK, NEVER
+   PURE WHITE. The deepest ground here is #060914 and the lightest ink
+   #e4eef5. And as in Day, there is no red.
 
-   Ahimsa's colour law holds without exception: NEVER PURE BLACK, NEVER
-   PURE WHITE. The deepest ground here is #080b10 and the lightest ink
-   #eef2f7. And as in Day, there is no red. */
+   Each accent family is anchored on its -300 step (the chosen color).
+   -200 is a tint toward ice; -400 to -700 sink toward the ground. */
 
 .ahimsa-night {
-  /* ---- Neutral: ice -> deep blue-black. 50 is still "lightest"; it is
+  /* ---- Neutral: ice -> deep midnight. 50 is still "lightest"; it is
      the semantic layer that flips which end is ground and which is ink. ---- */
-  --neutral-50:  #eef2f7; /* heading ink */
-  --neutral-100: #dce3ec; /* body ink */
-  --neutral-200: #bcc6d4;
-  --neutral-300: #93a0b2;
-  --neutral-400: #6d7a8c; /* disabled state, faint text */
-  --neutral-500: #4e5a6b;
-  --neutral-600: #38424f;
-  --neutral-700: #232c37; /* hairline-adjacent wells */
-  --neutral-800: #161d26; /* elevated surface */
-  --neutral-900: #0e131a; /* canvas */
-  --neutral-950: #080b10; /* sunk — the deepest ground in the system */
+  --neutral-50:  #e4eef5; /* heading ink — frost */
+  --neutral-100: #d3dfe9; /* body ink */
+  --neutral-200: #b0bfce;
+  --neutral-300: #8a9bb0;
+  --neutral-400: #667790; /* disabled state, faint text */
+  --neutral-500: #495771;
+  --neutral-600: #323f58;
+  --neutral-700: #1e2940; /* hairline-adjacent wells */
+  --neutral-800: #0f1626; /* elevated surface — deep well */
+  --neutral-900: #0a1124; /* canvas */
+  --neutral-950: #060914; /* sunk — the deepest ground in the system */
 
-  /* ---- Carried across from Day, unchanged at 300-700. ---- */
-  --peacock-200: #bfe6ea;
-  --peacock-300: #8ecbd1;
-  --peacock-400: #5fb0bb;
-  --peacock-500: #3b93a3;
-  --peacock-600: #2c7787;
-  --peacock-700: #215d6b;
+  /* ---- The tradition accents, in Night's register. ---- */
+  --saffron-200: #ecd4b3;
+  --saffron-300: #e8b878; /* Ghee */
+  --saffron-400: #c09a69;
+  --saffron-500: #9d7f5b;
+  --saffron-600: #79654e;
+  --saffron-700: #5a4d42;
 
-  --indigo-200: #c7cdec;
-  --indigo-300: #9ba4d6;
-  --indigo-400: #7480c4;
-  --indigo-500: #545fae;
-  --indigo-600: #414a92;
-  --indigo-700: #313876;
+  --turmeric-200: #eee3b5;
+  --turmeric-300: #ecd47a; /* Gold Dust */
+  --turmeric-400: #c3b16b;
+  --turmeric-500: #9f925d;
+  --turmeric-600: #7b734f;
+  --turmeric-700: #5b5743;
 
-  --monsoon-200: #c6d1de;
-  --monsoon-300: #9dadc2;
-  --monsoon-400: #7a8fab;
-  --monsoon-500: #5d7492;
-  --monsoon-600: #475b77;
-  --monsoon-700: #36465d;
+  --clay-200: #e9c7bb;
+  --clay-300: #e3a086; /* Low Embers */
+  --clay-400: #bc8674;
+  --clay-500: #996f65;
+  --clay-600: #775955;
+  --clay-700: #584447;
 
-  --bodhi-200: #d8e8cc;
-  --bodhi-300: #b5cf9e;
-  --bodhi-400: #93b976;
-  --bodhi-500: #729e53;
-  --bodhi-600: #5a8340;
-  --bodhi-700: #456631;
+  --bodhi-200: #b2d9c0;
+  --bodhi-300: #7ec18f; /* Fig Leaf */
+  --bodhi-400: #69a17c;
+  --bodhi-500: #57856b;
+  --bodhi-600: #44695a;
+  --bodhi-700: #34504b;
+
+  --peacock-200: #b2e1e8;
+  --peacock-300: #7fd0d8; /* Glacier Lake */
+  --peacock-400: #6aaeb8;
+  --peacock-500: #578f9b;
+  --peacock-600: #45717e;
+  --peacock-700: #345665;
+
+  --indigo-200: #c4cbf8;
+  --indigo-300: #a0a8f5; /* Nila */
+  --indigo-400: #858dcf;
+  --indigo-500: #6d75ae;
+  --indigo-600: #555d8d;
+  --indigo-700: #40476f;
+
+  --monsoon-200: #c6d4e3;
+  --monsoon-300: #a3b8cf; /* Rain Cloud */
+  --monsoon-400: #879ab0;
+  --monsoon-500: #6f7f95;
+  --monsoon-600: #57657a;
+  --monsoon-700: #414d62;
 
   /* ---- Frost — pale ice. Night's equivalent of cream: the quietest
-     luminous register, and the core colour of every glow. ---- */
+     luminous register, and the core color of every glow. ---- */
   --frost-200: #e4f1f5;
   --frost-300: #c3e2ea;
   --frost-400: #9ccfdb;
   --frost-500: #74b8c8;
   --frost-600: #549cad;
   --frost-700: #3d7c8c;
-
-  /* ---- Ember — warm copper, the only warning hue Night has. Deliberately
-     on the warm side so it reads as heat rather than as an alarm. A klaxon
-     colour would be a violation; so would red. ---- */
-  --ember-200: #f3cdb2;
-  --ember-300: #e7ac86;
-  --ember-400: #d78c60;
-  --ember-500: #c07046;
-  --ember-600: #a05935;
-  --ember-700: #7e4429;
 }

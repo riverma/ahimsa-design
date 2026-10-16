@@ -36,7 +36,7 @@ ${section('button', 'Actions', 'Button',
 <button class="ah-btn ah-btn--ghost" type="button">Not now</button>
 <button class="ah-btn ah-btn--sm ah-hit" type="button">Small</button>
 <button class="ah-btn ah-btn--danger" type="button">Remove it</button>`,
-    note: `<code>--ghost</code> is an <em>outlined</em> pill, not grey text. Grey text beside a filled pill reads as a caption, and a caption is not a choice. <code>--danger</code> is warm earth, never red: removing something is not an emergency.`,
+    note: `<code>--ghost</code> is an <em>outlined</em> pill, not gray text. Gray text beside a filled pill reads as a caption, and a caption is not a choice. <code>--danger</code> is warm earth, never red: removing something is not an emergency.`,
   }),
   spec({
     label: 'On a gradient',
@@ -68,11 +68,11 @@ ${section('pill', 'Actions', 'Pill',
 <span class="ah-pill ah-pill--static">
   <span class="ah-pill__dot"></span>With a dot
 </span>`,
-    note: `The dot is never the only carrier of its meaning — the pill's own text says the same thing, because colour is not a channel everyone has.`,
+    note: `The dot is never the only carrier of its meaning — the pill's own text says the same thing, because color is not a channel everyone has.`,
   }))}
 
 ${section('link', 'Actions', 'Link',
-  p(`The rule under a link draws itself in rather than the text changing colour
+  p(`The rule under a link draws itself in rather than the text changing color
      and jumping. Taken from the reference this aesthetic was tuned against, and
      it fills a gap: the system previously had no link treatment at all.`),
   spec({
@@ -126,7 +126,7 @@ ${section('chip', 'Forms', 'ToggleChip',
 
 ${section('card', 'Surfaces', 'Card',
   p(`Three surface levels plus one glass level, expressed as background first and
-     shadow second. A sunk surface gets no shadow at all — the colour <em>is</em>
+     shadow second. A sunk surface gets no shadow at all — the color <em>is</em>
      the elevation.`),
   spec({
     label: 'Variants',
@@ -142,7 +142,7 @@ ${section('card', 'Surfaces', 'Card',
 
 <!-- a gradient card carries its own measured ink -->
 <div class="ah-card ah-surface--cream">…</div>`,
-    note: `No coloured-left-border cards and no hard outlines. Two gradient cards side by side is the rule this system breaks least gladly.`,
+    note: `No colored-left-border cards and no hard outlines. Two gradient cards side by side is the rule this system breaks least gladly.`,
   }))}
 
 ${section('sheet', 'Surfaces', 'Sheet',
@@ -167,7 +167,7 @@ ${section('sheet', 'Surfaces', 'Sheet',
             </div>
           </div>`,
     code: `<div class="ah-scrim" role="presentation">
-  <div class="ah-sheet" role="dialog" aria-modal="true" aria-labelledby="t">
+  <div class="ah-sheet" role="dialog" aria-modal="true" aria-labeledby="t">
     <div class="ah-sheet__grab"></div>
     <div class="ah-sheet__head">
       <h2 class="ah-sheet__title" id="t">Share this card</h2>
@@ -303,7 +303,7 @@ ${section('choice', 'The core pattern', 'An equal-weight choice',
         <div class="no">
           <p class="ah-caps" style="margin:0">Not this</p>
           <div class="ah-actions"><button class="ah-btn" type="button">Delete it</button><span class="ah-body muted">no, I don't want to keep my data safe</span></div>
-          <p class="ah-body secondary" style="margin:0">Grey text reads as a caption rather than a choice, and confirmshaming puts a cost on saying no. Both are refused.</p>
+          <p class="ah-body secondary" style="margin:0">Gray text reads as a caption rather than a choice, and confirmshaming puts a cost on saying no. Both are refused.</p>
         </div>
       </div>`,
   snippet(`<div class="ah-actions">

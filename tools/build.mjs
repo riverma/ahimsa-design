@@ -16,7 +16,7 @@ const BASE   = [
 ];
 const THEME = {
   day:   { fonts: ['fonts/day.css'], tokens: ['palette', 'gradients', 'semantic', 'elevation', 'type', 'surfaces'].map(n => `tokens/day/${n}.css`), extra: [] },
-  night: { fonts: ['fonts/day.css', 'fonts/night.css'], tokens: ['palette', 'gradients', 'semantic', 'elevation', 'type', 'surfaces'].map(n => `tokens/night/${n}.css`), extra: ['ambient/ambient.css'] },
+  night: { fonts: ['fonts/day.css'], tokens: ['palette', 'gradients', 'semantic', 'elevation', 'type', 'surfaces'].map(n => `tokens/night/${n}.css`), extra: ['ambient/ambient.css'] },
 };
 
 const version = JSON.parse(readFileSync('package.json', 'utf8')).version;

@@ -5,7 +5,7 @@
 <!-- viewport-fit=cover for safe areas. Note what is absent: no
      maximum-scale, no user-scalable=no. Pinch zoom always stays. -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#e7e7e4">
+<meta name="theme-color" content="#ece6dc">
 <meta name="color-scheme" content="light dark">
 <title>For agents — Ahimsa Design System</title>
 <meta name="description" content="Machine-readable tokens, the class vocabulary, and the constraints that are not negotiable.">
@@ -54,7 +54,7 @@
   dist/ahimsa-night.css    the other
   dist/ahimsa.css          both, switch with a class on &lt;html&gt;
   dist/CHECKSUMS           sha256 per file, for a pinned vendored copy
-  fonts/                   6 woff2 + 3 OFL licence texts — copy all of it
+  fonts/                   4 woff2 + 2 OFL license texts — copy all of it
   tokens.json              every token, W3C DTCG format, both themes
   SKILL.md                 this brief, in full</code></pre>
         <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
@@ -125,7 +125,7 @@ state      .is-active  .is-selected  .is-disabled  .is-tappable  .is-on</code></
       <ol class="ah-prose ah-measure" style="margin:0 0 var(--space-6);padding-left:1.3em;display:grid;gap:var(--space-3)">
         <li><strong>Emit nothing that appears on its own.</strong> No <code>alert()</code>, no modal on load, no banner, no toast that is not the direct consequence of an action the person just took, no <code>role="alert"</code>, no <code>aria-live="assertive"</code>, no <code>setInterval</code>, no autoplay, no <code>beforeunload</code>.</li>
         <li><strong>Never emit red.</strong> There is no red token. If you are reaching for one, the thing you are building is probably refused for a second reason too.</li>
-        <li><strong>Every destructive or leaving action gets an equal-weight escape.</strong> <code>.ah-btn</code> beside <code>.ah-btn.ah-btn--ghost</code>, labelled warmly.</li>
+        <li><strong>Every destructive or leaving action gets an equal-weight escape.</strong> <code>.ah-btn</code> beside <code>.ah-btn.ah-btn--ghost</code>, labeled warmly.</li>
         <li><strong>Every interactive element is a real element</strong> with an accessible name, reachable by keyboard, at a 44px target, acting on pointer-up.</li>
         <li><strong>Never disable pinch zoom.</strong> No <code>maximum-scale</code>, no <code>user-scalable=no</code>.</li>
         <li><strong>Never load anything over a network.</strong> No CDN, no Google Fonts, no remote <code>@import</code>.</li>
@@ -157,7 +157,7 @@ That did not go through. Nothing was changed.
   </main>
 
   <footer class="site-foot">
-    <p class="ah-caption" style="margin:0">Ahimsa Design System v2.0.0 · MIT · fonts under SIL OFL-1.1</p>
+    <p class="ah-caption" style="margin:0">Ahimsa Design System v3.0.0 · MIT · fonts under SIL OFL-1.1</p>
     <p class="ah-caption" style="margin:0">No analytics. No cookies. Nothing here is loaded over a network.</p>
   </footer>
 

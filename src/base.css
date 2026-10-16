@@ -94,10 +94,10 @@ button, [role="button"], [role="tab"], [role="checkbox"] { touch-action: manipul
   }
 }
 
-/* ---- Forced colours (Windows High Contrast and friends).
+/* ---- Forced colors (Windows High Contrast and friends).
    This system is built on glass and gradients, and forced-colors discards
    both. Rather than fight it, hand the whole surface over to the user's
-   own palette: flat system colours, real borders where a shadow used to
+   own palette: flat system colors, real borders where a shadow used to
    carry the edge. ---- */
 @media (forced-colors: active) {
   .ah-card, .ah-sheet, .ah-pill, .ah-chip, .ah-btn, .ah-mono, .ah-toast > * {

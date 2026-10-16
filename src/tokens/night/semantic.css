@@ -5,7 +5,7 @@
 .ahimsa-night {
   /* ---- Surfaces ---- */
   --surface-canvas:      var(--neutral-900);
-  --surface-canvas-flat: #0e131a;
+  --surface-canvas-flat: #0a1124;
   --surface-elevated:    var(--neutral-800);
   --surface-sunk:        var(--neutral-950);
   --surface-inverse:     var(--neutral-50);
@@ -16,32 +16,32 @@
      darkened its quiet text for a warm gradient canvas. ---- */
   --text-heading:   var(--neutral-50);
   --text-body:      var(--neutral-100);
-  --text-secondary: #dce3ecb8; /* ~72% */
-  --text-muted:     #dce3ec80; /* NON-TEXT ONLY — status dots, rules, disabled marks.
-                                   Measures 4.39:1, which clears 3:1 for non-text
+  --text-secondary: #d3dfe9b8; /* ~72% */
+  --text-muted:     #d3dfe980; /* NON-TEXT ONLY — status dots, rules, disabled marks.
+                                   Measures 4.20:1, which clears 3:1 for non-text
                                    (1.4.11) but NOT the 4.5:1 small text owes. No component
                                    sets type in this. */
-  --text-faint:     #dce3ec4d; /* ~30% */
+  --text-faint:     #d3dfe94d; /* ~30% */
   --text-inverse:   var(--neutral-900);
 
   /* ---- Borders. In Night these are the PRIMARY structural device —
-     Day separates with shadow and cream, Night with a hairline.
+     Day separates with shadow and paper, Night with a hairline.
      A hairline that carries meaning must clear 3:1 (WCAG 1.4.11); use
      --border-strong for those. Subtle and medium are decorative. ---- */
-  --border-subtle: #dce3ec1a; /* ~10% — decorative only */
-  --border-medium: #dce3ec33; /* ~20% — decorative only */
-  --border-strong: #dce3ec59; /* ~35% — emphatic, but DECORATIVE only: 2.69:1 */
+  --border-subtle: #d3dfe91a; /* ~10% — decorative only */
+  --border-medium: #d3dfe933; /* ~20% — decorative only */
+  --border-strong: #d3dfe959; /* ~35% — emphatic, but DECORATIVE only: 2.59:1 */
 
   /* The boundary of an interactive control. Owes 3:1 (WCAG 1.4.11). */
-  --border-control: #dce3ec8c; /* 55% — 4.86:1 worst case */
+  --border-control: #d3dfe98c; /* 55% — 4.79:1 worst case */
 
   /* ---- Accents ---- */
   --accent-primary:   var(--peacock-300);
   --accent-secondary: var(--indigo-300);
   --accent-success:   var(--bodhi-300);
-  --accent-warning:   var(--ember-300); /* the ONLY error colour. Never red. */
+  --accent-warning:   var(--clay-300); /* the ONLY error color. Low Embers, never red. */
 
-  --accent-warning-surface: var(--ember-500); /* fill for a destructive control — warm copper, not red.
+  --accent-warning-surface: var(--clay-400); /* fill for a destructive control — warm copper, not red.
                                       A destructive action is still not an emergency. */
 
   /* Setting SMALL TEXT in an accent? Use the -200 step, not these.
@@ -62,10 +62,10 @@
 
   /* ---- Glow. Night's answer to Day's paper shadow. Emphasis here is
      light, not lift. ---- */
-  --glow-sm: 0 0 12px -2px #8ecbd159;
-  --glow-md: 0 0 28px -4px #8ecbd166, 0 0 6px #8ecbd140;
-  --glow-lg: 0 0 64px -8px #8ecbd173, 0 0 18px #8ecbd14d;
+  --glow-sm: 0 0 12px -2px #7fd0d859;
+  --glow-md: 0 0 28px -4px #7fd0d866, 0 0 6px #7fd0d840;
+  --glow-lg: 0 0 64px -8px #7fd0d873, 0 0 18px #7fd0d84d;
 
-  /* ---- Night's display type opens up where Day's pulls tight. ---- */
-  --tracking-display: 0.03em;
+  /* ---- Display tracking matches Day: same type, same fit. ---- */
+  --tracking-display: -0.045em;
 }

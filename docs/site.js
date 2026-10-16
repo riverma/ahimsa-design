@@ -13,7 +13,7 @@
     root.classList.add('ahimsa-' + theme);
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) {
-      meta.setAttribute('content', theme === 'night' ? '#0e131a' : '#e7e7e4');
+      meta.setAttribute('content', theme === 'night' ? '#0a1124' : '#ece6dc');
     }
     document.querySelectorAll('[data-theme-btn]').forEach(function (b) {
       var on = b.getAttribute('data-theme-btn') === theme;
@@ -22,13 +22,23 @@
     });
   }
 
-  /* Deliberately NOT prefers-color-scheme. Day and Night are different
-     characters, not different brightnesses, and swapping an interface's
-     whole character because of an OS setting is the kind of surprise this
-     system refuses. The stored choice is the person's own. */
+  /* A stored choice is the person's own and wins. With none, follow the
+     operating system's appearance, live, until they choose. */
   var stored;
   try { stored = localStorage.getItem(KEY); } catch (e) { stored = null; }
-  apply(stored === 'night' ? 'night' : 'day');
+  var dark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  if (stored === 'night' || stored === 'day') {
+    apply(stored);
+  } else {
+    apply(dark && dark.matches ? 'night' : 'day');
+    if (dark && dark.addEventListener) {
+      dark.addEventListener('change', function (e) {
+        var chosen;
+        try { chosen = localStorage.getItem(KEY); } catch (err) { chosen = null; }
+        if (!chosen) apply(e.matches ? 'night' : 'day');
+      });
+    }
+  }
 
   document.addEventListener('click', function (e) {
     var btn = e.target.closest('[data-theme-btn]');
