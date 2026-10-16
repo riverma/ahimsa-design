@@ -5,7 +5,7 @@
 <!-- viewport-fit=cover for safe areas. Note what is absent: no
      maximum-scale, no user-scalable=no. Pinch zoom always stays. -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#e7e7e4">
+<meta name="theme-color" content="#ece6dc">
 <meta name="color-scheme" content="light dark">
 <title>Components — Ahimsa Design System</title>
 <meta name="description" content="Ten primitives, with a framework-free web implementation and the markup to paste.">
@@ -61,7 +61,7 @@
           <button class="ah-btn ah-btn--sm ah-hit" type="button">Small</button>
           <button class="ah-btn ah-btn--danger" type="button">Remove it</button>
           <button class="ah-btn" type="button" disabled>Disabled</button></div>
-        <p class="ah-body secondary ah-measure" style="margin:0"><code>--ghost</code> is an <em>outlined</em> pill, not grey text. Grey text beside a filled pill reads as a caption, and a caption is not a choice. <code>--danger</code> is warm earth, never red: removing something is not an emergency.</p>
+        <p class="ah-body secondary ah-measure" style="margin:0"><code>--ghost</code> is an <em>outlined</em> pill, not gray text. Gray text beside a filled pill reads as a caption, and a caption is not a choice. <code>--danger</code> is warm earth, never red: removing something is not an emergency.</p>
       <div class="snippet">
         <pre tabindex="0"><code>&lt;button class=&quot;ah-btn&quot; type=&quot;button&quot;&gt;Continue&lt;/button&gt;
 &lt;button class=&quot;ah-btn ah-btn--ghost&quot; type=&quot;button&quot;&gt;Not now&lt;/button&gt;
@@ -101,7 +101,7 @@
           <button class="ah-pill ah-pill--outline ah-hit" type="button">Outline</button>
           <button class="ah-pill ah-pill--outline is-active ah-hit" type="button">Outline active</button>
           <span class="ah-pill ah-pill--static"><span class="ah-pill__dot"></span>With a dot</span></div>
-        <p class="ah-body secondary ah-measure" style="margin:0">The dot is never the only carrier of its meaning — the pill's own text says the same thing, because colour is not a channel everyone has.</p>
+        <p class="ah-body secondary ah-measure" style="margin:0">The dot is never the only carrier of its meaning — the pill's own text says the same thing, because color is not a channel everyone has.</p>
       <div class="snippet">
         <pre tabindex="0"><code>&lt;button class=&quot;ah-pill ah-hit&quot; type=&quot;button&quot;&gt;Default&lt;/button&gt;
 &lt;button class=&quot;ah-pill is-active ah-hit&quot; type=&quot;button&quot; aria-pressed=&quot;true&quot;&gt;Active&lt;/button&gt;
@@ -116,7 +116,7 @@
     <section class="ah-section" id="link">
       <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Actions</p>
       <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Link</h2>
-      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">The rule under a link draws itself in rather than the text changing colour
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">The rule under a link draws itself in rather than the text changing color
      and jumping. Taken from the reference this aesthetic was tuned against, and
      it fills a gap: the system previously had no link treatment at all.</p>
       <div class="spec">
@@ -190,7 +190,7 @@
       <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Surfaces</p>
       <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Card</h2>
       <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Three surface levels plus one glass level, expressed as background first and
-     shadow second. A sunk surface gets no shadow at all — the colour <em>is</em>
+     shadow second. A sunk surface gets no shadow at all — the color <em>is</em>
      the elevation.</p>
       <div class="spec">
         <p class="ah-caps" style="margin:0">Variants</p>
@@ -200,7 +200,7 @@
             <div class="ah-card ah-card--sunk"><p class="ah-caps" style="margin:0 0 6px">sunk</p><p class="ah-body" style="margin:0">Recessed. No shadow at all.</p></div>
             <div class="ah-card ah-surface--cream"><p class="ah-caps" style="margin:0 0 6px">gradient</p><p class="ah-body" style="margin:0">One featured moment per screen.</p></div>
           </div></div>
-        <p class="ah-body secondary ah-measure" style="margin:0">No coloured-left-border cards and no hard outlines. Two gradient cards side by side is the rule this system breaks least gladly.</p>
+        <p class="ah-body secondary ah-measure" style="margin:0">No colored-left-border cards and no hard outlines. Two gradient cards side by side is the rule this system breaks least gladly.</p>
       <div class="snippet">
         <pre tabindex="0"><code>&lt;div class=&quot;ah-card&quot;&gt;…&lt;/div&gt;
 &lt;div class=&quot;ah-card ah-card--list&quot;&gt;…&lt;/div&gt;
@@ -239,7 +239,7 @@
         <p class="ah-body secondary ah-measure" style="margin:0">Wire <kbd>Escape</kbd> to close as well. A sheet you can only leave by dragging is not leaveable by everyone.</p>
       <div class="snippet">
         <pre tabindex="0"><code>&lt;div class=&quot;ah-scrim&quot; role=&quot;presentation&quot;&gt;
-  &lt;div class=&quot;ah-sheet&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot; aria-labelledby=&quot;t&quot;&gt;
+  &lt;div class=&quot;ah-sheet&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot; aria-labeledby=&quot;t&quot;&gt;
     &lt;div class=&quot;ah-sheet__grab&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;ah-sheet__head&quot;&gt;
       &lt;h2 class=&quot;ah-sheet__title&quot; id=&quot;t&quot;&gt;Share this card&lt;/h2&gt;
@@ -380,7 +380,7 @@
   </main>
 
   <footer class="site-foot">
-    <p class="ah-caption" style="margin:0">Ahimsa Design System v2.0.0 · MIT · fonts under SIL OFL-1.1</p>
+    <p class="ah-caption" style="margin:0">Ahimsa Design System v3.0.0 · MIT · fonts under SIL OFL-1.1</p>
     <p class="ah-caption" style="margin:0">No analytics. No cookies. Nothing here is loaded over a network.</p>
   </footer>
 

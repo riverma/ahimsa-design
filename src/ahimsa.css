@@ -9,14 +9,14 @@
    (html, so that the page background resolves too. A class on body leaves
    the root element without tokens and you get a white band on overscroll.)
 
-   Ahimsa Night is the sibling aesthetic, not a dark mode:
+   Ahimsa Night is the dark aesthetic:
 
      <html lang="en" class="ahimsa-night">
 
-   Do NOT wire the theme to prefers-color-scheme. Day and Night are
-   different characters, not different brightnesses, and switching an app's
-   whole character because of an OS setting is exactly the sort of surprise
-   this system refuses. Let a person choose, and remember what they chose.
+   Respect the operating system. With no stored choice, start in Night when
+   prefers-color-scheme is dark and in Day otherwise, and follow the system
+   if it changes. Once a person picks a theme inside the app, that choice
+   wins and is remembered.
 
    ---------------------------------------------------------------------
    This file is a chain of @imports, which is fine for a page and hostile
@@ -31,7 +31,6 @@
 
 /* Fonts — self-hosted, OFL-1.1. Drop the one you don't use. */
 @import url("fonts/day.css");
-@import url("fonts/night.css");
 
 /* Geometry and time. Shared: switching theme never moves the grid. */
 @import url("tokens/shared.css");

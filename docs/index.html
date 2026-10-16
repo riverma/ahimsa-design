@@ -5,7 +5,7 @@
 <!-- viewport-fit=cover for safe areas. Note what is absent: no
      maximum-scale, no user-scalable=no. Pinch zoom always stays. -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#e7e7e4">
+<meta name="theme-color" content="#ece6dc">
 <meta name="color-scheme" content="light dark">
 <title>A design system rooted in non-harm — Ahimsa Design System</title>
 <meta name="description" content="Ahimsa is a design system with two aesthetics, built on one premise: if a pattern requires the user to lose for the product to win, this system will not produce it.">
@@ -36,10 +36,10 @@
   <main id="main">
 
     <section class="hero">
-      <p class="ah-caps ah-caps--rule" style="margin:0">Ahimsa · अहिंसा · v2.0.0</p>
+      <p class="ah-caps ah-caps--rule" style="margin:0">Ahimsa · अहिंसा · v3.0.0</p>
       <h1 class="ah-display-fluid heading-ink hero__title" style="margin:0">Nothing here is designed to grab you.</h1>
       <p class="ah-prose hero__lede" style="margin:0">
-        Ahimsa is a design system rooted in non-harm. It ships colour, type, space
+        Ahimsa is a design system rooted in non-harm. It ships color, type, space
         and motion, ten primitives, and an explicit list of the things it refuses
         to build.
       </p>
@@ -71,30 +71,29 @@
       <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Two aesthetics</p>
       <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Day and Night</h2>
       <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Both are the same system. They share the spacing grid, the corner radii, the
-     size scale and the easing curves exactly; what changes is colour, the voice
-     of the type, and how a surface establishes its edge. Night's accents are
-     literally the cool end of Day's palette.</p>
+     size scale and the easing curves exactly; what changes is color, the voice
+     of the type, and how a surface establishes its edge. Night keeps every hue Day
+     chose, one step lighter; and the type is the same in both.</p>
       <div class="pair" style="margin-bottom:var(--space-6)">
-        <div style="border-radius:var(--radius-xl);padding:var(--space-6);background:linear-gradient(155deg,#d9d6d2 0%,#e4e2df 30%,#eeedeb 60%,#f7f6f4 100%);box-shadow:var(--shadow-md)">
-          <p style="margin:0 0 var(--space-3);font-family:'DM Sans',system-ui,sans-serif;font-size:0.625rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#0c0e12b0">Ahimsa Day</p>
-          <p style="margin:0 0 var(--space-3);font-family:Fraunces,Georgia,serif;font-size:1.375rem;line-height:1.15;color:#17191e">Paper, never white. Ink, never black.</p>
-          <p style="margin:0 0 var(--space-4);font-family:Fraunces,Georgia,serif;font-style:italic;font-size:1.0625rem;line-height:1.35;color:#17191ed0">The italic serif carries what is felt.</p>
-          <p style="margin:0;font-family:'DM Sans',system-ui,sans-serif;font-size:0.8125rem;line-height:1.4;color:#17191ecc">Editorial and unhurried. Wide-tracked small caps carry what is known, and depth is soft paper shadow.</p>
+        <div style="position:relative;overflow:hidden;border-radius:var(--radius-xl);padding:var(--space-6);background:radial-gradient(60% 55% at 14% -4%,#fff0b0e6 0%,#fff0b000 70%),linear-gradient(155deg,#fbf3e6 0%,#f3ece2 30%,#e9e6e0 60%,#dfe1e0 100%);box-shadow:var(--shadow-md)">
+          <p style="margin:0 0 var(--space-3);font-family:'DM Sans',system-ui,sans-serif;font-size:0.625rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#1c1410b0">Ahimsa Day</p>
+          <p style="margin:0 0 var(--space-3);font-family:Fraunces,Georgia,serif;font-size:1.375rem;line-height:1.15;color:#30221c">Paper, never white. Ink, never black.</p>
+          <p style="margin:0 0 var(--space-4);font-family:Fraunces,Georgia,serif;font-style:italic;font-size:1.0625rem;line-height:1.35;color:#30221cd0">The italic serif carries what is felt.</p>
+          <p style="margin:0;font-family:'DM Sans',system-ui,sans-serif;font-size:0.8125rem;line-height:1.4;color:#30221ccc">Editorial and unhurried. Wide-tracked small caps carry what is known, the sun falls from the top left, and depth is soft paper shadow.</p>
         </div>
-        <div style="position:relative;overflow:hidden;border-radius:var(--radius-xl);padding:var(--space-6);background:radial-gradient(120% 90% at 50% 0%, #1d2a36 0%, #0e131a 55%, #080b10 100%);box-shadow:var(--shadow-md)">
-          <div aria-hidden="true" style="position:absolute;inset:-20%;mix-blend-mode:plus-lighter;opacity:.5;background:radial-gradient(38% 28% at 22% 18%,#3b93a340 0,transparent 70%),radial-gradient(30% 24% at 78% 32%,#545fae33 0,transparent 72%)"></div>
+        <div style="position:relative;overflow:hidden;border-radius:var(--radius-xl);padding:var(--space-6);background:linear-gradient(155deg,#060914 0%,#0a1124 30%,#101a35 60%,#182648 100%);box-shadow:var(--shadow-md)">
+          <div aria-hidden="true" style="position:absolute;inset:0;background-image:var(--ambient-stars);background-size:100% 100%;background-repeat:no-repeat"></div>
           <div style="position:relative">
-            <p style="margin:0 0 var(--space-3);font-family:'DM Mono',ui-monospace,monospace;font-size:0.625rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#8ecbd1">Ahimsa Night</p>
-            <p style="margin:0 0 var(--space-3);font-family:'DM Sans',system-ui,sans-serif;font-weight:300;font-size:1.375rem;line-height:1.2;letter-spacing:0.02em;color:#eef2f7">Deep blue-black, never pure black. Ice, never pure white.</p>
-            <p style="margin:0 0 var(--space-4);font-family:'DM Sans',system-ui,sans-serif;font-weight:200;font-size:1.375rem;line-height:1.45;letter-spacing:0.03em;color:#c3e2ea">The hairline sans carries what is felt.</p>
-            <p style="margin:0;font-family:'DM Sans',system-ui,sans-serif;font-size:0.8125rem;line-height:1.45;color:#dce3ec">Futuristic and still. Mono carries what is measured, and depth is hairline and glow rather than shadow.</p>
+            <p style="margin:0 0 var(--space-3);font-family:'DM Sans',system-ui,sans-serif;font-size:0.625rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#7fd0d8">Ahimsa Night</p>
+            <p style="margin:0 0 var(--space-3);font-family:Fraunces,Georgia,serif;font-size:1.375rem;line-height:1.15;color:#e4eef5">Midnight, never pure black. Frost, never pure white.</p>
+            <p style="margin:0 0 var(--space-4);font-family:Fraunces,Georgia,serif;font-style:italic;font-size:1.0625rem;line-height:1.35;color:#c3e2ea">The same italic serif carries what is felt.</p>
+            <p style="margin:0;font-family:'DM Sans',system-ui,sans-serif;font-size:0.8125rem;line-height:1.45;color:#d3dfe9">The same voice as Day, lit from the other side. A faint field of stars sits behind it, and depth is hairline and glow rather than shadow.</p>
           </div>
         </div>
       </div>
-      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Switch the aesthetic with the control in the header. Night is <em>not</em> a
-     dark mode, and the system deliberately does not wire it to
-     <code>prefers-color-scheme</code> — see
-     <a class="ah-link" href="principles.html#themes">why</a>.</p>
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Switch the aesthetic with the control in the header. With no choice made,
+     the site follows your operating system's appearance — see
+     <a class="ah-link" href="principles.html#themes">how</a>.</p>
     </section>
 
     <section class="ah-section" id="install">
@@ -112,7 +111,7 @@
 &lt;html lang=&quot;en&quot; class=&quot;ahimsa-night&quot;&gt;</code></pre>
         <button class="ah-btn ah-btn--sm ah-btn--ghost snippet__copy" data-copy type="button">Copy</button>
       </div>
-      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Copy <code>fonts/</code> alongside it, licence texts included. Nothing is
+      <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Copy <code>fonts/</code> alongside it, license texts included. Nothing is
      ever fetched from a CDN: a remote font stops working on a plane and tells a
      third party who is using your app.</p>
     </section>
@@ -124,7 +123,7 @@
         <li><strong>No red.</strong> There is no danger token in either aesthetic. Errors are warm clay or warm copper, because a person who hit a problem has not done something wrong.</li>
         <li><strong>Nothing appears unasked.</strong> No banners, no modals on load, no notification badges, no floating "update available" bar. Version news lives in Settings, behind a control you press.</li>
         <li><strong>No numbers as pressure.</strong> No streaks, no scores, no counts framed as scarcity.</li>
-        <li><strong>Leaving weighs the same as continuing.</strong> Every escape hatch is a real control at equal metrics, never grey text.</li>
+        <li><strong>Leaving weighs the same as continuing.</strong> Every escape hatch is a real control at equal metrics, never gray text.</li>
         <li><strong>No emoji, no icon set.</strong> Type and space carry the meaning.</li>
       </ul>
       <p style="margin:var(--space-6) 0 0"><a class="ah-link" href="principles.html#refusals">The full list, with the reasoning →</a></p>
@@ -133,7 +132,7 @@
   </main>
 
   <footer class="site-foot">
-    <p class="ah-caption" style="margin:0">Ahimsa Design System v2.0.0 · MIT · fonts under SIL OFL-1.1</p>
+    <p class="ah-caption" style="margin:0">Ahimsa Design System v3.0.0 · MIT · fonts under SIL OFL-1.1</p>
     <p class="ah-caption" style="margin:0">No analytics. No cookies. Nothing here is loaded over a network.</p>
   </footer>
 

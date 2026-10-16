@@ -79,7 +79,6 @@
   text-transform: uppercase;
   color: var(--text-secondary); /* small text owes 4.5:1 — see .ah-caps */
 }
-.ahimsa-night .ah-notice__title { font-family: var(--font-mono); }
 
 /* Something did not work. Stated in the same voice as everything else:
    a warm tint and a sentence, not a red box and an exclamation mark.

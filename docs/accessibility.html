@@ -5,7 +5,7 @@
 <!-- viewport-fit=cover for safe areas. Note what is absent: no
      maximum-scale, no user-scalable=no. Pinch zoom always stays. -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#e7e7e4">
+<meta name="theme-color" content="#ece6dc">
 <meta name="color-scheme" content="light dark">
 <title>Accessibility — Ahimsa Design System</title>
 <meta name="description" content="WCAG 2.2 AA, checked by machine rather than claimed — including what is only partially met.">
@@ -56,7 +56,7 @@
       <table class="tbl">
         <thead><tr><th>SC</th><th>Criterion</th><th>Status</th><th>How</th></tr></thead>
         <tbody>
-          <tr><td><code>1.4.1</code></td><td>Use of colour</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">Every status has a text or shape channel. The pill dot never carries meaning alone.</td></tr>
+          <tr><td><code>1.4.1</code></td><td>Use of color</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">Every status has a text or shape channel. The pill dot never carries meaning alone.</td></tr>
           <tr><td><code>1.4.3</code></td><td>Contrast (minimum)</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">Machine-checked across both aesthetics and all 28 gradients by tools/check-contrast.mjs. Three inherited token values were raised to reach it — see below.</td></tr>
           <tr><td><code>1.4.4</code></td><td>Resize text</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">The whole type scale is rem. Nothing sets a px font-size on the root.</td></tr>
           <tr><td><code>1.4.10</code></td><td>Reflow</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-warning)"></span>Met for .ah-page</span></td><td class="secondary">The document shell reflows to 320px. The fixed app shell is a deliberate trade — do not use it to hold an article.</td></tr>
@@ -75,7 +75,7 @@
           <tr><td><code>2.5.5</code></td><td>Target size (AAA)</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">.ah-hit gives a 44px target without moving a painted pixel.</td></tr>
           <tr><td><code>2.5.7</code></td><td>Dragging movements</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">Pagination dots are buttons. Any drag affordance must be paired with a single-pointer route.</td></tr>
           <tr><td><code>4.1.2</code></td><td>Name, role, value</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-success)"></span>Met</span></td><td class="secondary">Every snippet on the Components page ships its ARIA.</td></tr>
-          <tr><td><code>1.4.3 (hints)</code></td><td>--text-faint</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-warning)"></span>Partial, by declaration</span></td><td class="secondary">At 2.07:1 it does not meet AA and is not intended to: it is for hints, no component uses it, and it must never be the sole carrier of meaning.</td></tr>
+          <tr><td><code>1.4.3 (hints)</code></td><td>--text-faint</td><td><span class="ah-pill ah-pill--static"><span class="ah-pill__dot" style="background:var(--accent-warning)"></span>Partial, by declaration</span></td><td class="secondary">At 2.14:1 it does not meet AA and is not intended to: it is for hints, no component uses it, and it must never be the sole carrier of meaning.</td></tr>
         </tbody>
       </table>
     </section>
@@ -84,15 +84,15 @@
       <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">The cost</p>
       <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">Three inherited values had to change</h2>
       <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Ahimsa Day is a restructure of a system already shipping in two apps, so the
-     rule was that no colour value moves. Three had to. Each is declared in
+     rule was that no color value moves. Three had to. Each is declared in
      <code>tools/check-parity.mjs</code>, which fails the build if a declared
      deviation disappears <em>or</em> if any undeclared value moves.</p>
       <table class="tbl tbl--fixed">
         <thead><tr><th style="width:26%">Token</th><th>Reason</th></tr></thead>
         <tbody>
-          <tr><td><code>--text-secondary</code></td><td class="secondary">WCAG 1.4.3: the original 65% alpha measures 3.64:1 on the darkest Day ground and fails AA for the descriptions and captions it exists to set. Raised to 76% (4.79:1) — the value a shipping consumer had already independently arrived at.</td></tr>
-          <tr><td><code>--text-muted</code></td><td class="secondary">WCAG 1.4.3: the original 45% alpha measures 2.30:1 and fails even the 3:1 large-text floor, for small-caps labels and metadata. Raised to 60% (3.23:1).</td></tr>
-          <tr><td><code>--text-faint</code></td><td class="secondary">The original 28% alpha measures 1.63:1. Raised to 40% (2.07:1) and redefined as hints only — it is now used by no component and must never be the sole carrier of meaning.</td></tr>
+          <tr><td><code>--text-secondary</code></td><td class="secondary">WCAG 1.4.3: the original 65% alpha measures 3.86:1 on the darkest Day ground and fails AA for the descriptions and captions it exists to set. Raised to 76% (5.15:1) — the value a shipping consumer had already independently arrived at.</td></tr>
+          <tr><td><code>--text-muted</code></td><td class="secondary">WCAG 1.4.3: the original 45% alpha measures 2.39:1 and fails even the 3:1 large-text floor, for small-caps labels and metadata. Raised to 60% (3.40:1).</td></tr>
+          <tr><td><code>--text-faint</code></td><td class="secondary">The original 28% alpha measures 1.66:1. Raised to 40% (2.14:1) and redefined as hints only — it is now used by no component and must never be the sole carrier of meaning.</td></tr>
         </tbody>
       </table>
       <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">Two of the three are not invented values: a shipping consumer had already
@@ -108,10 +108,9 @@
       <p class="ah-caps ah-caps--rule" style="margin:0 0 var(--space-4)">Honestly</p>
       <h2 class="ah-display-m" style="margin:0 0 var(--space-5)">What is still imperfect</h2>
       <ul class="ah-prose ah-measure" style="margin:0;padding-left:1.2em;display:grid;gap:var(--space-3)">
-        <li><strong>Five Day gradients cannot carry text.</strong> clay, indigo, monsoon, periwinkle and periwinkle-soft span too wide a lightness range for any ink to clear AA across them. They ship as surface-only, and text on them belongs in an opaque card. They were not narrowed because they are the system's signature ramps and two apps already render them.</li>
-        <li><strong><code>--text-faint</code> is 2.07:1</strong> and does not meet AA. It is for hints, no component uses it, and the docs say plainly that it must never be the sole carrier of meaning. If you find yourself reaching for it to set real content, reach for <code>--text-muted</code> instead.</li>
+        <li><strong>Some Day gradients cannot carry text.</strong> Day's indigo gradient spans too wide a lightness range for any ink to clear AA across it. It ships as surface-only, and text on it belongs in an opaque card. The generator lists exactly which ones.</li>
+        <li><strong><code>--text-faint</code> is 2.14:1</strong> and does not meet AA. It is for hints, no component uses it, and the docs say plainly that it must never be the sole carrier of meaning. If you find yourself reaching for it to set real content, reach for <code>--text-muted</code> instead.</li>
         <li><strong>The fixed app shell does not reflow like a document.</strong> <code>.ah-app</code> meets 320px, but at 200% zoom a fixed-viewport application is inherently tighter than a flowing page. Use <code>.ah-page</code> for anything read rather than operated.</li>
-        <li><strong>Night's hairline weights are capped at display sizes.</strong> Weight 200 loses effective contrast at small sizes because the stems thin out, so body copy in Night is 400 and never lighter. This is enforced by convention, not by a gate.</li>
         <li><strong>The two apps this was extracted from do not yet comply.</strong> Both ship a floating update bar that this system now refuses, and one has a drag-driven card deck with no single-pointer alternative. Those are theirs to fix, and naming them here is more useful than implying otherwise.</li>
       </ul>
     </section>
@@ -126,14 +125,14 @@ npm run check:a11y   # axe-core through Playwright, both themes, 320/390/1280 + 
       </div>
       <p class="ah-prose ah-measure" style="margin:0 0 var(--space-4)">The contrast gate composites translucent ink onto its actual ground before
      measuring, which most checkers do not — quiet text in this system is the
-     ink colour at low alpha, and a ratio computed without compositing is
+     ink color at low alpha, and a ratio computed without compositing is
      meaningless.</p>
     </section>
 
   </main>
 
   <footer class="site-foot">
-    <p class="ah-caption" style="margin:0">Ahimsa Design System v2.0.0 · MIT · fonts under SIL OFL-1.1</p>
+    <p class="ah-caption" style="margin:0">Ahimsa Design System v3.0.0 · MIT · fonts under SIL OFL-1.1</p>
     <p class="ah-caption" style="margin:0">No analytics. No cookies. Nothing here is loaded over a network.</p>
   </footer>
 

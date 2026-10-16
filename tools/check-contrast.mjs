@@ -4,7 +4,7 @@
    widened: both themes, every gradient, and the non-text 3:1 rule (1.4.11)
    the original did not cover.
 
-   Quiet text in this system is the ink colour at low alpha, so every
+   Quiet text in this system is the ink color at low alpha, so every
    comparison composites the ink onto its actual ground first. */
 
 import { readTokens } from './lib/css-tokens.mjs';
@@ -110,7 +110,15 @@ for (const [theme, files] of Object.entries(THEMES)) {
     }
   }
 
-  /* --- Ahimsa's own colour law --- */
+  /* --- The primary button: --text-inverse on --accent-primary. --- */
+  {
+    const fill = get('--accent-primary'), label = get('--text-inverse');
+    const ratio = contrast(over(label, fill), fill);
+    rows.push([theme, '--text-inverse', '--accent-primary', ratio, AA_SMALL]);
+    if (ratio < AA_SMALL) fails.push(`${theme}  --text-inverse on --accent-primary (primary button)  ${ratio.toFixed(2)}:1  needs ${AA_SMALL}`);
+  }
+
+  /* --- Ahimsa's own color law --- */
   const sum = (c) => c.r + c.g + c.b;
   const darkest = theme === 'day' ? get('--neutral-900') : get('--neutral-950');
   const lightest = get('--neutral-50');

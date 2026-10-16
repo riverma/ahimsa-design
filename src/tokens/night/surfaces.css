@@ -13,72 +13,82 @@
    ONE GRADIENT OWNS A SCREEN. Two of these side by side is the rule this
    system breaks least gladly. */
 
-/* deep — worst stop #161d26; heading 15.09:1, body/secondary 4.53:1, muted 3.04:1 */
+/* deep — worst stop #0f1626; heading 15.34:1, body/secondary 4.51:1, muted 3.02:1 */
 .ahimsa-night .ah-surface--deep {
   background: var(--gradient-deep);
-  --text-heading:   #eef2f7;
-  --text-body:      #eef2f77c;
-  --text-secondary: #eef2f77c;
-  --text-muted:     #eef2f75c;
-  --border-control: #eef2f776;
+  --text-heading:   #e4eef5;
+  --text-body:      #e4eef57d;
+  --text-secondary: #e4eef57d;
+  --text-muted:     #e4eef55e;
+  --border-control: #e4eef578;
 }
 
-/* horizon — worst stop #2c5866; heading 6.93:1, body/secondary 4.53:1, muted 3.01:1 */
+/* midnight — worst stop #182648; heading 12.66:1, body/secondary 4.52:1, muted 3.01:1 */
+.ahimsa-night .ah-surface--midnight {
+  background: var(--gradient-midnight);
+  --text-heading:   #e4eef5;
+  --text-body:      #e4eef585;
+  --text-secondary: #e4eef585;
+  --text-muted:     #e4eef55f;
+  --border-control: #e4eef579;
+}
+
+/* horizon — worst stop #45717e; heading 4.56:1, body/secondary 4.51:1, muted 3.00:1 */
 .ahimsa-night .ah-surface--horizon {
   background: var(--gradient-horizon);
-  --text-heading:   #eef2f7;
-  --text-body:      #eef2f7b9;
-  --text-secondary: #eef2f7b9;
-  --text-muted:     #eef2f77f;
-  --border-control: #eef2f799;
+  --text-heading:   #e4eef5;
+  --text-body:      #e4eef5fd;
+  --text-secondary: #e4eef5fd;
+  --text-muted:     #e4eef5ac;
+  --border-control: #e4eef5c6;
 }
 
-/* aurora — worst stop #2c7787; heading 4.56:1, body/secondary 4.52:1, muted 3.01:1 */
+/* aurora — worst stop #45717e; heading 4.56:1, body/secondary 4.51:1, muted 3.00:1 */
 .ahimsa-night .ah-surface--aurora {
   background: var(--gradient-aurora);
-  --text-heading:   #eef2f7;
-  --text-body:      #eef2f7fd;
-  --text-secondary: #eef2f7fd;
-  --text-muted:     #eef2f7ae;
-  --border-control: #eef2f7c8;
+  --text-heading:   #e4eef5;
+  --text-body:      #e4eef5fd;
+  --text-secondary: #e4eef5fd;
+  --text-muted:     #e4eef5ac;
+  --border-control: #e4eef5c6;
 }
 
-/* iris — worst stop #545fae; heading 5.15:1, body/secondary 4.51:1, muted 3.01:1 */
+/* iris — worst stop #555d8d; heading 5.35:1, body/secondary 4.51:1, muted 3.01:1 */
 .ahimsa-night .ah-surface--iris {
   background: var(--gradient-iris);
-  --text-heading:   #eef2f7;
-  --text-body:      #eef2f7e5;
-  --text-secondary: #eef2f7e5;
-  --text-muted:     #eef2f79d;
-  --border-control: #eef2f7b7;
+  --text-heading:   #e4eef5;
+  --text-body:      #e4eef5de;
+  --text-secondary: #e4eef5de;
+  --text-muted:     #e4eef598;
+  --border-control: #e4eef5b2;
 }
 
-/* nightfall — worst stop #475b77; heading 6.16:1, body/secondary 4.52:1, muted 3.02:1 */
+/* nightfall — worst stop #57657a; heading 5.03:1, body/secondary 4.51:1, muted 3.02:1 */
 .ahimsa-night .ah-surface--nightfall {
   background: var(--gradient-nightfall);
-  --text-heading:   #eef2f7;
-  --text-body:      #eef2f7c8;
-  --text-secondary: #eef2f7c8;
-  --text-muted:     #eef2f789;
-  --border-control: #eef2f7a3;
+  --text-heading:   #e4eef5;
+  --text-body:      #e4eef5e9;
+  --text-secondary: #e4eef5e9;
+  --text-muted:     #e4eef59f;
+  --border-control: #e4eef5b9;
 }
 
-/* ember — worst stop #7e4429; heading 6.80:1, body/secondary 4.51:1, muted 3.02:1 */
+/* ember — worst stop #775955; heading 5.34:1, body/secondary 4.52:1, muted 3.01:1 */
 .ahimsa-night .ah-surface--ember {
   background: var(--gradient-ember);
-  --text-heading:   #eef2f7;
-  --text-body:      #eef2f7bc;
-  --text-secondary: #eef2f7bc;
-  --text-muted:     #eef2f783;
-  --border-control: #eef2f79c;
+  --text-heading:   #e4eef5;
+  --text-body:      #e4eef5df;
+  --text-secondary: #e4eef5df;
+  --text-muted:     #e4eef598;
+  --border-control: #e4eef5b2;
 }
 
-/* void — worst stop #1d2a36; heading 13.00:1, body/secondary 4.51:1, muted 3.02:1 */
+/* void — worst stop #182648; heading 12.66:1, body/secondary 4.52:1, muted 3.01:1 */
 .ahimsa-night .ah-surface--void {
   background: var(--gradient-void);
-  --text-heading:   #eef2f7;
-  --text-body:      #eef2f782;
-  --text-secondary: #eef2f782;
-  --text-muted:     #eef2f75d;
-  --border-control: #eef2f777;
+  --text-heading:   #e4eef5;
+  --text-body:      #e4eef585;
+  --text-secondary: #e4eef585;
+  --text-muted:     #e4eef55f;
+  --border-control: #e4eef579;
 }

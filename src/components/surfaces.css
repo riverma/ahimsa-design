@@ -2,8 +2,8 @@
    Card, Sheet.
 
    Three surface levels plus one glass level, expressed as background FIRST
-   and shadow second. Sunk surfaces get no shadow at all; the colour is the
-   elevation. No coloured-left-border cards, no hard outlines. */
+   and shadow second. Sunk surfaces get no shadow at all; the color is the
+   elevation. No colored-left-border cards, no hard outlines. */
 
 /* ================================================================
    Card
@@ -116,3 +116,20 @@
 }
 
 .ahimsa-night .ah-sheet { border-top: 1px solid var(--border-medium); }
+
+/* ================================================================
+   Sky — Day's atmosphere, the way .ah-ambient is Night's.
+   A warm haze that cools toward the far corner, with the sun falling on
+   it from the top left. Put it on the page, a screen, or a hero region;
+   cards and text sit on top as they would on flat paper.
+   Decorative: it carries no meaning, and under forced-colors it falls
+   away to the system canvas.
+   ================================================================ */
+.ahimsa-day .ah-sky {
+  background-color: var(--surface-canvas-flat);
+  background-image: var(--gradient-sun), var(--gradient-dawn);
+  background-repeat: no-repeat;
+}
+@media (forced-colors: active) {
+  .ahimsa-day .ah-sky { background-image: none; }
+}

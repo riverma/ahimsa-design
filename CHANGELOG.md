@@ -7,19 +7,63 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.0] - 2026-10-16
+
+Both aesthetics are recolored and Night now speaks in Day's type. This is
+breaking: every Day color, gradient and shadow value changes, Night's palette
+changes, and two applications render them.
+
+### Changed
+
+- **Day is lit by a sun.** Warm paper (Chalk cards, Cocoa ink) under a Soft
+  Haze sky. `--gradient-dawn` is now the sky and the new `--gradient-sun` is
+  the light falling on it from the top left; together they are `.ah-sky`.
+  `--gradient-cream` and every tradition gradient were regenerated.
+- **The accents were chosen, not derived.** Marigold Robe (saffron), Gold Leaf
+  (turmeric), Kiln (clay), Young Leaf (bodhi), Verdigris (peacock), Champaran
+  (indigo), Rain Cloud (monsoon). Each is the `-600` step of its family in
+  Day. Token slugs are unchanged; the names are documented in Foundations.
+  `--accent-primary` is now `peacock-600`.
+- **Night keeps those hues, one step lighter.** Ghee, Gold Dust, Low Embers,
+  Fig Leaf, Glacier Lake, Nila, Rain Cloud, each the `-300` step. Saffron,
+  turmeric and clay join Night's palette; the ember family is gone and
+  warnings are clay. The ground is Midnight Blue with a Deep Well card and
+  Frost ink.
+- **Night uses Day's type.** Fraunces and DM Sans, the same weights, the same
+  display tracking. The ultralight sans and the mono voice are gone.
+- **Night follows the operating system.** The documentation no longer says
+  Night is not a dark mode. With no stored choice, an app should start in
+  Night when `prefers-color-scheme` is dark, and a choice made in the app
+  always wins. The docs site does exactly this.
+- **American English throughout** (`color`, `gray`, `license`, `labeled`).
+- The parity baseline was re-baselined to the new Day values.
+
+### Added
+
+- `.ah-ambient--stars`: a faint, static, fixed-arrangement starfield for Night.
+- `.ah-sky`: Day's counterpart, a warm haze with the sun at the top left.
+- `--gradient-midnight` (Night's sky) and `--gradient-sun` (Day's light).
+- `--ambient-stars`, the starfield as a custom property.
+
+### Removed
+
+- **DM Mono** and `fonts/night.css`: Night no longer needs a second family.
+  `--font-mono` is the system monospace in both aesthetics.
+- Night's `ember-*` palette family.
+
 ## [2.0.0] - 2026-10-11
 
-Day moves from warm cream to newsprint. This is breaking: colour, gradient
+Day moves from warm cream to newsprint. This is breaking: color, gradient
 and shadow values in Day change, and two applications render them.
 
 ### Changed
 
-- **Ahimsa Day is now newsprint.** Paper-grey canvas, off-white cards, and
+- **Ahimsa Day is now newsprint.** Paper-gray canvas, off-white cards, and
   near-black ink with a faint cool tint, in step with Night's blue-black.
   Primary buttons are ink on paper.
 - **Accents are a hint, not a palette.** Every ramp is desaturated; the primary
   accent and focus ring are deep peacock, links and active tabs are indigo.
-- **All Day gradients are muted**, and `dawn` and `cream` are paper greys.
+- **All Day gradients are muted**, and `dawn` and `cream` are paper grays.
   Gradient surface classes were regenerated with re-measured ink.
 - **Shadows, scrim and the docs preview card** are tinted to the new ink.
 - **The system is described as platform-neutral**: for phone, desktop and web

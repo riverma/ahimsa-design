@@ -2,24 +2,34 @@
    All 155 degrees (cream is 170 for large horizontal surfaces), stops
    always at 0 / 30 / 60 / 100%. Named by feeling.
 
-   The rule: ONE GRADIENT OWNS A SCREEN. Never two side by side. Flat cream
-   is the default; a gradient is a moment of emphasis, not a decoration.
+   Day is lit by a sun. --gradient-dawn is the sky (a warm haze that cools
+   toward the far corner) and --gradient-sun is the light falling on it from
+   the top left. Together they are .ah-sky. Everything else is a moment of
+   emphasis.
+
+   The rule: ONE GRADIENT OWNS A SCREEN. The sky counts as the ground, not
+   as a second gradient: never put two emphatic gradients side by side.
 
    No repeating patterns, no textures, no photography direction. */
 
 .ahimsa-day {
-  /* ---- The two neutral heroes ---- */
-  --gradient-dawn:  linear-gradient(155deg, #d9d6d2 0%, #e4e2df 30%, #eeedeb 60%, #f7f6f4 100%);
-  --gradient-cream: linear-gradient(170deg, #fafaf8 0%, #f1f1ee 50%, #e3e3df 100%);
+  /* ---- The sky ---- */
+  --gradient-dawn:  linear-gradient(155deg, #fbf3e6 0%, #f3ece2 30%, #e9e6e0 60%, #dfe1e0 100%);
+  --gradient-cream: linear-gradient(170deg, #fcf8ef 0%, #f4eee4 50%, #e7e3dc 100%);
+
+  /* The one radial in Day, and the sun itself: a warm light that falls
+     away to nothing before it reaches the middle of the screen. It is a
+     layer to put over --gradient-dawn, never a surface of its own. */
+  --gradient-sun: radial-gradient(60% 55% at 14% -4%, #fff0b0e6 0%, #fff0b000 70%);
 
   /* ---- The ahimsa-tradition set ---- */
-  --gradient-saffron:  linear-gradient(155deg, #a78a6f 0%, #baa38c 30%, #cdbcaa 60%, #dfd5c9 100%);
-  --gradient-turmeric: linear-gradient(155deg, #998966 0%, #afa285 30%, #c5bba6 60%, #dbd5c7 100%);
-  --gradient-clay:     linear-gradient(155deg, #90766d 0%, #a79086 30%, #beaca3 60%, #d6cac3 100%);
-  --gradient-bodhi:    linear-gradient(155deg, #77846d 0%, #96a28d 30%, #b6beaf 60%, #d6dad2 100%);
-  --gradient-peacock:  linear-gradient(155deg, #5f7a7f 0%, #7f989b 30%, #a5b8ba 60%, #cbd6d7 100%);
-  --gradient-indigo:   linear-gradient(155deg, #74778f 0%, #9094a8 30%, #b0b2c1 60%, #d1d2da 100%);
-  --gradient-monsoon:  linear-gradient(155deg, #70767f 0%, #8b919a 30%, #aaafb5 60%, #caccd0 100%);
+  --gradient-saffron:   linear-gradient(155deg, #c37a40 0%, #d4a278 30%, #e0c0a3 60%, #eddcca 100%);
+  --gradient-turmeric:  linear-gradient(155deg, #a58b36 0%, #c0ad72 30%, #d4c69f 60%, #e7dec8 100%);
+  --gradient-clay:      linear-gradient(155deg, #ba7659 0%, #ce9f89 30%, #ddbead 60%, #ebdbcf 100%);
+  --gradient-bodhi:     linear-gradient(155deg, #709a5a 0%, #9db789 30%, #bfccad 60%, #dee1cf 100%);
+  --gradient-peacock:   linear-gradient(155deg, #42968f 0%, #7fb4ac 30%, #adcbc2 60%, #d6e0d8 100%);
+  --gradient-indigo:    linear-gradient(155deg, #7375b0 0%, #9f9ec2 30%, #c0becf 60%, #dedbde 100%);
+  --gradient-monsoon:   linear-gradient(155deg, #7c8793 0%, #a5aaaf 30%, #c4c5c4 60%, #e0ded9 100%);
 
   /* ---- The classic set ---- */
   --gradient-amber:            linear-gradient(155deg, #b2a496 0%, #c1b5a7 30%, #d0c6b8 60%, #ded6ca 100%);

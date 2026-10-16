@@ -1,25 +1,25 @@
 /* Ahimsa Day — semantic tokens.
-   The ONLY colour tokens a component may reference. Both themes define
+   The ONLY color tokens a component may reference. Both themes define
    this exact set of names, which is what makes markup theme-portable. */
 
 .ahimsa-day {
   /* ---- Surfaces ---- */
-  --surface-canvas:      var(--neutral-200); /* default app background */
-  --surface-canvas-flat: #e7e7e4;            /* for html/body, where a gradient can't go */
+  --surface-canvas:      var(--neutral-200); /* flat fallback; the sky (.ah-sky) sits over it */
+  --surface-canvas-flat: #ece6dc;            /* for html/body, where a gradient can't go */
   --surface-elevated:    var(--neutral-50);  /* cards, sheets, elevated surfaces */
   --surface-sunk:        var(--neutral-300); /* recessed surfaces, subtle wells */
   --surface-inverse:     var(--neutral-800); /* dark surface, used sparingly */
 
-  /* ---- Text. Quiet steps are the warm brown at low alpha rather than a
-     grey, so nothing ever reads cold against cream.
+  /* ---- Text. Quiet steps are the cocoa at low alpha rather than a
+     gray, so nothing ever reads cold against the paper.
 
      DEVIATION FROM THE ORIGINAL TOKEN SET, and the only one in Day.
-     The original alphas were 65 / 45 / 28%, which measure 3.64 / 2.30 /
-     1.63 against the darkest Day ground — secondary fails AA outright and
+     The original alphas were 65 / 45 / 28%, which measure 3.86 / 2.39 /
+     1.66 against the darkest Day ground — secondary fails AA outright and
      muted fails even the 3:1 large-text floor. They are not usable for
      descriptions or labels, which is what they are for.
 
-     The values below are 76 / 60 / 40%, which measure 4.79 / 3.23 / 2.07.
+     The values below are 76 / 60 / 40%, which measure 5.15 / 3.40 / 2.14.
      They are not invented: a shipping consumer independently derived
      exactly these, for a different reason (quiet text fading on a warm
      gradient canvas), and they turn out to be the accessible ones.
@@ -27,31 +27,31 @@
      gate still catches any change nobody decided on. ---- */
   --text-heading:   var(--neutral-800); /* titles, display type */
   --text-body:      var(--neutral-700); /* body copy */
-  --text-secondary: #2d3036c2;          /* 76% — descriptions, captions. 4.79:1 worst case */
-  --text-muted:     #2d303699; /* NON-TEXT ONLY — status dots, rules, disabled marks.
-                                   Measures 3.23:1, which clears 3:1 for non-text
+  --text-secondary: #3a2c25c2;          /* 76% — descriptions, captions. 5.15:1 worst case */
+  --text-muted:     #3a2c2599; /* NON-TEXT ONLY — status dots, rules, disabled marks.
+                                   Measures 3.40:1, which clears 3:1 for non-text
                                    (1.4.11) but NOT the 4.5:1 small text owes. No component
                                    sets type in this. */
-  --text-faint:     #2d303666;          /* 40% — hints ONLY. 2.07:1: never the sole carrier of anything */
+  --text-faint:     #3a2c2566;          /* 40% — hints ONLY. 2.14:1: never the sole carrier of anything */
   --text-inverse:   var(--neutral-50);  /* text on dark surfaces */
 
   /* ---- Borders. Mostly absent by design: inputs use a single bottom rule
-     rather than a box, and separators are warm brown at low alpha. ---- */
-  --border-subtle: #2d303614; /* ~8%  — barely-there divisions */
-  --border-medium: #2d30362e; /* ~18% — clear separators */
-  --border-strong: #2d303659; /* ~35% — emphatic, but DECORATIVE only: 1.90:1 */
+     rather than a box, and separators are cocoa at low alpha. ---- */
+  --border-subtle: #3a2c2514; /* ~8%  — barely-there divisions */
+  --border-medium: #3a2c252e; /* ~18% — clear separators */
+  --border-strong: #3a2c2559; /* ~35% — emphatic, but DECORATIVE only: 1.92:1 */
 
   /* The boundary of an interactive control — a ghost button's ring, an
      outline pill. That line IS the control's edge, so it owes 3:1
      (WCAG 1.4.11) in a way a separator does not. --border-strong cannot
      carry it. Additive; nothing upstream had this. */
-  --border-control: #2d303699; /* 60% — 3.23:1 worst case */
+  --border-control: #3a2c2599; /* 60% — 3.40:1 worst case */
 
   /* ---- Accents ---- */
-  --accent-primary:   var(--peacock-700); /* brand — the one hint of colour */
+  --accent-primary:   var(--peacock-600); /* brand — Verdigris, the one hint of color */
   --accent-secondary: var(--indigo-600);  /* interactive — links, active tabs */
   --accent-success:   var(--bodhi-600);
-  --accent-warning:   var(--clay-600);    /* the ONLY error colour. Warm, not alarming.
+  --accent-warning:   var(--clay-600);    /* the ONLY error color. Warm, not alarming.
                                              There is no red token in this system. */
 
   --accent-warning-surface: var(--clay-600); /* fill for a destructive control — fired earth, not red.
@@ -60,8 +60,9 @@
                                       A destructive action is still not an emergency. */
 
   /* Setting SMALL TEXT in an accent? Use the -700 step, not these.
-     --accent-success and --accent-warning are tuned as fills and marks and
-     clear the 3:1 non-text bar; as 10px type they do not reach 4.5:1. */
+     The -600 accents clear 4.5:1 on a card but fall short on the shaded end
+     of the sky, and --accent-success and --accent-warning are tuned as
+     fills and marks (3:1 non-text). -700 clears small text everywhere. */
 
   /* ---- Focus. Must clear 3:1 against both the element and its ground
      (WCAG 1.4.11). Never suppressed — see base.css. ---- */
@@ -71,10 +72,10 @@
 
   /* ---- Glass. Needs backdrop-filter to read correctly. Reserved for
      surfaces sitting on a gradient, and for the sheet scrim. Not used
-     decoratively on flat cream. ---- */
+     decoratively on flat paper. ---- */
   --glass-overlay:        #ffffff6b; /* 42% white — frosted glass surfaces */
   --glass-overlay-strong: #ffffff8f; /* 56% white — more opaque frosted panels */
-  --glass-scrim:          #0c0e1273; /* 45% dark — modal / sheet scrims */
+  --glass-scrim:          #1c141073; /* 45% dark — modal / sheet scrims */
   --glass-blur:           12px;
 
   /* ---- Glow. Day has none: depth here comes from warm paper shadow.

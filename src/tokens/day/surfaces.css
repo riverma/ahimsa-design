@@ -13,197 +13,217 @@
    ONE GRADIENT OWNS A SCREEN. Two of these side by side is the rule this
    system breaks least gladly. */
 
-/* dawn — worst stop #d9d6d2; heading 13.34:1, body/secondary 4.53:1, muted 3.01:1 */
+/* dawn — worst stop #dfe1e0; heading 13.82:1, body/secondary 4.54:1, muted 3.00:1 */
 .ahimsa-day .ah-surface--dawn {
   background: var(--gradient-dawn);
-  --text-heading:   #0c0e12;
-  --text-body:      #0c0e129a;
-  --text-secondary: #0c0e129a;
-  --text-muted:     #0c0e1277;
-  --border-control: #0c0e1291;
+  --text-heading:   #1c1410;
+  --text-body:      #1c14109d;
+  --text-secondary: #1c14109d;
+  --text-muted:     #1c141079;
+  --border-control: #1c141093;
 }
 
-/* cream — worst stop #e3e3df; heading 15.01:1, body/secondary 4.55:1, muted 3.03:1 */
+/* cream — worst stop #e7e3dc; heading 14.19:1, body/secondary 4.53:1, muted 3.02:1 */
 .ahimsa-day .ah-surface--cream {
   background: var(--gradient-cream);
-  --text-heading:   #0c0e12;
-  --text-body:      #0c0e1297;
-  --text-secondary: #0c0e1297;
-  --text-muted:     #0c0e1275;
-  --border-control: #0c0e128f;
+  --text-heading:   #1c1410;
+  --text-body:      #1c14109c;
+  --text-secondary: #1c14109c;
+  --text-muted:     #1c141079;
+  --border-control: #1c141093;
 }
 
-/* saffron — worst stop #a78a6f; heading 5.99:1, body/secondary 4.50:1, muted 3.02:1 */
+/* sun — worst stop #fff0b0; heading 15.85:1, body/secondary 4.54:1, muted 3.02:1 */
+.ahimsa-day .ah-surface--sun {
+  background: var(--gradient-sun);
+  --text-heading:   #1c1410;
+  --text-body:      #1c141099;
+  --text-secondary: #1c141099;
+  --text-muted:     #1c141077;
+  --border-control: #1c141091;
+}
+
+/* saffron — worst stop #c37a40; heading 5.34:1, body/secondary 4.53:1, muted 3.01:1 */
 .ahimsa-day .ah-surface--saffron {
   background: var(--gradient-saffron);
-  --text-heading:   #0c0e12;
-  --text-body:      #0c0e12c9;
-  --text-secondary: #0c0e12c9;
-  --text-muted:     #0c0e1294;
-  --border-control: #0c0e12ae;
+  --text-heading:   #1c1410;
+  --text-body:      #1c1410de;
+  --text-secondary: #1c1410de;
+  --text-muted:     #1c1410a1;
+  --border-control: #1c1410bb;
 }
 
-/* turmeric — worst stop #998966; heading 5.63:1, body/secondary 4.51:1, muted 3.02:1 */
+/* turmeric — worst stop #a58b36; heading 5.49:1, body/secondary 4.52:1, muted 3.01:1 */
 .ahimsa-day .ah-surface--turmeric {
   background: var(--gradient-turmeric);
-  --text-heading:   #0c0e12;
-  --text-body:      #0c0e12d1;
-  --text-secondary: #0c0e12d1;
-  --text-muted:     #0c0e1298;
-  --border-control: #0c0e12b2;
+  --text-heading:   #1c1410;
+  --text-body:      #1c1410da;
+  --text-secondary: #1c1410da;
+  --text-muted:     #1c14109f;
+  --border-control: #1c1410b9;
 }
 
-/* clay — worst stop #90766d; heading 4.60:1, body/secondary 4.51:1, muted 3.02:1 */
+/* clay — worst stop #ba7659; heading 5.03:1, body/secondary 4.51:1, muted 3.01:1 */
 .ahimsa-day .ah-surface--clay {
   background: var(--gradient-clay);
-  --text-heading:   #0c0e12;
-  --text-body:      #0c0e12f9;
-  --text-secondary: #0c0e12f9;
-  --text-muted:     #0c0e12a9;
-  --border-control: #0c0e12c3;
+  --text-heading:   #1c1410;
+  --text-body:      #1c1410e7;
+  --text-secondary: #1c1410e7;
+  --text-muted:     #1c1410a6;
+  --border-control: #1c1410c0;
 }
 
-/* bodhi — worst stop #77846d; heading 4.88:1, body/secondary 4.52:1, muted 3.01:1 */
+/* bodhi — worst stop #709a5a; heading 5.58:1, body/secondary 4.52:1, muted 3.01:1 */
 .ahimsa-day .ah-surface--bodhi {
   background: var(--gradient-bodhi);
-  --text-heading:   #0c0e12;
-  --text-body:      #0c0e12ea;
-  --text-secondary: #0c0e12ea;
-  --text-muted:     #0c0e12a3;
-  --border-control: #0c0e12bc;
+  --text-heading:   #1c1410;
+  --text-body:      #1c1410d7;
+  --text-secondary: #1c1410d7;
+  --text-muted:     #1c14109d;
+  --border-control: #1c1410b7;
 }
 
-/* peacock — SURFACE ONLY. Stop #5f7a7f cannot carry AA text at any
-   opacity (best possible 4.21:1, with the most present ink the
-   system allows). Use it as a backdrop and put text in an opaque .ah-card. */
-.ahimsa-day .ah-surface--peacock { background: var(--gradient-peacock); }
+/* peacock — worst stop #42968f; heading 5.18:1, body/secondary 4.52:1, muted 3.00:1 */
+.ahimsa-day .ah-surface--peacock {
+  background: var(--gradient-peacock);
+  --text-heading:   #1c1410;
+  --text-body:      #1c1410e1;
+  --text-secondary: #1c1410e1;
+  --text-muted:     #1c1410a1;
+  --border-control: #1c1410bb;
+}
 
-/* indigo — SURFACE ONLY. Stop #74778f cannot carry AA text at any
-   opacity (best possible 4.39:1, with the most present ink the
+/* indigo — SURFACE ONLY. Stop #7375b0 cannot carry AA text at any
+   opacity (best possible 4.24:1, with the most present ink the
    system allows). Use it as a backdrop and put text in an opaque .ah-card. */
 .ahimsa-day .ah-surface--indigo { background: var(--gradient-indigo); }
 
-/* monsoon — SURFACE ONLY. Stop #70767f cannot carry AA text at any
-   opacity (best possible 4.22:1, with the most present ink the
-   system allows). Use it as a backdrop and put text in an opaque .ah-card. */
-.ahimsa-day .ah-surface--monsoon { background: var(--gradient-monsoon); }
+/* monsoon — worst stop #7c8793; heading 4.96:1, body/secondary 4.52:1, muted 3.01:1 */
+.ahimsa-day .ah-surface--monsoon {
+  background: var(--gradient-monsoon);
+  --text-heading:   #1c1410;
+  --text-body:      #1c1410ea;
+  --text-secondary: #1c1410ea;
+  --text-muted:     #1c1410a7;
+  --border-control: #1c1410c1;
+}
 
-/* amber — worst stop #b2a496; heading 7.95:1, body/secondary 4.51:1, muted 3.02:1 */
+/* amber — worst stop #b2a496; heading 7.47:1, body/secondary 4.53:1, muted 3.01:1 */
 .ahimsa-day .ah-surface--amber {
   background: var(--gradient-amber);
-  --text-heading:   #0c0e12;
-  --text-body:      #0c0e12b1;
-  --text-secondary: #0c0e12b1;
-  --text-muted:     #0c0e1286;
-  --border-control: #0c0e12a0;
+  --text-heading:   #1c1410;
+  --text-body:      #1c1410bb;
+  --text-secondary: #1c1410bb;
+  --text-muted:     #1c14108d;
+  --border-control: #1c1410a7;
 }
 
-/* rose — worst stop #c0a5a8; heading 8.45:1, body/secondary 4.50:1, muted 3.03:1 */
+/* rose — worst stop #c0a5a8; heading 7.94:1, body/secondary 4.50:1, muted 3.00:1 */
 .ahimsa-day .ah-surface--rose {
   background: var(--gradient-rose);
-  --text-heading:   #0c0e12;
-  --text-body:      #0c0e12ad;
-  --text-secondary: #0c0e12ad;
-  --text-muted:     #0c0e1284;
-  --border-control: #0c0e129e;
+  --text-heading:   #1c1410;
+  --text-body:      #1c1410b6;
+  --text-secondary: #1c1410b6;
+  --text-muted:     #1c14108a;
+  --border-control: #1c1410a3;
 }
 
-/* coral — worst stop #bca096; heading 7.92:1, body/secondary 4.50:1, muted 3.01:1 */
+/* coral — worst stop #bca096; heading 7.44:1, body/secondary 4.51:1, muted 3.00:1 */
 .ahimsa-day .ah-surface--coral {
   background: var(--gradient-coral);
-  --text-heading:   #0c0e12;
-  --text-body:      #0c0e12b1;
-  --text-secondary: #0c0e12b1;
-  --text-muted:     #0c0e1286;
-  --border-control: #0c0e12a0;
+  --text-heading:   #1c1410;
+  --text-body:      #1c1410bb;
+  --text-secondary: #1c1410bb;
+  --text-muted:     #1c14108d;
+  --border-control: #1c1410a7;
 }
 
-/* terracotta — worst stop #97847a; heading 5.42:1, body/secondary 4.50:1, muted 3.00:1 */
+/* terracotta — worst stop #97847a; heading 5.10:1, body/secondary 4.51:1, muted 3.01:1 */
 .ahimsa-day .ah-surface--terracotta {
   background: var(--gradient-terracotta);
-  --text-heading:   #0c0e12;
-  --text-body:      #0c0e12d6;
-  --text-secondary: #0c0e12d6;
-  --text-muted:     #0c0e129a;
-  --border-control: #0c0e12b3;
+  --text-heading:   #1c1410;
+  --text-body:      #1c1410e5;
+  --text-secondary: #1c1410e5;
+  --text-muted:     #1c1410a5;
+  --border-control: #1c1410bf;
 }
 
-/* sage — worst stop #869188; heading 5.90:1, body/secondary 4.50:1, muted 3.02:1 */
+/* sage — worst stop #869188; heading 5.55:1, body/secondary 4.51:1, muted 3.01:1 */
 .ahimsa-day .ah-surface--sage {
   background: var(--gradient-sage);
-  --text-heading:   #0c0e12;
-  --text-body:      #0c0e12cb;
-  --text-secondary: #0c0e12cb;
-  --text-muted:     #0c0e1295;
-  --border-control: #0c0e12af;
+  --text-heading:   #1c1410;
+  --text-body:      #1c1410d8;
+  --text-secondary: #1c1410d8;
+  --text-muted:     #1c14109e;
+  --border-control: #1c1410b8;
 }
 
-/* teal — worst stop #7d9893; heading 6.24:1, body/secondary 4.51:1, muted 3.02:1 */
+/* teal — worst stop #7d9893; heading 5.86:1, body/secondary 4.52:1, muted 3.01:1 */
 .ahimsa-day .ah-surface--teal {
   background: var(--gradient-teal);
-  --text-heading:   #0c0e12;
-  --text-body:      #0c0e12c5;
-  --text-secondary: #0c0e12c5;
-  --text-muted:     #0c0e1292;
-  --border-control: #0c0e12ab;
+  --text-heading:   #1c1410;
+  --text-body:      #1c1410d1;
+  --text-secondary: #1c1410d1;
+  --text-muted:     #1c14109a;
+  --border-control: #1c1410b3;
 }
 
-/* violet — worst stop #aaa4b3; heading 7.98:1, body/secondary 4.52:1, muted 3.02:1 */
+/* violet — worst stop #aaa4b3; heading 7.49:1, body/secondary 4.50:1, muted 3.02:1 */
 .ahimsa-day .ah-surface--violet {
   background: var(--gradient-violet);
-  --text-heading:   #0c0e12;
-  --text-body:      #0c0e12b1;
-  --text-secondary: #0c0e12b1;
-  --text-muted:     #0c0e1286;
-  --border-control: #0c0e12a0;
+  --text-heading:   #1c1410;
+  --text-body:      #1c1410ba;
+  --text-secondary: #1c1410ba;
+  --text-muted:     #1c14108d;
+  --border-control: #1c1410a7;
 }
 
-/* slate — worst stop #7c848e; heading 5.10:1, body/secondary 4.52:1, muted 3.00:1 */
+/* slate — worst stop #7c848e; heading 4.80:1, body/secondary 4.50:1, muted 3.01:1 */
 .ahimsa-day .ah-surface--slate {
   background: var(--gradient-slate);
-  --text-heading:   #0c0e12;
-  --text-body:      #0c0e12e1;
-  --text-secondary: #0c0e12e1;
-  --text-muted:     #0c0e129f;
-  --border-control: #0c0e12b9;
+  --text-heading:   #1c1410;
+  --text-body:      #1c1410f0;
+  --text-secondary: #1c1410f0;
+  --text-muted:     #1c1410aa;
+  --border-control: #1c1410c3;
 }
 
-/* periwinkle — worst stop #82869b; heading 5.36:1, body/secondary 4.50:1, muted 3.00:1 */
+/* periwinkle — worst stop #82869b; heading 5.04:1, body/secondary 4.51:1, muted 3.02:1 */
 .ahimsa-day .ah-surface--periwinkle {
   background: var(--gradient-periwinkle);
-  --text-heading:   #0c0e12;
-  --text-body:      #0c0e12d8;
-  --text-secondary: #0c0e12d8;
-  --text-muted:     #0c0e129b;
-  --border-control: #0c0e12b4;
+  --text-heading:   #1c1410;
+  --text-body:      #1c1410e7;
+  --text-secondary: #1c1410e7;
+  --text-muted:     #1c1410a6;
+  --border-control: #1c1410c0;
 }
 
-/* periwinkle-soft — worst stop #82869b; heading 5.36:1, body/secondary 4.50:1, muted 3.00:1 */
+/* periwinkle-soft — worst stop #82869b; heading 5.04:1, body/secondary 4.51:1, muted 3.02:1 */
 .ahimsa-day .ah-surface--periwinkle-soft {
   background: var(--gradient-periwinkle-soft);
-  --text-heading:   #0c0e12;
-  --text-body:      #0c0e12d8;
-  --text-secondary: #0c0e12d8;
-  --text-muted:     #0c0e129b;
-  --border-control: #0c0e12b4;
+  --text-heading:   #1c1410;
+  --text-body:      #1c1410e7;
+  --text-secondary: #1c1410e7;
+  --text-muted:     #1c1410a6;
+  --border-control: #1c1410c0;
 }
 
-/* mauve — worst stop #aa939d; heading 6.78:1, body/secondary 4.51:1, muted 3.01:1 */
+/* mauve — worst stop #aa939d; heading 6.37:1, body/secondary 4.50:1, muted 3.00:1 */
 .ahimsa-day .ah-surface--mauve {
   background: var(--gradient-mauve);
-  --text-heading:   #0c0e12;
-  --text-body:      #0c0e12bd;
-  --text-secondary: #0c0e12bd;
-  --text-muted:     #0c0e128d;
-  --border-control: #0c0e12a7;
+  --text-heading:   #1c1410;
+  --text-body:      #1c1410c8;
+  --text-secondary: #1c1410c8;
+  --text-muted:     #1c141095;
+  --border-control: #1c1410af;
 }
 
-/* olive — worst stop #7e8676; heading 5.11:1, body/secondary 4.50:1, muted 3.01:1 */
+/* olive — worst stop #7e8676; heading 4.80:1, body/secondary 4.51:1, muted 3.01:1 */
 .ahimsa-day .ah-surface--olive {
   background: var(--gradient-olive);
-  --text-heading:   #0c0e12;
-  --text-body:      #0c0e12e0;
-  --text-secondary: #0c0e12e0;
-  --text-muted:     #0c0e129f;
-  --border-control: #0c0e12b9;
+  --text-heading:   #1c1410;
+  --text-body:      #1c1410f0;
+  --text-secondary: #1c1410f0;
+  --text-muted:     #1c1410aa;
+  --border-control: #1c1410c3;
 }

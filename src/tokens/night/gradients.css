@@ -3,21 +3,22 @@
    Where Day's gradients are a warm wash, Night's climb out of the dark
    toward a single distant light.
 
+   --gradient-midnight is the sky. Under it, .ah-ambient--stars lays a
+   faint, static field of stars; nothing in it moves.
+
    Names are deliberately distinct from Day's, so that no palette-level
    name ever holds two different values across the system. */
 
 .ahimsa-night {
-  --gradient-deep:      linear-gradient(155deg, #080b10 0%, #0e131a 50%, #161d26 100%);
-  --gradient-horizon:   linear-gradient(155deg, #0e131a 0%, #16222e 40%, #1d3442 75%, #2c5866 100%);
-  /* The bright end lands on peacock-600 rather than -500: at -500 the ink
-     tops out at 3.17:1 and the gradient could not carry body text. */
-  --gradient-aurora:    linear-gradient(155deg, #0e131a 0%, #1a2233 40%, #2b3a5c 75%, #2c7787 100%);
-  --gradient-iris:      linear-gradient(155deg, #0e131a 0%, #1c1f38 45%, #313876 80%, #545fae 100%);
-  /* monsoon-600 for the same reason: -500 caps the ink at 4.27:1. */
-  --gradient-nightfall: linear-gradient(155deg, #0e131a 0%, #1b2530 40%, #2b3849 75%, #475b77 100%);
-  --gradient-ember:     linear-gradient(155deg, #0e131a 0%, #241a1a 40%, #47291d 75%, #7e4429 100%);
+  --gradient-deep:      linear-gradient(155deg, #060914 0%, #0a1124 50%, #0f1626 100%);
+  --gradient-midnight:  linear-gradient(155deg, #060914 0%, #0a1124 30%, #101a35 60%, #182648 100%);
+  --gradient-horizon:   linear-gradient(155deg, #0a1124 0%, #162436 30%, #284151 60%, #45717e 100%);
+  --gradient-aurora:    linear-gradient(155deg, #0a1124 0%, #10243a 30%, #2a4656 60%, #45717e 100%);
+  --gradient-iris:      linear-gradient(155deg, #0a1124 0%, #1b223b 30%, #363d61 60%, #555d8d 100%);
+  --gradient-nightfall: linear-gradient(155deg, #0a1124 0%, #1b2337 30%, #374256 60%, #57657a 100%);
+  --gradient-ember:     linear-gradient(155deg, #0a1124 0%, #22212f 30%, #493b40 60%, #775955 100%);
 
-  /* The one radial in the system, and the ambient layer's ground: a field
-     lit faintly from above, falling away to nothing at the edges. */
-  --gradient-void: radial-gradient(120% 90% at 50% 0%, #1d2a36 0%, #0e131a 55%, #080b10 100%);
+  /* The ground of the ambient layer: a field lit faintly from above,
+     falling away to nothing at the edges. */
+  --gradient-void: radial-gradient(120% 90% at 50% 0%, #182648 0%, #0a1124 55%, #060914 100%);
 }

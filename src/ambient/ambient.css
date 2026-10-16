@@ -2,7 +2,7 @@
    =====================================================================
    WHAT THIS IS
    A decorative field that sits behind a screen and does nothing else. It
-   is the Night theme's answer to Day's cream paper: atmosphere, not
+   is the Night theme's answer to Day's sunlit sky: atmosphere, not
    information.
 
    The reference implementations (littleworkshop's TRACK, uberviz's Splice)
@@ -75,8 +75,8 @@
   mix-blend-mode: plus-lighter;
   opacity: var(--ambient-bloom);
   background:
-    radial-gradient(38% 28% at 22% 18%, #3b93a340 0%, transparent 70%),
-    radial-gradient(30% 24% at 78% 32%, #545fae33 0%, transparent 72%),
+    radial-gradient(38% 28% at 22% 18%, #49788540 0%, transparent 70%),
+    radial-gradient(30% 24% at 78% 32%, #5b639533 0%, transparent 72%),
     radial-gradient(46% 34% at 50% 96%, #74b8c826 0%, transparent 76%);
   animation: ah-ambient-breathe var(--ambient-drift) var(--ease-standard) infinite alternate;
 }
@@ -100,7 +100,7 @@
   background-image: repeating-linear-gradient(
     0deg,
     transparent 0 2px,
-    #dce3ec 2px 3px
+    #d3dfe9 2px 3px
   );
   background-blend-mode: overlay;
   opacity: 1;
@@ -111,7 +111,7 @@
   inset: 0;
   mix-blend-mode: overlay;
   opacity: var(--ambient-scan);
-  background: repeating-linear-gradient(0deg, transparent 0 2px, #dce3ec 2px 3px);
+  background: repeating-linear-gradient(0deg, transparent 0 2px, #d3dfe9 2px 3px);
 }
 
 /* ---- Vignette. BarrelBlur's falloff, without the blur cost. ---- */
@@ -131,8 +131,8 @@
   height: 62%;
   opacity: var(--ambient-lines);
   background:
-    repeating-linear-gradient(0deg, transparent 0 38px, #8ecbd1 38px 39px),
-    repeating-linear-gradient(90deg, transparent 0 68px, #8ecbd1 68px 69px);
+    repeating-linear-gradient(0deg, transparent 0 38px, #7fd0d8 38px 39px),
+    repeating-linear-gradient(90deg, transparent 0 68px, #7fd0d8 68px 69px);
   mask-image: linear-gradient(to top, #000 0%, transparent 92%);
   -webkit-mask-image: linear-gradient(to top, #000 0%, transparent 92%);
   transform: perspective(420px) rotateX(74deg);
@@ -146,8 +146,8 @@
   inset: 0;
   opacity: calc(var(--ambient-lines) * 0.7);
   background:
-    repeating-linear-gradient(0deg, transparent 0 47px, #9ba4d6 47px 48px),
-    repeating-linear-gradient(90deg, transparent 0 47px, #9ba4d6 47px 48px);
+    repeating-linear-gradient(0deg, transparent 0 47px, #a0a8f5 47px 48px),
+    repeating-linear-gradient(90deg, transparent 0 47px, #a0a8f5 47px 48px);
   mask-image: radial-gradient(70% 60% at 50% 40%, #000 0%, transparent 100%);
   -webkit-mask-image: radial-gradient(70% 60% at 50% 40%, #000 0%, transparent 100%);
 }
@@ -166,6 +166,18 @@
   mask-image: radial-gradient(60% 60% at 50% 42%, #000 20%, transparent 100%);
   -webkit-mask-image: radial-gradient(60% 60% at 50% 42%, #000 20%, transparent 100%);
   animation: ah-ambient-hue var(--ambient-drift) var(--ease-standard) infinite alternate;
+}
+
+/* ---- Stars. A faint, static field: 130 pinpricks of ice-white at 14-56%
+   opacity, in a fixed arrangement so the sky is the same every night.
+   Nothing twinkles and nothing moves. It is there to give the feeling of
+   night and to be ignored; it never carries meaning. Put it over
+   --gradient-midnight (or --gradient-void) and under the content. ---- */
+:root, .ahimsa-night { --ambient-stars: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cg fill='%23eaf0ff'%3E%3Ccircle cx='73.1%25' cy='55.5%25' r='0.5' opacity='.29'/%3E%3Ccircle cx='64.9%25' cy='36.0%25' r='0.5' opacity='.41'/%3E%3Ccircle cx='55.3%25' cy='37.8%25' r='0.8' opacity='.18'/%3E%3Ccircle cx='80.4%25' cy='60.8%25' r='0.5' opacity='.42'/%3E%3Ccircle cx='74.7%25' cy='87.1%25' r='0.5' opacity='.39'/%3E%3Ccircle cx='77.9%25' cy='17.8%25' r='0.8' opacity='.44'/%3E%3Ccircle cx='59.6%25' cy='36.0%25' r='0.5' opacity='.53'/%3E%3Ccircle cx='70.2%25' cy='4.3%25' r='0.8' opacity='.26'/%3E%3Ccircle cx='52.1%25' cy='70.6%25' r='0.5' opacity='.34'/%3E%3Ccircle cx='5.7%25' cy='11.6%25' r='0.5' opacity='.55'/%3E%3Ccircle cx='44.8%25' cy='34.2%25' r='0.8' opacity='.31'/%3E%3Ccircle cx='51.4%25' cy='68.6%25' r='0.5' opacity='.35'/%3E%3Ccircle cx='93.5%25' cy='24.6%25' r='0.8' opacity='.15'/%3E%3Ccircle cx='51.4%25' cy='11.4%25' r='0.5' opacity='.38'/%3E%3Ccircle cx='93.5%25' cy='71.8%25' r='0.8' opacity='.26'/%3E%3Ccircle cx='61.1%25' cy='79.1%25' r='0.5' opacity='.35'/%3E%3Ccircle cx='35.7%25' cy='21.6%25' r='1.15' opacity='.28'/%3E%3Ccircle cx='26.1%25' cy='69.6%25' r='0.5' opacity='.22'/%3E%3Ccircle cx='54.9%25' cy='94.3%25' r='0.5' opacity='.53'/%3E%3Ccircle cx='4.7%25' cy='90.6%25' r='0.5' opacity='.36'/%3E%3Ccircle cx='85.8%25' cy='70.2%25' r='0.5' opacity='.22'/%3E%3Ccircle cx='19.3%25' cy='94.5%25' r='0.5' opacity='.39'/%3E%3Ccircle cx='89.3%25' cy='49.6%25' r='0.5' opacity='.35'/%3E%3Ccircle cx='27.5%25' cy='26.0%25' r='0.5' opacity='.38'/%3E%3Ccircle cx='74.8%25' cy='3.7%25' r='0.5' opacity='.16'/%3E%3Ccircle cx='79.1%25' cy='83.8%25' r='0.5' opacity='.38'/%3E%3Ccircle cx='9.3%25' cy='89.2%25' r='0.5' opacity='.54'/%3E%3Ccircle cx='82.2%25' cy='74.6%25' r='0.5' opacity='.44'/%3E%3Ccircle cx='56.4%25' cy='28.1%25' r='0.8' opacity='.28'/%3E%3Ccircle cx='99.4%25' cy='78.5%25' r='0.8' opacity='.4'/%3E%3Ccircle cx='92.1%25' cy='3.4%25' r='0.5' opacity='.18'/%3E%3Ccircle cx='8.7%25' cy='75.6%25' r='0.8' opacity='.44'/%3E%3Ccircle cx='36.7%25' cy='16.8%25' r='0.5' opacity='.18'/%3E%3Ccircle cx='25.4%25' cy='18.3%25' r='0.5' opacity='.15'/%3E%3Ccircle cx='17.9%25' cy='79.8%25' r='0.5' opacity='.44'/%3E%3Ccircle cx='53.4%25' cy='28.2%25' r='0.5' opacity='.18'/%3E%3Ccircle cx='15.9%25' cy='24.2%25' r='0.5' opacity='.28'/%3E%3Ccircle cx='73.2%25' cy='81.5%25' r='0.5' opacity='.55'/%3E%3Ccircle cx='3.2%25' cy='57.6%25' r='0.5' opacity='.55'/%3E%3Ccircle cx='81.4%25' cy='1.9%25' r='1.15' opacity='.21'/%3E%3Ccircle cx='35.3%25' cy='82.1%25' r='0.8' opacity='.5'/%3E%3Ccircle cx='29.9%25' cy='83.0%25' r='0.5' opacity='.55'/%3E%3Ccircle cx='97.9%25' cy='54.5%25' r='0.5' opacity='.19'/%3E%3Ccircle cx='62.9%25' cy='83.9%25' r='0.5' opacity='.54'/%3E%3Ccircle cx='26.7%25' cy='91.8%25' r='0.5' opacity='.16'/%3E%3Ccircle cx='33.1%25' cy='5.7%25' r='0.5' opacity='.53'/%3E%3Ccircle cx='28.2%25' cy='71.5%25' r='0.5' opacity='.35'/%3E%3Ccircle cx='67.5%25' cy='73.0%25' r='0.8' opacity='.42'/%3E%3Ccircle cx='83.7%25' cy='51.8%25' r='0.5' opacity='.31'/%3E%3Ccircle cx='36.3%25' cy='38.6%25' r='0.5' opacity='.43'/%3E%3Ccircle cx='29.7%25' cy='11.7%25' r='0.5' opacity='.15'/%3E%3Ccircle cx='52.1%25' cy='51.0%25' r='0.5' opacity='.2'/%3E%3Ccircle cx='83.2%25' cy='13.1%25' r='0.5' opacity='.14'/%3E%3Ccircle cx='37.2%25' cy='71.5%25' r='0.5' opacity='.28'/%3E%3Ccircle cx='9.3%25' cy='44.9%25' r='0.5' opacity='.37'/%3E%3Ccircle cx='46.0%25' cy='32.7%25' r='0.5' opacity='.23'/%3E%3Ccircle cx='20.8%25' cy='3.3%25' r='0.5' opacity='.39'/%3E%3Ccircle cx='80.3%25' cy='72.6%25' r='0.5' opacity='.21'/%3E%3Ccircle cx='45.2%25' cy='22.1%25' r='0.8' opacity='.16'/%3E%3Ccircle cx='38.4%25' cy='80.1%25' r='0.5' opacity='.33'/%3E%3Ccircle cx='43.8%25' cy='71.3%25' r='0.5' opacity='.48'/%3E%3Ccircle cx='87.3%25' cy='42.3%25' r='0.5' opacity='.54'/%3E%3Ccircle cx='11.5%25' cy='81.7%25' r='0.8' opacity='.26'/%3E%3Ccircle cx='11.3%25' cy='65.8%25' r='0.5' opacity='.23'/%3E%3Ccircle cx='17.2%25' cy='28.1%25' r='1.15' opacity='.21'/%3E%3Ccircle cx='30.6%25' cy='4.8%25' r='0.8' opacity='.21'/%3E%3Ccircle cx='15.1%25' cy='76.8%25' r='0.8' opacity='.53'/%3E%3Ccircle cx='70.2%25' cy='15.0%25' r='0.5' opacity='.36'/%3E%3Ccircle cx='80.3%25' cy='24.3%25' r='0.5' opacity='.53'/%3E%3Ccircle cx='81.2%25' cy='20.1%25' r='0.5' opacity='.39'/%3E%3Ccircle cx='70.6%25' cy='70.2%25' r='0.5' opacity='.34'/%3E%3Ccircle cx='73.6%25' cy='51.8%25' r='0.5' opacity='.26'/%3E%3Ccircle cx='47.8%25' cy='92.9%25' r='0.8' opacity='.31'/%3E%3Ccircle cx='0.7%25' cy='64.2%25' r='0.5' opacity='.5'/%3E%3Ccircle cx='50.0%25' cy='68.9%25' r='0.5' opacity='.23'/%3E%3Ccircle cx='72.5%25' cy='43.6%25' r='0.5' opacity='.15'/%3E%3Ccircle cx='78.0%25' cy='52.6%25' r='0.5' opacity='.54'/%3E%3Ccircle cx='42.9%25' cy='41.0%25' r='1.15' opacity='.39'/%3E%3Ccircle cx='26.9%25' cy='20.0%25' r='0.5' opacity='.49'/%3E%3Ccircle cx='60.9%25' cy='99.6%25' r='0.5' opacity='.16'/%3E%3Ccircle cx='64.1%25' cy='18.6%25' r='0.5' opacity='.27'/%3E%3Ccircle cx='59.6%25' cy='48.5%25' r='0.5' opacity='.4'/%3E%3Ccircle cx='27.4%25' cy='46.5%25' r='0.5' opacity='.28'/%3E%3Ccircle cx='85.1%25' cy='82.2%25' r='0.8' opacity='.34'/%3E%3Ccircle cx='30.5%25' cy='23.3%25' r='0.8' opacity='.34'/%3E%3Ccircle cx='60.7%25' cy='72.3%25' r='0.5' opacity='.42'/%3E%3Ccircle cx='39.6%25' cy='25.1%25' r='0.5' opacity='.27'/%3E%3Ccircle cx='80.2%25' cy='78.4%25' r='0.8' opacity='.36'/%3E%3Ccircle cx='56.0%25' cy='87.5%25' r='0.5' opacity='.5'/%3E%3Ccircle cx='90.4%25' cy='50.6%25' r='0.8' opacity='.54'/%3E%3Ccircle cx='1.8%25' cy='58.1%25' r='0.5' opacity='.2'/%3E%3Ccircle cx='3.7%25' cy='21.8%25' r='0.8' opacity='.23'/%3E%3Ccircle cx='33.0%25' cy='40.7%25' r='0.8' opacity='.16'/%3E%3Ccircle cx='13.4%25' cy='9.4%25' r='0.5' opacity='.55'/%3E%3Ccircle cx='27.0%25' cy='62.8%25' r='0.8' opacity='.27'/%3E%3Ccircle cx='40.8%25' cy='67.7%25' r='0.8' opacity='.21'/%3E%3Ccircle cx='85.7%25' cy='99.2%25' r='0.5' opacity='.51'/%3E%3Ccircle cx='60.4%25' cy='7.7%25' r='0.5' opacity='.48'/%3E%3Ccircle cx='69.9%25' cy='95.8%25' r='0.5' opacity='.34'/%3E%3Ccircle cx='71.0%25' cy='65.4%25' r='0.5' opacity='.4'/%3E%3Ccircle cx='47.6%25' cy='88.2%25' r='0.8' opacity='.34'/%3E%3Ccircle cx='19.5%25' cy='30.1%25' r='0.8' opacity='.5'/%3E%3Ccircle cx='55.7%25' cy='52.0%25' r='0.5' opacity='.5'/%3E%3Ccircle cx='73.5%25' cy='25.6%25' r='0.5' opacity='.33'/%3E%3Ccircle cx='31.6%25' cy='60.7%25' r='0.5' opacity='.19'/%3E%3Ccircle cx='36.2%25' cy='23.0%25' r='0.8' opacity='.49'/%3E%3Ccircle cx='36.5%25' cy='54.9%25' r='0.5' opacity='.25'/%3E%3Ccircle cx='14.1%25' cy='50.1%25' r='0.5' opacity='.55'/%3E%3Ccircle cx='34.7%25' cy='75.8%25' r='0.5' opacity='.51'/%3E%3Ccircle cx='44.5%25' cy='79.0%25' r='0.8' opacity='.49'/%3E%3Ccircle cx='47.8%25' cy='44.2%25' r='0.5' opacity='.51'/%3E%3Ccircle cx='79.7%25' cy='45.0%25' r='0.5' opacity='.44'/%3E%3Ccircle cx='98.3%25' cy='87.1%25' r='0.5' opacity='.35'/%3E%3Ccircle cx='37.5%25' cy='65.6%25' r='0.8' opacity='.55'/%3E%3Ccircle cx='64.2%25' cy='32.7%25' r='0.5' opacity='.26'/%3E%3Ccircle cx='20.7%25' cy='11.1%25' r='0.5' opacity='.16'/%3E%3Ccircle cx='88.0%25' cy='74.5%25' r='0.8' opacity='.49'/%3E%3Ccircle cx='28.2%25' cy='71.0%25' r='0.8' opacity='.34'/%3E%3Ccircle cx='1.2%25' cy='36.1%25' r='0.5' opacity='.2'/%3E%3Ccircle cx='73.5%25' cy='65.7%25' r='0.5' opacity='.23'/%3E%3Ccircle cx='59.6%25' cy='87.1%25' r='0.8' opacity='.4'/%3E%3Ccircle cx='31.1%25' cy='99.9%25' r='0.5' opacity='.5'/%3E%3Ccircle cx='61.8%25' cy='76.3%25' r='0.5' opacity='.37'/%3E%3Ccircle cx='67.4%25' cy='92.1%25' r='0.5' opacity='.2'/%3E%3Ccircle cx='2.8%25' cy='7.0%25' r='0.5' opacity='.27'/%3E%3Ccircle cx='86.1%25' cy='43.7%25' r='0.5' opacity='.51'/%3E%3Ccircle cx='60.4%25' cy='7.8%25' r='0.5' opacity='.4'/%3E%3Ccircle cx='49.0%25' cy='13.2%25' r='0.8' opacity='.2'/%3E%3Ccircle cx='33.2%25' cy='21.4%25' r='0.5' opacity='.22'/%3E%3Ccircle cx='1.8%25' cy='61.7%25' r='0.5' opacity='.16'/%3E%3C/g%3E%3C/svg%3E"); }
+.ah-ambient--stars {
+  background-image: var(--ambient-stars);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 /* ---- Drift. Opacity and hue only, over half a minute, and it never

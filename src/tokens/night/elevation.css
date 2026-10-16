@@ -5,10 +5,10 @@
    the lifting. Emphasis comes from --glow-*, never from a brighter fill. */
 
 .ahimsa-night {
-  --shadow-xs:    inset 0 0 0 1px #dce3ec14;
-  --shadow-sm:    inset 0 0 0 1px #dce3ec1f, 0 1px 0 #ffffff0a;
-  --shadow-md:    inset 0 0 0 1px #dce3ec29, inset 0 1px 0 #ffffff14, 0 8px 32px -12px #000000a6;
-  --shadow-lg:    inset 0 0 0 1px #dce3ec33, 0 16px 48px -16px #000000b8;
-  --shadow-xl:    0 40px 80px -24px #000000cc, 0 0 0 1px #dce3ec1f;
+  --shadow-xs:    inset 0 0 0 1px #d3dfe914;
+  --shadow-sm:    inset 0 0 0 1px #d3dfe91f, 0 1px 0 #ffffff0a;
+  --shadow-md:    inset 0 0 0 1px #d3dfe929, inset 0 1px 0 #ffffff14, 0 8px 32px -12px #000000a6;
+  --shadow-lg:    inset 0 0 0 1px #d3dfe933, 0 16px 48px -16px #000000b8;
+  --shadow-xl:    0 40px 80px -24px #000000cc, 0 0 0 1px #d3dfe91f;
   --shadow-sheet: 0 -16px 48px #000000a6, inset 0 1px 0 #ffffff14;
 }

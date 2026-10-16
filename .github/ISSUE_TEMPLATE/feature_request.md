@@ -14,7 +14,7 @@ is more useful than "an alert component".
 
 **Does it survive the refusals?**
 Please check <https://ahimsa-design.riverma.com/principles.html#refusals>
-first. Proposals for a notification badge, an alert colour, a banner, a streak
+first. Proposals for a notification badge, an alert color, a banner, a streak
 or a countdown will be declined — the absence is the product, not an oversight.
 
 **Would it need a token value to change?**
