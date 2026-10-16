@@ -7,11 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2.1.0] - 2026-10-16
+## [3.0.0] - 2026-10-16
 
-Both aesthetics are recolored and Night now speaks in Day's type. Token
-values in Day and Night change, and two applications render them, so treat
-this as a visual migration even though the version is a minor.
+Both aesthetics are recolored, Night now speaks in Day's type, and Night now
+follows the operating system's light or dark preference by default. This is
+breaking: token values in Day and Night change, and two applications render
+them.
 
 ### Changed
 
