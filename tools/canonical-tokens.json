@@ -145,5 +145,5 @@
     "--weight-regular": "400",
     "--weight-semibold": "600"
   },
-  "_rebaselined": "v3.0.0 (2026-10-16): color, gradient and shadow values re-baselined to the sun-lit Day palette (Soft Haze sky, Chalk cards, Cocoa ink; Marigold Robe, Gold Leaf, Kiln, Young Leaf, Verdigris, Champaran, Rain Cloud). Earlier: v2.0.0 newsprint. The three declared text-alpha deviations still compare against the original 1.x values."
+  "_rebaselined": "v2.1.0 (2026-10-16): color, gradient and shadow values re-baselined to the sun-lit Day palette (Soft Haze sky, Chalk cards, Cocoa ink; Marigold Robe, Gold Leaf, Kiln, Young Leaf, Verdigris, Champaran, Rain Cloud). Earlier: v2.0.0 newsprint. The three declared text-alpha deviations still compare against the original 1.x values."
 }

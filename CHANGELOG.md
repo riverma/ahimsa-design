@@ -7,25 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [3.1.0] - 2026-10-16
+## [2.1.0] - 2026-10-16
 
-### Changed
-
-- **The primary button is the brand accent**: Verdigris in Day, Glacier Lake
-  in Night, with `--text-inverse` as its label. It was ink on paper.
-- **Links use the interactive accent** (`--accent-secondary`: Champaran in Day,
-  Nila in Night). `.ah-link--quiet` still inherits, for navigation.
-
-### Added
-
-- The contrast gate now measures the primary button's label against
-  `--accent-primary` (4.79:1 in Day, 10.65:1 in Night).
-
-## [3.0.0] - 2026-10-16
-
-Both aesthetics are recolored and Night now speaks in Day's type. This is
-breaking: every Day color, gradient and shadow value changes, Night's palette
-changes, and two applications render them.
+Both aesthetics are recolored and Night now speaks in Day's type. Token
+values in Day and Night change, and two applications render them, so treat
+this as a visual migration even though the version is a minor.
 
 ### Changed
 
@@ -51,6 +37,10 @@ changes, and two applications render them.
   always wins. The docs site does exactly this.
 - **American English throughout** (`color`, `gray`, `license`, `labeled`).
 - The parity baseline was re-baselined to the new Day values.
+- **The primary button is the brand accent**: Verdigris in Day, Glacier Lake
+  in Night, with `--text-inverse` as its label. It was ink on paper.
+- **Links use the interactive accent** (`--accent-secondary`: Champaran in Day,
+  Nila in Night). `.ah-link--quiet` still inherits, for navigation.
 
 ### Added
 
@@ -58,6 +48,8 @@ changes, and two applications render them.
 - `.ah-sky`: Day's counterpart, a warm haze with the sun at the top left.
 - `--gradient-midnight` (Night's sky) and `--gradient-sun` (Day's light).
 - `--ambient-stars`, the starfield as a custom property.
+- The contrast gate now measures the primary button's label against
+  `--accent-primary` (4.79:1 in Day, 10.65:1 in Night).
 
 ### Removed
 
