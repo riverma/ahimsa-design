@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.1.0] - 2026-10-16
+
+### Changed
+
+- **The primary button is the brand accent**: Verdigris in Day, Glacier Lake
+  in Night, with `--text-inverse` as its label. It was ink on paper.
+- **Links use the interactive accent** (`--accent-secondary`: Champaran in Day,
+  Nila in Night). `.ah-link--quiet` still inherits, for navigation.
+
+### Added
+
+- The contrast gate now measures the primary button's label against
+  `--accent-primary` (4.79:1 in Day, 10.65:1 in Night).
+
 ## [3.0.0] - 2026-10-16
 
 Both aesthetics are recolored and Night now speaks in Day's type. This is
