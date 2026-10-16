@@ -15,7 +15,7 @@ const BASE   = [
   'patterns/shell.css',
 ];
 const THEME = {
-  day:   { fonts: ['fonts/day.css'], tokens: ['palette', 'gradients', 'semantic', 'elevation', 'type', 'surfaces'].map(n => `tokens/day/${n}.css`), extra: [] },
+  day:   { fonts: ['fonts/day.css'], tokens: ['palette', 'gradients', 'semantic', 'elevation', 'type', 'surfaces'].map(n => `tokens/day/${n}.css`), extra: ['ambient/clouds.css'] },
   night: { fonts: ['fonts/day.css'], tokens: ['palette', 'gradients', 'semantic', 'elevation', 'type', 'surfaces'].map(n => `tokens/night/${n}.css`), extra: ['ambient/ambient.css'] },
 };
 
@@ -32,11 +32,11 @@ function bundle(title, files) {
 mkdirSync('dist', { recursive: true });
 
 const out = {
-  'ahimsa-day.css':   bundle('Ahimsa Day',  [...THEME.day.fonts,   ...SHARED, ...THEME.day.tokens,   ...BASE]),
+  'ahimsa-day.css':   bundle('Ahimsa Day',  [...THEME.day.fonts,   ...SHARED, ...THEME.day.tokens,   ...BASE, ...THEME.day.extra]),
   'ahimsa-night.css': bundle('Ahimsa Night', [...THEME.night.fonts, ...SHARED, ...THEME.night.tokens, ...BASE, ...THEME.night.extra]),
   'ahimsa.css':       bundle('Day + Night', [
     ...new Set([...THEME.day.fonts, ...THEME.night.fonts]),
-    ...SHARED, ...THEME.day.tokens, ...THEME.night.tokens, ...BASE, ...THEME.night.extra,
+    ...SHARED, ...THEME.day.tokens, ...THEME.night.tokens, ...BASE, ...THEME.day.extra, ...THEME.night.extra,
   ]),
 };
 

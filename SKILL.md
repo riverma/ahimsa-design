@@ -53,6 +53,8 @@ type       --size-micro|xs|sm|base|md|lg|xl|2xl|3xl|4xl|5xl  --size-reading
 motion     --duration-instant|fast|base|slow|slower|slowest|reveal
            --ease-standard|emphasized|decelerate|accelerate|reveal|expo
 gradients  --gradient-<name>   (use .ah-surface--<name>, which brings its ink)
+ground     --gradient-sky  --ambient-clouds   (Day; use .ah-sky)
+           --gradient-midnight  --ambient-stars (Night)
 ```
 
 Three that catch people out:
@@ -88,7 +90,7 @@ type       .ah-display-xl|l|m  .ah-heading-l|m  .ah-title-l|m  .ah-body
 layout     .ah-page  .ah-measure  .ah-stack  .ah-section
            .ah-app  .ah-screen  .ah-scroll  .ah-hdr  .ah-footer  .ah-list
            .ah-hrow
-surface    .ah-surface--<gradient>
+surface    .ah-surface--<gradient>  .ah-sky (Day's ground: gray sky, white clouds)
 ambient    .ah-ambient [--void --bloom --grain --scan --vignette --grid
                         --isolines --horizon]      (Night only, decorative)
 state      .is-active  .is-selected  .is-disabled  .is-tappable  .is-on

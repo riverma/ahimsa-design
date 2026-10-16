@@ -13,6 +13,16 @@
    ONE GRADIENT OWNS A SCREEN. Two of these side by side is the rule this
    system breaks least gladly. */
 
+/* sky — worst stop #dcdcdc; heading 13.24:1, body/secondary 4.52:1, muted 3.00:1 */
+.ahimsa-day .ah-surface--sky {
+  background: var(--gradient-sky);
+  --text-heading:   #1c1410;
+  --text-body:      #1c14109e;
+  --text-secondary: #1c14109e;
+  --text-muted:     #1c14107a;
+  --border-control: #1c141094;
+}
+
 /* dawn — worst stop #dfe1e0; heading 13.82:1, body/secondary 4.54:1, muted 3.00:1 */
 .ahimsa-day .ah-surface--dawn {
   background: var(--gradient-dawn);

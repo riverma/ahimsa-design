@@ -42,6 +42,7 @@
 @import url("tokens/day/elevation.css");
 @import url("tokens/day/type.css");
 @import url("tokens/day/surfaces.css");   /* generated */
+@import url("ambient/clouds.css");        /* Day's clouds, for .ah-sky */
 
 /* Ahimsa Night */
 @import url("tokens/night/palette.css");

@@ -119,15 +119,16 @@
 
 /* ================================================================
    Sky — Day's atmosphere, the way .ah-ambient is Night's.
-   A warm haze that cools toward the far corner, with the sun falling on
-   it from the top left. Put it on the page, a screen, or a hero region;
+   A light gray sky, a touch deeper overhead, with three large, soft white
+   clouds that never move. Put it on the page, a screen, or a hero region;
    cards and text sit on top as they would on flat paper.
    Decorative: it carries no meaning, and under forced-colors it falls
    away to the system canvas.
    ================================================================ */
 .ahimsa-day .ah-sky {
   background-color: var(--surface-canvas-flat);
-  background-image: var(--gradient-sun), var(--gradient-dawn);
+  background-image: var(--ambient-clouds), var(--gradient-sky);
+  background-size: 100% 100%, auto;
   background-repeat: no-repeat;
 }
 @media (forced-colors: active) {

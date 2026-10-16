@@ -1,5 +1,5 @@
 /* Ahimsa Day — raw palette.
-   Warm paper and cocoa ink under a sun-lit sky, with accents that carry a
+   Warm paper and cocoa ink under a light gray, clouded sky, with accents that carry a
    little more life than the newsprint they replace. These are raw values;
    components must reference the semantic aliases in semantic.css, never a
    step from this file.
@@ -12,7 +12,7 @@
    shade toward the darkest ink. */
 
 .ahimsa-day {
-  /* ---- Neutral: paper -> ink. Warm, in step with the sun. The workhorse. ---- */
+  /* ---- Neutral: paper -> ink. Warm, against the gray sky. The workhorse. ---- */
   --neutral-50: #f7f6f1; /* chalk — elevated surfaces, sheets, cards */
   --neutral-100: #f1eee6; /* inline elevated blocks */
   --neutral-200: #ece6dc; /* canvas — the flat fallback under the sky */
